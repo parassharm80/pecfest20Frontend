@@ -9,12 +9,28 @@ import {MatCheckboxModule, } from "@angular/material/checkbox";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import { ContactsComponent } from './contacts/contacts.component';
 import { ScheduleComponent } from './schedule/schedule.component';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
+import { EventsComponent } from './events/events.component';
+import { SignupComponent } from './signup/signup.component';
+import { SponsorComponent } from './sponsor/sponsor.component';
+import { HospitalityComponent } from './hospitality/hospitality.component';
+import { ProfileComponent } from './profile/profile.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactsComponent,
     ScheduleComponent,
+    HomeComponent,
+    HeaderComponent,
+    EventsComponent,
+    SignupComponent,
+    SponsorComponent,
+    HospitalityComponent,
+    ProfileComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
