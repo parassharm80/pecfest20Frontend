@@ -125,6 +125,6 @@
   },
   "defaultProject": "Pecfest",
   "cli": {
-    "analytics": "22473007-cafd-4bfd-9d59-ba9ca51432ef"
+    "analytics": "false"
   }
 }
