@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'app-accomodation',
@@ -10,18 +11,16 @@ export class AccomodationComponent {
   constructor(public dialog: MatDialog) {}
 
   openConfirmationDialog() {
-    this.dialog.open(ConfirmationDialogBox);
+    let dialogRef = this.dialog.open(ConfirmationDialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(result == "true") {
+        this.applyForAccomodation();
+      }
+    })
   }
-}
 
-@Component({
-  selector: 'confirmation-dialog-box',
-  templateUrl: './confirmationDialogBox.html',
-})
-export class ConfirmationDialogBox {
-
-    applyForAccomodation() {
-      console.log("applied");
-    }
-
+  applyForAccomodation() {
+    console.log("applied");
+  }
 }
