@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from "@angular/material/button";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MatToolbarModule } from "@angular/material/toolbar";
     BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
