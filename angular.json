@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "Pecfest"
+  "defaultProject": "Pecfest",
+  "cli": {
+    "analytics": "false"
+  }
 }
