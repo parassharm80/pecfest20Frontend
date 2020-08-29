@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {MatExpansionModule } from '@angular/material/expansion';
 import { AccomodationRoutingModule } from "./accomodation-routing.module";
 import { AccomodationComponent } from "./accomodation.component";
 
@@ -9,7 +10,8 @@ import { AccomodationComponent } from "./accomodation.component";
   ],
   imports: [
     CommonModule,
-    AccomodationRoutingModule
+    AccomodationRoutingModule,
+    MatExpansionModule
   ],
   exports: [AccomodationRoutingModule]
 })
