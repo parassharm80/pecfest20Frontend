@@ -7,12 +7,10 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatDialogModule } from '@angular/material/dialog';
-import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ConfirmationDialogComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
