@@ -3,11 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { AccomodationComponent } from './accomodation.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: AccomodationComponent,
-  },
-  {},
+    {
+        path: "",
+        component: AccomodationComponent
+    }
 ];
 
 @NgModule({

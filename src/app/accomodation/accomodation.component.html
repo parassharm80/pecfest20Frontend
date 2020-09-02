@@ -1,1 +1,71 @@
-<h1>Accomodation</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PECFest-Accomodation</title>
+</head>
+
+<body>
+    <h1>Accomodation</h1>
+    <nav id="accomodation-nav">
+    </nav>
+    <div id="register">
+        <h4>Apply for Accomodation</h4>
+        <!--Only one button will show at a time after redirecting it with log in id-->
+        <a routerLink="../register"><button mat-stroked-button>Sign in/Sign up</button></a>
+        <button mat-stroked-button (click)="openConfirmationDialog()">Apply </button>
+    </div>
+    <div id="about-us">
+        <h4>About Us</h4>
+        <p>About the accomodation given by PEC.</p>
+    </div>
+    <div id="policies">
+        <h4>Policies</h4>
+        <p>Policies and rules for staying in hostel.</p>
+    </div>
+    <div id="accomodation-faq">
+        <h4>FAQ's</h4>
+        <mat-accordion>
+            <mat-expansion-panel >
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Q.1 Where will we stay?
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    Sample Question 1
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>Ans. You will stay in PEC Hostels.</p>
+            </mat-expansion-panel>
+            <mat-expansion-panel >
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Q.2 Will the food be provided to us?
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    Sample Question 2
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>Ans. Yes the Hostel Mess will provide the food.</p>
+            </mat-expansion-panel>
+            <mat-expansion-panel >
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Q.3 What about the security of our bags?
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    Sample Question 3
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>Ans. PEC has complete security staff, they will take care.</p>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+    <div id="accomodation-contact">
+        <h4>Contact Us</h4>
+        poc
+    </div>
+</body>
+
+</html>
