@@ -10,16 +10,17 @@ import { MatDialogModule } from '@angular/material/dialog';
 import {RouterModule} from "@angular/router";
 import {AuthModule} from "./auth/auth.module";
 import {HeaderModule} from "./header/header.module";
-import {AccomodationModule} from "./accomodation/accomodation.module";
+import {HeaderComponent} from "./header/header.component";
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
-    AccomodationModule,
     RouterModule,
     BrowserAnimationsModule,
     MatButtonModule,
