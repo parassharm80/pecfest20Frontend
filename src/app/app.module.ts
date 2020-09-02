@@ -7,10 +7,15 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatDialogModule } from '@angular/material/dialog';
+import {AuthRoutingModule} from "./auth/auth-routing.module";
+import {RouterModule} from "@angular/router";
+import { HeaderComponent } from './header/header.component';
+import {AuthModule} from "./auth/auth.module";
+import {HeaderModule} from "./header/header.module";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
