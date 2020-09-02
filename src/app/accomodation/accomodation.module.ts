@@ -16,6 +16,7 @@ import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-
     ConfirmationDialogComponent
   ],
   imports: [
+    CommonModule,
     AccomodationRoutingModule,
     MatButtonModule,
     MatCheckboxModule,
