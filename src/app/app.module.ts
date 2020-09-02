@@ -27,7 +27,6 @@ import {AccomodationModule} from "./accomodation/accomodation.module";
     RouterModule,
     HeaderModule,
     MatCheckboxModule,
-    HeaderModule,
     MatToolbarModule,
     MatDialogModule
   ],
