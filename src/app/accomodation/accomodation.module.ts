@@ -16,17 +16,15 @@ import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-
     ConfirmationDialogComponent
   ],
   imports: [
-    CommonModule,
     AccomodationRoutingModule,
     MatButtonModule,
     MatCheckboxModule,
-    BrowserAnimationsModule,
     MatExpansionModule,
     MatToolbarModule,
     MatDialogModule
   ],
   providers: [],
-  exports: [AccomodationRoutingModule]
+  exports: [AccomodationComponent]
 })
 export class AccomodationModule {
 }
