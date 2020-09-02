@@ -20,6 +20,5 @@ export class AppComponent {
           this.showLoading = false;
         }
     });
-    console.log(this.showLoading);
   }
 }

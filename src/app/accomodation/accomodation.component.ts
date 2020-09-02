@@ -22,7 +22,6 @@ export class AccomodationComponent {
           routerEvent instanceof NavigationError)
         this.showLoading = false;
     });
-    console.log(this.showLoading+'file');
   }
 
     openConfirmationDialog() {
