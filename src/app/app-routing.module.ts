@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {AppComponent} from "./app.component"
-import {HeaderComponent} from "./header/header.component";
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
-    path:"",
-    component:HeaderComponent
+    path: '',
+    component: HomeComponent,
+    // loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+  },
+  {
+    path: '',
+    // component: HomeComponent,
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
   // {
   //   path:"headers",
@@ -19,11 +25,17 @@ const routes: Routes = [
   {
     path: 'events',
     loadChildren: () => import('./events/events.module').then(m => m.EventsModule)
-  }
+  },
+  {
+    path: '**',
+    redirectTo: ''
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    onSameUrlNavigation: 'reload'
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

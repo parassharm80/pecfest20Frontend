@@ -11,10 +11,12 @@ import {RouterModule} from "@angular/router";
 import {AuthModule} from "./auth/auth.module";
 import {HeaderModule} from "./header/header.module";
 import {AccomodationModule} from "./accomodation/accomodation.module";
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
