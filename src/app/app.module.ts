@@ -8,10 +8,9 @@ import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatDialogModule } from '@angular/material/dialog';
 import {RouterModule} from "@angular/router";
-import {AuthModule} from "./auth/auth.module";
 import {HeaderModule} from "./header/header.module";
-import {AccomodationModule} from "./accomodation/accomodation.module";
 import { HomeComponent } from './home/home.component';
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -19,14 +18,12 @@ import { HomeComponent } from './home/home.component';
     HomeComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
-    AccomodationModule,
     RouterModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    AuthModule,
-    RouterModule,
     HeaderModule,
     MatCheckboxModule,
     MatToolbarModule,

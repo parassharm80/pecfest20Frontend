@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {AuthRoutingModule} from "../auth/auth-routing.module";
-import {HeaderRoutingModule} from "./header-routing.module";
 import {HeaderComponent} from "./header.component";
 
 
@@ -10,8 +9,11 @@ import {HeaderComponent} from "./header.component";
   imports: [
     CommonModule,
     AuthRoutingModule,
-    HeaderRoutingModule,
+
   ],
-  exports: [HeaderComponent]
+  exports: [
+    HeaderComponent
+  ]
 })
 export class HeaderModule { }
+

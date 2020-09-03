@@ -7,17 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    // loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
   {
     path: '',
-    // component: HomeComponent,
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
-  // {
-  //   path:"headers",
-  //   loadChildren: () => import('./header/header.module').then(m => m.HeaderModule)
-  // },
   {
     path: 'accomodation',
     loadChildren: () => import('./accomodation/accomodation.module').then(m => m.AccomodationModule)
