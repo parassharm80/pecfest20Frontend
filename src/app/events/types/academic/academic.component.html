@@ -1,0 +1,14 @@
+<div class="wrap">
+  <div *ngIf='this.name'>
+    <div id="event-title">{{title}}</div>
+    <ul>
+      <li class="asf" *ngFor="let event of events"><a routerLink="/{{event}}">{{ event }}</a></li>
+    </ul>
+  </div>
+  <div *ngIf='!this.name'>
+    <div id="event-title">{{title}}</div>
+    <ul>
+      <li class="asf" *ngFor="let event of events"><a routerLink="{{event}}">{{ event }}</a></li>
+    </ul>
+  </div>
+</div>
