@@ -1,6 +1,6 @@
 <div class="wrap">
     <div id="event-title">{{title}}</div>
     <ul>
-        <li class="asf" *ngFor="let event of events"><a href="/events/{{event}}">{{ event }}</a></li>
+        <li class="asf" *ngFor="let event of events"><a routerLink="{{event}}">{{ event }}</a></li>
     </ul>
 </div>

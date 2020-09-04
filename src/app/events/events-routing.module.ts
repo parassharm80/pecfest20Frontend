@@ -11,40 +11,56 @@ const routes: Routes = [
     component: EventsComponent,
   },
   {
-    path: 'cultural/:name',
-    component: CulturalComponent,
-  },
-  {
     path: 'cultural',
-    component: CulturalComponent,
-  },
-  {
-    path: 'technical/:name',
-    component: TechnicalComponent,
+    children: [
+      {
+        path: '',
+        component: CulturalComponent,
+      },
+      {
+        path: ':name',
+        component: CulturalComponent,
+      },
+    ]
   },
   {
     path: 'technical',
-    component: TechnicalComponent,
-  },
-  {
-    path: 'workshops/:name',
-    component: AcademicComponent,
-
+    children: [
+      {
+        path: '',
+        component: TechnicalComponent,
+      },
+      {
+        path: ':name',
+        component: TechnicalComponent,
+      },
+    ]
   },
   {
     path: 'workshops',
-    component: AcademicComponent,
-
-  },
-  {
-    path: 'lectures/:name',
-    component: AcademicComponent,
-
+    children: [
+      {
+        path: '',
+        component: AcademicComponent,
+      },
+      {
+        path: ':name',
+        component: AcademicComponent,
+      },
+    ]
   },
   {
     path: 'lectures',
-    component: AcademicComponent,
-
+    children: [
+      {
+        path: '',
+        component: AcademicComponent,
+      },
+      {
+        path: ':name',
+        component: AcademicComponent,
+      },
+    ]
   },
   {},
 ];

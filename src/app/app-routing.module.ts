@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {AccomodationComponent} from "./accomodation/accomodation.component";
+import {AppComponent} from "./app.component"
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
-    path:"",
-    component:AccomodationComponent
+    path: '',
+    component: HomeComponent,
   },
-  // {
-  //   path:"headers",
-  //   loadChildren: () => import('./header/header.module').then(m => m.HeaderModule)
-  // },
+  {
+    path: '',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+  },
   {
     path: 'accomodation',
     loadChildren: () => import('./accomodation/accomodation.module').then(m => m.AccomodationModule)
@@ -22,11 +23,13 @@ const routes: Routes = [
   {
     path: '**',
     redirectTo: ''
-  }
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    onSameUrlNavigation: 'reload'
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
