@@ -11,9 +11,7 @@ import {HeaderComponent} from "./header.component";
     AuthRoutingModule,
 
   ],
-  exports: [
-    HeaderComponent
-  ]
+  exports: [HeaderComponent]
 })
 export class HeaderModule { }
 

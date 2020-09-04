@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {AppComponent} from "./app.component"
-import {HeaderComponent} from "./header/header.component";
 import {AccomodationComponent} from "./accomodation/accomodation.component";
 
 const routes: Routes = [
@@ -16,6 +14,14 @@ const routes: Routes = [
   {
     path: 'accomodation',
     loadChildren: () => import('./accomodation/accomodation.module').then(m => m.AccomodationModule)
+  },
+  {
+    path: 'events',
+    loadChildren: () => import('./events/events.module').then(m => m.EventsModule)
+  },
+  {
+    path: '**',
+    redirectTo: ''
   }
 ];
 
