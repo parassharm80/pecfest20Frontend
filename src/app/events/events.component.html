@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<div class="wrap">
+    <div id="event-title">{{title}}</div>
+    <ul>
+        <li class="event-items" *ngFor="let event of events"><a routerLink="{{event}}">{{ event }}</a></li>
+    </ul>
+</div>

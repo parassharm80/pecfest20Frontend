@@ -1,21 +1,27 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {AppComponent} from "./app.component"
-import {HeaderComponent} from "./header/header.component";
-import {AccomodationComponent} from "./accomodation/accomodation.component";
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
     path:"",
-    component:AccomodationComponent
+    component:HomeComponent
   },
-  // {
-  //   path:"headers",
-  //   loadChildren: () => import('./header/header.module').then(m => m.HeaderModule)
-  // },
+  {
+    path: '',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+  },
+  {
+    path: 'events',
+    loadChildren: () => import('./events/events.module').then(m => m.EventsModule)
+  },
   {
     path: 'accomodation',
     loadChildren: () => import('./accomodation/accomodation.module').then(m => m.AccomodationModule)
+  },
+  {
+    path: '**',
+    redirectTo: ''
   }
 ];
 
