@@ -1,10 +1,28 @@
+.wrap{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin: auto;
+}
+
 #event-title{
-font-size: 5vmax;
+  font-size: 5vmax;
+  margin: 40px;
+  text-transform: uppercase;
+}
+
+ul{
+  padding: 0;
+  margin: auto;
 }
 
 li{
   list-style: none;
+  margin: 0.3em;
+  padding: 0.3em;
+  text-transform: uppercase;
   font-size: 3vmax;
+  text-align: center;
 }
 
 a{

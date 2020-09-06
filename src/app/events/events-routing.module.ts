@@ -4,7 +4,6 @@ import { EventsComponent } from './events.component';
 import { CulturalComponent } from './types/cultural/cultural.component';
 import { TechnicalComponent } from './types/technical/technical.component';
 import { AcademicComponent } from './types/academic/academic.component';
-import { EventComponent } from './event/event.component';
 
 const routes: Routes = [
   {
@@ -62,10 +61,6 @@ const routes: Routes = [
         component: AcademicComponent,
       },
     ]
-  },
-  {
-    path: ':id',
-    component: EventComponent,
   },
   {},
 ];
