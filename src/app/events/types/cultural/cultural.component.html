@@ -1,14 +1,17 @@
-<div class="wrap">
-  <div *ngIf='this.name'>
-    <div id="event-title">{{title}}</div>
-    <ul>
-      <li class="asf" *ngFor="let event of events"><a routerLink="/{{event}}">{{ event }}</a></li>
-    </ul>
-  </div>
-  <div *ngIf='!this.name'>
-    <div id="event-title">{{title}}</div>
-    <ul>
-      <li class="asf" *ngFor="let event of events"><a routerLink="{{event}}">{{ event }}</a></li>
-    </ul>
-  </div>
+<div *ngIf='this.name' class="container-sm mx-auto w-75 m-3">
+  <div id="event-title" class="text-center m-5 text-uppercase">{{title}}</div>
+  <ul class="list-group text-center text-uppercase">
+    <li class="py-2" *ngFor="let event of events"><a routerLink="../../{{event}}"><img
+          class="event-image rounded img-fluid" src="https://placehold.it/1000x200/CCCCCC/999999&text=BANNER"
+          alt="event banner"></a></li>
+  </ul>
+  <!-- <ul class="list-group text-center text-uppercase">
+          <li class="py-3" *ngFor="let event of events"><a routerLink="../../{{event}}">{{ event }}</a></li>
+        </ul> -->
+</div>
+<div *ngIf='!this.name'  class="container-sm mx-auto w-75 m-3">
+  <div id="event-title" class="text-center m-5 text-uppercase">{{title}}</div>
+  <ul class="list-group text-center text-uppercase">
+    <li class="py-3" *ngFor="let event of events"><a routerLink="{{event}}">{{ event }}</a></li>
+  </ul>
 </div>

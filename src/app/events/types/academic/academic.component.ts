@@ -20,6 +20,6 @@ export class AcademicComponent {
       console.log(params);
       this.title = this.name != undefined ? `${this.name}` : params[0].path
     });
-    this.events = this.name != undefined ? ['asg'] : ['asfa', 'berer', 'sddbad']
+    this.events = this.name != undefined ? ['asg', 'asfa', 'berer', 'sddbad'] : ['asfa', 'berer', 'sddbad']
   }
 }
