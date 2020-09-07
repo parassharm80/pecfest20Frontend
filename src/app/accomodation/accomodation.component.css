@@ -1,3 +1,11 @@
+.coming-soon{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-top: 7%;
+}
+
 @keyframes ldio-nvnx6loo9jr-1 {
   0% { transform: rotate(0deg) }
   50% { transform: rotate(-45deg) }

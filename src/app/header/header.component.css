@@ -1,0 +1,23 @@
+.logo{
+    width: 100px;
+    height: 100px;
+}
+.bt{
+    padding: 1px 1px 1px 1px;
+    border-color: transparent;
+    background-color: transparent;
+}
+.text{
+    color: black;
+    font-size: 15px;
+    font-family: header-text;
+}
+.gap{
+    padding-top: 0.5vh;
+    padding-left: 3vh;
+}
+
+@font-face {
+    font-family: "header-text";
+    src: url("../../assets/fonts/emulogic.ttf");
+  }

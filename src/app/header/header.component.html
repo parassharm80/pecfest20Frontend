@@ -1,36 +1,43 @@
-<html>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand"
-     [routerLink]="['']"><i class="fas fa-user-clock"></i>PECFEST</a>
-  <button class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class= "collapse navbar-collapse" id = "navbar">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class = "nav-link"
-           [routerLink]="['register']" routerLinkActive="active">Register</a>
-      </li>
-      <li class="nav-item">
-        <a class = "nav-link"
-           [routerLink]="['login']" routerLinkActive="active">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class = "nav-link"
-           [routerLink]="['reset-password']" routerLinkActive="active">Reset Password</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link"
-            [routerLink]="['events']" routerLinkActive="active">Events</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-</html>
+<div class="gap">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand"
+       [routerLink]="['']"><img src="../../assets/pecfest_logo.png" class="logo"></a>
+    <button class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class= "collapse navbar-collapse" id = "navbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class = "nav-link"
+             [routerLink]="['register']" routerLinkActive="active"><button class="bt"><p class="text">REGISTER</p></button></a>
+        </li>
+        <li class="nav-item">
+          <a class = "nav-link"
+             [routerLink]="['login']" routerLinkActive="active"><button class="bt"><p class="text">LOGIN</p></button></a>
+        </li>
+        <li class="nav-item">
+          <a class = "nav-link"
+             [routerLink]="['reset-password']" routerLinkActive="active"><button class="bt"><p class="text">SPONSORS</p></button></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+              [routerLink]="['events']" routerLinkActive="active"><button class="bt"><p class="text">EVENTS</p></button></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+              [routerLink]="['accomodation']" routerLinkActive="active"><button class="bt"><p class="text">ACCOMODATION</p></button></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+              [routerLink]="['accomodation']" routerLinkActive="active"><button class="bt"><p class="text">CONTACT US</p></button></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>

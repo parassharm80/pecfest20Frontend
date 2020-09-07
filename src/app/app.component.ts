@@ -7,7 +7,7 @@ import {Event, NavigationEnd, NavigationStart, Router} from "@angular/router";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Pecfest';
+  title = 'PECFEST\'20';
   showLoading = true;
   constructor(private router: Router) {
     this.router.events.subscribe((routerEvent: Event) => {
