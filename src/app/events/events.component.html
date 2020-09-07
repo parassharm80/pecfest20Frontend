@@ -1,6 +1,46 @@
-<div class="container-sm mx-auto w-75 m-3">
-    <div id="event-title" class="text-center m-5 text-uppercase">{{title}}</div>
-    <ul class="list-group text-center text-uppercase">
-        <li class="py-3" *ngFor="let event of events"><a routerLink="{{event}}">{{ event }}</a></li>
-    </ul>
+<div class="bg-img">
+    <div id="event-title">
+        <img src="../../assets/events/events-title.png" class="event-center">
+    </div>
+    <div lay></div>
+    <div class="card" id="leftbox">
+        <a routerLink="cultural">
+            <mat-card class="example-card">
+                <mat-card-header>
+                <mat-card-title><p style="padding: 2vh 1vh 0vh 0vh; text-align: center;">CULTURAL</p></mat-card-title>
+                </mat-card-header>
+                <img mat-card-image src="../../assets/events/event1-01.png" alt="Photo of a Shiba Inu" style="border: 0ch;">
+            </mat-card>
+        </a>
+    </div>
+    <div class="card"  id="middlebox">
+        <a routerLink="technical">
+            <mat-card class="example-card">
+                <mat-card-header>
+                <mat-card-title><p style="padding: 2vh 1vh 0vh 0vh; text-align: center;">TECHNICAL</p></mat-card-title>
+                </mat-card-header>
+                <img mat-card-image src="../../assets/events/event1-01.png" alt="Photo of a Shiba Inu" style="border: 0ch;">
+            </mat-card>
+        </a>
+    </div>
+    <div class="card"  id="rightbox">
+        <a routerLink="workshops">
+            <mat-card class="example-card">
+                <mat-card-header>
+                <mat-card-title><p style="padding: 2vh 1vh 0vh 0vh; text-align: center;">WORKSHOPS</p></mat-card-title>
+                </mat-card-header>
+                <img mat-card-image src="../../assets/events/event1-01.png" alt="Photo of a Shiba Inu" style="border: 0ch;">
+            </mat-card>
+        </a>
+    </div>
+    <div class="card">
+        <a routerLink="lectures">
+            <mat-card class="example-card">
+                <mat-card-header>
+                <mat-card-title><p style="padding: 2vh 1vh 0vh 0vh; text-align: center;">LECTURES</p></mat-card-title>
+                </mat-card-header>
+                <img mat-card-image src="../../assets/events/event1-01.png" alt="Photo of a Shiba Inu" style="border: 0ch;">
+            </mat-card>
+        </a>
+    </div>
 </div>

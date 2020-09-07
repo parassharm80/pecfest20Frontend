@@ -6,7 +6,8 @@ import { TechnicalComponent } from './types/technical/technical.component';
 import { AcademicComponent } from './types/academic/academic.component'
 import { CulturalComponent } from './types/cultural/cultural.component';
 import { EventComponent } from './event/event.component'
-
+import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
 @NgModule({
   declarations: [
     EventsComponent,
@@ -17,7 +18,9 @@ import { EventComponent } from './event/event.component'
   ],
   imports: [
     CommonModule,
-    EventsRoutingModule
+    EventsRoutingModule,
+    MatCardModule,
+    MatGridListModule
   ],
   exports: [EventsRoutingModule]
 })
