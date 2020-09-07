@@ -67,3 +67,12 @@
   transform-origin: 0 0;
 }
 .ldio-nvnx6loo9jr div { box-sizing: content-box; }
+.bg-img{
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  background-image: url("../assets/events/background.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: right, left; 
+
+}
