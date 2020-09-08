@@ -1,9 +1,50 @@
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
+@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css';
+.monotone:hover{
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -moz-box-shadow: 0 0 10px #ccc;
+  -webkit-box-shadow: 0 0 10px #ccc;
+  box-shadow: 0 0 40px #ccc;
+  border: #555;
+  border-width: medium;
+  position: relative;
+}
+.title{
+  font-size: 25px;
+  font-family: cursive;
+}
+hr{ 
+  border-top: 2px solid #8c8b8b; 
+} 
+.monotone{
+  width: 250px;
+  height: 250px;
+}
+.name{
+  
+  font-size: 13px;
+  font-family: 'retro';
+  color: #555;
+}
+
 .heading-event{
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 175px;
     text-align: center;
+}
+.boundary{
+  padding: 0% 12% 4% 12%
+}
+h1{
+  font-family: 'titlium';
+  font-style:italic;
+  font-weight: 700;
+  font: 600;
+  font-size: 25px;
+  color: darkslategray;
 }
 
 .column {
@@ -56,4 +97,84 @@
   
   .button:hover {
     background-color: #555;
+  }
+
+  .fa {
+    padding: 5px 5px 5px 5px;
+    font-size: 20px;
+    width: 34px;
+    height: 34px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+  }
+  
+  .fa:hover {
+      opacity: 0.7;
+      scale: 2;
+  }
+  
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+a{
+  padding-top: 10px;
+  padding-right: 3% ;
+}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+.my-float{
+	margin-top:16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+  @font-face {
+    font-family: 'titlium';
+    src: url('../../assets/fonts/titlium.ttf');
+    font-weight: 900;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'retro';
+    src: url('../../assets/fonts/emulogic.ttf');
   }
