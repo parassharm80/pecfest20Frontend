@@ -12,7 +12,6 @@ li {
 
 #event-title {
   text-align: center;
-  margin-top: 20px;
   margin-bottom: 50px;
 }
 
@@ -20,8 +19,24 @@ li {
   transform: rotate(-10deg);
   color: #ff6666;
   font-family: "Mrs Sheppards", cursive;
-  font-size: 900%;
+  font-size: 1000%;
+  line-height: 1;
   text-shadow: 5px 5px 0 #6699ff, 10px 10px 0 #00131e;
+}
+
+#event-title h2 {
+  transform: rotate(-5deg);
+  color: #ff6666;
+  font-family: "Mrs Sheppards", cursive;
+  font-size: 700%;
+  line-height: 1;
+  text-shadow: 5px 5px 0 #6699ff, 10px 10px 0 #00131e;
+}
+
+.events-list{
+  font-family: "Pacifico", cursive;
+  text-transform: capitalize;
+  line-height: 1.5;
 }
 
 .events-grid {
