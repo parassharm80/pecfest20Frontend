@@ -16,8 +16,3 @@
     padding-top: 0.5vh;
     padding-left: 3vh;
 }
-
-@font-face {
-    font-family: "header-text";
-    src: url("../../assets/fonts/emulogic.ttf");
-  }
