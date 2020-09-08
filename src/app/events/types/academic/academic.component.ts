@@ -11,10 +11,8 @@ export class AcademicComponent {
   title: string
   events: Array<string>
   constructor(private route: ActivatedRoute) {
-    console.log('Called Constructor');
     this.route.params.subscribe(params => {
       this.name = params['name'];
-      console.log(this.name);
     });
     this.route.parent.url.subscribe(params => {
       console.log(params);
