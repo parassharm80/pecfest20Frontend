@@ -1,47 +1,15 @@
-<html>
-    <div id = "container">
-      <div id="text">
-        <h1>Events</h1>
+<div id="event-title">
+  <h1>{{title}}</h1>
+</div>
+<ul class="events-grid">
+  <li *ngFor='let event of events'>
+    <a routerLink="{{event}}">
+      <div class="events-box events-img-{{event}}">
+        <div class="events-info">
+          <h3>{{event}}</h3>
+          <p>Nulla commodo iaculis vulputate.</p>
+        </div>
       </div>
-    </div>
-    <div class="xop-section">
-      <ul class="xop-grid">
-        <li>
-          <div class="xop-box xop-img-1">
-            <a routerLink="technical">
-              <div class="xop-info">
-                <h3>Technical</h3>
-                <p>Nulla commodo iaculis vulputate.</p>
-              </div></a>
-          </div>
-        </li>
-        <li>
-          <div class="xop-box xop-img-2">
-            <a routerLink="cultural">
-              <div class="xop-info">
-                <h3>Cultural</h3>
-                <p>Nulla commodo iaculis vulputate.</p>
-              </div></a>
-          </div>
-        </li>
-        <li>
-          <div class="xop-box xop-img-3">
-            <a routerLink="Lectures">
-              <div class="xop-info">
-                <h3>Lectures</h3>
-                <p>Nulla commodo iaculis vulputate.</p>
-              </div></a>
-          </div>
-        </li>
-        <li>
-          <div class="xop-box xop-img-4">
-            <a routerLink="workshops">
-              <div class="xop-info">
-                <h3>Workshops</h3>
-                <p>Nulla commodo iaculis vulputate.</p>
-              </div></a>
-          </div>
-        </li>
-      </ul>
-    </div>
-</html>
+    </a>
+  </li>
+</ul>

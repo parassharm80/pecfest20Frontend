@@ -1,125 +1,100 @@
-@import url('https://fonts.googleapis.com/css2?family=Mrs+Sheppards&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Pacifico');
-a{
+@import url("https://fonts.googleapis.com/css2?family=Mrs+Sheppards&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Pacifico");
+a {
   text-decoration: none;
   color: black;
 }
-#container{
-  align-items: center;
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  margin-top: 20px;
-}
-#text{
-  transform: rotate(-10deg);
-}
-h1{
-  color: #ff6666;
-  font-family: 'Mrs Sheppards', cursive;
-  font-size: 140px;
-  text-shadow: 5px 5px 0 #6699ff, 10px 10px 0 #00131E;
-}
-.event-center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 45%;
-  margin-top: -10pt;
-}
 
-.xop-section {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 6% 2%;
-}
-
-.xop-grid {
-  margin: 20px 0 0 0;
-  padding: 0;
+li {
   list-style: none;
-  display: block;
+  font-size: 3vmax;
+}
+
+#event-title {
   text-align: center;
-  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
 
-.xop-grid:after {
-  clear: both;
+#event-title h1 {
+  transform: rotate(-10deg);
+  color: #ff6666;
+  font-family: "Mrs Sheppards", cursive;
+  font-size: 1000%;
+  text-shadow: 5px 5px 0 #6699ff, 10px 10px 0 #00131e;
 }
 
-.xop-grid:after, .xop-box:before {
-  content: '';
-  display: table;
+.events-grid {
+  list-style: none;
+  display: flex;
+  max-width: 580px;
+  margin: 5% auto;
+  padding: 0%;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
 }
 
-.xop-grid li {
-  width: 228px;
-  height: 228px;
-  display: inline-block;
+.events-grid li {
+  height: 250px;
+  display: block;
+  flex-basis: 250px;
   margin: 20px;
 }
-.xop-grid li {
-  width: 228px;
-  height: 228px;
-  display: inline-block;
-  margin: 20px;
+
+.events-img-technical {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)),
+  url(../../assets/events/technical.png) bottom;
 }
 
-.xop-box {
+.events-img-cultural {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)),
+  bottom url(../../assets/events/cultural.png);
+}
+
+.events-img-lectures {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)),
+  bottom url(../../assets/events/lecture.png);
+}
+
+.events-img-workshops {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)),
+  bottom url(../../assets/events/online_workshop.png);
+}
+
+.events-box {
   width: 100%;
   height: 100%;
   position: relative;
-  cursor: pointer;
   border-radius: 10px;
-  -webkit-transition: 0.3s ease-in-out,
-  -webkit-transform 0.3s ease-in-out;
-  -moz-transition:  0.3s ease-in-out,
-  -moz-transform 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out,
-  transform 0.3s ease-in-out, ;
+  background-size: contain;
+  -webkit-transition: 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out, -moz-transform 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.xop-box:hover {
+.events-box:hover {
   transform: scale(1.05);
 }
-.xop-img-1 {
-  background: linear-gradient( rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.10)), /* bottom, image */
-  url(../../assets/events/technical.png);
-}
-
-.xop-img-2 {
-  background: linear-gradient( rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.10)), /* bottom, image */
-  url(../../assets/events/cultural.png);
-}
-
-.xop-img-3 {
-  background: linear-gradient( rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.10)), /* bottom, image */
-  url(../../assets/events/lecture.png);
-}
-
-.xop-img-4 {
-  background: linear-gradient( rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.10)), /* bottom, image */
-  url(../../assets/events/online_workshop.png);
-}
-
-.xop-info {
+.events-info {
   position: absolute;
   width: inherit;
   height: inherit;
 }
 
-.xop-info h3 {
-  font-family: 'Pacifico', cursive;
+.events-info h3 {
+  font-family: "Pacifico", cursive;
   font-weight: 400;
   color: white;
   font-size: 42px;
+  text-transform: capitalize;
   margin: 0 30px;
-  padding: 100px 0 0 0;
+  padding: 110px 0 0 0;
   line-height: 1.5;
 }
 
-.xop-info p {
-  font-family: 'Source Sans Pro', sans-serif;
+.events-info p {
+  font-family: "Source Sans Pro", sans-serif;
   color: white;
   padding: 4px 5px;
   margin: 0 30px;
