@@ -27,15 +27,6 @@ h1{
   width: 45%;
   margin-top: -10pt;
 }
-.bg-img{
-  min-height: 100vh;
-  height: 100%;
-  width: 100%;
-  background-image: url("../../assets/events/background.png");
-  background-repeat: no-repeat, no-repeat;
-  background-position: right, left;
-
-}
 
 .xop-section {
   max-width: 960px;

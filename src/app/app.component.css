@@ -54,7 +54,7 @@
   height: 200px;
   display: inline-block;
   overflow: hidden;
-  background: #ffffff;
+  background:transparent;
 }
 .ldio-nvnx6loo9jr {
   width: 100%;
@@ -67,6 +67,7 @@
   transform-origin: 0 0;
 }
 .ldio-nvnx6loo9jr div { box-sizing: content-box; }
+
 .bg-img{
   min-height: 100vh;
   height: 100%;

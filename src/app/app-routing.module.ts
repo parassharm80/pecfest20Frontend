@@ -20,6 +20,10 @@ const routes: Routes = [
     loadChildren: () => import('./accomodation/accomodation.module').then(m => m.AccomodationModule)
   },
   {
+    path: 'team',
+    loadChildren: () => import('./team/team.module').then(m => m.TeamModule)
+  },
+  {
     path: '**',
     redirectTo: ''
   }
