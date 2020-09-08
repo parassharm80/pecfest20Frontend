@@ -9,8 +9,8 @@
 }
 .text{
     color: black;
-    font-size: 15px;
-    font-family: header-text;
+    font-size: 25px;
+    font-family: 'Montserrat Alternates', sans-serif;
 }
 .gap{
     padding-top: 0.5vh;
