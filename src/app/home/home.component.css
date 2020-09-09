@@ -92,49 +92,6 @@ body{
 .my-container h1 {
   text-align: center;
 }
-h2{
-  position: absolute;
-  font-family: 'Montserrat Alternates', sans-serif;
-  top: 60%;
-  margin: 0;
-  font-size: 2em;
-  font-weight: 900;
-  color: black;
-  z-index: 1;
-  overflow: hidden;
-}
-h2:before{
-  content: '';
-  position: absolute;
-  left: 120%;
-  width: 120%;
-  height: 100%;
-  background: linear-gradient(90deg,transparent 0%, #ffffe6 5%,#ffffe6  100%);
-  animation: animate 2.6s linear forwards;
-  animation-delay: 2s;
-}
-@keyframes animate {
-  0%{
-    left: 110%;
-  }
-  100%{
-    left: -20%;
-  }
-}
-video{
-  position: absolute;
-  top: 10%;
-  left: -20%;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 2;
-  pointer-events: none;
-  mix-blend-mode: screen;
-}
-h2 span{
-  color: red;
-}
 .social-menu ul {
   position: absolute;
   top: 90%;
