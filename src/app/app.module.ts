@@ -27,7 +27,7 @@ import { HomeComponent } from './home/home.component';
     HeaderModule,
     MatCheckboxModule,
     MatToolbarModule,
-    MatDialogModule
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
