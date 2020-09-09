@@ -1,55 +1,29 @@
 <!-- Header -->
-<header class="bg-primary text-center py-5 mb-4">
-  <div class="container">
-    <h1 class="font-weight-light text-white">Meet the Team</h1>
+<!-- <header class="bg-primary text-center py-5 mb-4 d"> -->
+  <div class="container ">
+    <h1><img src="../../assets/website team/website-team.png" class="heading"></h1>
   </div>
-</header>
+<!-- </header> -->
 
-<!-- Page Content -->
+
 <div class="container">
-  <div class="row">
-    <!-- Team Member 1 -->
-    <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-0 shadow image">
-        <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
-        <div class="card-body text-center">
-          <h5 class="card-title mb-0">Team Member</h5>
-          <div class="card-text text-black-50">Web Developer</div>
-        </div>
-      </div>
-    </div>
-    <!-- Team Member 2 -->
-    <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-0 shadow">
-        <img src="https://source.unsplash.com/9UVmlIb0wJU/500x350" class="card-img-top" alt="...">
-        <div class="card-body text-center">
-          <h5 class="card-title mb-0">Team Member</h5>
-          <div class="card-text text-black-50">Web Developer</div>
-        </div>
-      </div>
-    </div>
-    <!-- Team Member 3 -->
-    <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-0 shadow">
-        <img src="https://source.unsplash.com/sNut2MqSmds/500x350" class="card-img-top" alt="...">
-        <div class="card-body text-center">
-          <h5 class="card-title mb-0">Team Member</h5>
-          <div class="card-text text-black-50">Web Developer</div>
-        </div>
-      </div>
-    </div>
-    <!-- Team Member 4 -->
-    <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-0 shadow">
-        <img src="https://source.unsplash.com/ZI6p3i9SbVU/500x350" class="card-img-top" alt="...">
-        <div class="card-body text-center">
-          <h5 class="card-title mb-0">Team Member</h5>
-          <div class="card-text text-black-50">Web Developer</div>
+  <div class="row ">
+    <div *ngFor="let member of websiteTeam; index as i" class="image col-xl-3 col-md-6 mb-4 ">
+      <div class="card border-0 shadow ">
+        <img  *ngIf="member.event==true" (mouseleave)="okie(i)" src="..//..//assets/website team/{{member.gif}}" class="card-img-top k" alt="...">
+        <img    src="..//..//assets/website team/{{member.image}}" class="card-img-top k" alt="{{member.name}}">
+        <div class="overlay ">
+          <div class="p">
+          <a href="{{member.fb}}" class="fa fa-facebook"></a>
+          <a href="{{member.insta}}" class="fa fa-instagram"></a>
+          </div>
+          </div> 
+        <div class="card-body text-center ">
+          <h5 class="card-title mb-0"><p style="font-size: 21px; font-family: Verdana;">{{member.name}}</p></h5>
+          <div class="card-text text-black-50"><p style="font-size: 15px; font-family:monospace;"><b>{{member.post}}</b></p></div>
         </div>
       </div>
     </div>
   </div>
-  <!-- /.row -->
-
 </div>
-<!-- /.container -->
+

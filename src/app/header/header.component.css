@@ -8,11 +8,20 @@
     background-color: transparent;
 }
 .text{
+    height: 20%;
     color: whitesmoke;
     font-size: 25px;
-    font-family: 'Montserrat Alternates', sans-serif;
+    font-family:  quantico;
+    font-weight: 2000;
 }
 .gap{
     padding-top: 0.5vh;
     padding-left: 3vh;
 }
+
+@font-face {
+    font-family: 'quantico';
+    src: url('../../assets/fonts/quantico.ttf');
+    
+    font-style: italic;
+  }
