@@ -9,6 +9,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ChangePasswordComponent} from "./components/change-password/change-password.component";
 import { ConfirmEmailComponent } from './components/confirm-email/confirm-email.component';
 import {HttpClientModule} from '@angular/common/http';
+import {CookieService} from 'ngx-cookie-service';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import {HttpClientModule} from '@angular/common/http';
     ResetpasswordComponent,
     ChangePasswordComponent,
     ConfirmEmailComponent,
-  ]
+  ],
+  providers:[CookieService]
 })
 export class AuthModule { }

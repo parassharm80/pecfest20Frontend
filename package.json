@@ -26,6 +26,7 @@
     "jquery": "^3.5.1",
     "js-sha512": "^0.8.0",
     "ngx-bootstrap": "^6.1.0",
+    "ngx-cookie-service": "^10.0.1",
     "popper.js": "^1.16.1",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
