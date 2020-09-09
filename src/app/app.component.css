@@ -30,7 +30,7 @@
   width: 120px;
   height: 60px;
   border-radius: 120px 120px 0 0;
-  background: #f8b26a;
+  background:rgb(250, 168, 68);
   animation: ldio-nvnx6loo9jr-1 1s linear infinite;
   transform-origin: 60px 60px;
 }
@@ -64,7 +64,7 @@
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #e15b64;
+  background:rgb(223, 52, 131);
   animation: ldio-nvnx6loo9jr-3 1s linear infinite;
 }
 .ldio-nvnx6loo9jr > div:nth-child(1) div:nth-child(1) {
