@@ -98,7 +98,14 @@
 }
 
 .bg-img {
-  min-height: 100vh;
   overflow: hidden;
-  background-image: url("../assets/events/background.png");
+  background-image:
+  url("../assets/events/background.png"),
+  url("../assets/events/bg-repeat.png");
+  background-position: 
+  top,
+  top;
+  background-repeat: 
+  no-repeat, repeat;
+  min-height: 100vh; 
 }
