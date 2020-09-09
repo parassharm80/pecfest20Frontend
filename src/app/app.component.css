@@ -98,14 +98,10 @@
 }
 
 .bg-img {
+  background-attachment: fixed;
   overflow: hidden;
   background-image:
-  url("../assets/events/background.png"),
-  url("../assets/events/bg-repeat.png");
-  background-position: 
-  top,
-  top;
-  background-repeat: 
-  no-repeat, repeat;
+  url("../assets/events/background.png");
+  background-position: center;
   min-height: 100vh; 
 }
