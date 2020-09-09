@@ -24,6 +24,10 @@ const routes: Routes = [
     loadChildren: () => import('./team/team.module').then(m => m.TeamModule)
   },
   {
+    path: 'website-team',
+    loadChildren: () => import('./website-team/website-team.module').then(m => m.WebsiteTeamModule)
+  },
+  {
     path: '**',
     redirectTo: ''
   }

@@ -5,7 +5,7 @@ import {TeamComponent} from "./team.component";
 
 
 @NgModule({
-  declarations: [],
+  declarations: [TeamComponent],
   imports: [
     CommonModule,
     TeamRoutingModule,

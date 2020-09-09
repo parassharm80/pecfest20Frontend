@@ -6,16 +6,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./team.component.css']
 })
 export class TeamComponent implements OnInit {
-  team={
-    heading:[{
-      name:"asfa",
-      post:"dsa"
-    }]
+  coreTeam;
+  constructor() { 
+    this.coreTeam=[
+      {
+        "name": 'sd',
+        "fb": "dsds",
+        "insta": 'dss',
+        "position": "dsfsd",
+        "linkedIn": "dasfa",
+        "photo": "name of photo",
+        "whatsapp":"43"
+      }
+    ]
   }
 
-  constructor() { }
-
   ngOnInit(): void {
+    this.items=['ds','dsfds']
   }
 
 }
