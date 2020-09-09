@@ -17,7 +17,7 @@ export class AppComponent {
         }
 
         if(routerEvent instanceof NavigationEnd) {
-          this.showLoading = true;
+          this.showLoading = false;
         }
     });
   }
