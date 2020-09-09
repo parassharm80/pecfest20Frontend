@@ -8,6 +8,7 @@ import { ResetpasswordComponent } from './components/resetpassword/resetpassword
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ChangePasswordComponent} from "./components/change-password/change-password.component";
 import { ConfirmEmailComponent } from './components/confirm-email/confirm-email.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ConfirmEmailComponent } from './components/confirm-email/confirm-email.
     CommonModule,
     AuthRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   exports: [
     LoginComponent,

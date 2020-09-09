@@ -11,6 +11,7 @@ import {RouterModule} from "@angular/router";
 import {HeaderModule} from "./header/header.module";
 import {CommonModule} from "@angular/common";
 import { HomeComponent } from './home/home.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { HomeComponent } from './home/home.component';
     MatCheckboxModule,
     MatToolbarModule,
     MatDialogModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

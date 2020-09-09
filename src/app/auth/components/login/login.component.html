@@ -12,7 +12,7 @@
         <input type="text"
                class="form-control"
                id="loginUsername"
-               placeholder="Enter EmailID" formControlName="email">
+               placeholder="Enter EmailID" formControlName="email" (keyup)="setErrorToNull()">
         <span class="text-danger"
               *ngIf="(logInForm.controls.email.touched || submitted) && logInForm.controls.email.errors?.email">
             Enter a valid email address
@@ -23,7 +23,7 @@
         <input type="password"
                class="form-control"
                id="loginPassword"
-               placeholder="Password" formControlName="password">
+               placeholder="Password" formControlName="password" (keyup)="setErrorToNull()">
         <span class="text-danger"
               *ngIf="(logInForm.controls.password.touched || submitted) && logInForm.controls.password.errors?.required">
             Required field
@@ -34,6 +34,9 @@
       </div>
       <button type="submit" (click)="onLogIn()"
               class="btn btn-primary">Login <i class="fas fa-sign-in-alt" ></i></button>
+      <div class="alert alert-danger" role="alert" *ngIf="errorMessage!=null" style="margin-top: 10px">
+        {{errorMessage}}
+      </div>
     </form>
   </div>
 </div>
