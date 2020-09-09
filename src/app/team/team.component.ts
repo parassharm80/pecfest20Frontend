@@ -22,7 +22,6 @@ export class TeamComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.items=['ds','dsfds']
   }
 
 }
