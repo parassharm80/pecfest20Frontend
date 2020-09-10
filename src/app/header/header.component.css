@@ -1,3 +1,4 @@
+
 .logo{
     width: 100px;
     height: 100px;
@@ -22,6 +23,6 @@
 @font-face {
     font-family: 'quantico';
     src: url('../../assets/fonts/quantico.ttf');
-    
+
     font-style: italic;
   }

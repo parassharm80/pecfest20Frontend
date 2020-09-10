@@ -1,5 +1,23 @@
-@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
-@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css';
+@import url("https://fonts.googleapis.com/css2?family=Mrs+Sheppards&display=swap");
+
+li {
+  list-style: none;
+  font-size: 3vmax;
+}
+
+#event-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#event-title h1 {
+  transform: rotate(-10deg);
+  color: #ff6666;
+  font-family: "Mrs Sheppards", cursive;
+  font-size: 1000%;
+  line-height: 1;
+  text-shadow: 5px 5px 0 #6699ff, 10px 10px 0 #00131e;
+}
 .monotone:hover{
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
@@ -14,15 +32,15 @@
   font-size: 25px;
   font-family: cursive;
 }
-hr{ 
-  border-top: 2px solid #8c8b8b; 
-} 
+hr{
+  border-top: 2px solid #8c8b8b;
+}
 .monotone{
   width: 250px;
   height: 250px;
 }
 .name{
-  
+
   font-size: 13px;
   font-family: 'retro';
   color: #555;
@@ -53,7 +71,7 @@ h1{
     margin-bottom: 16px;
     padding: 0 8px;
   }
-  
+
   /* Display the columns below each other instead of side by side on small screens */
   @media screen and (max-width: 650px) {
     .column {
@@ -61,28 +79,28 @@ h1{
       display: block;
     }
   }
-  
+
   /* Add some shadows to create a card effect */
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   }
-  
+
   /* Some left and right padding inside the container */
   .container {
     padding: 0 16px;
   }
-  
+
   /* Clear floats */
   .container::after, .row::after {
     content: "";
     clear: both;
     display: table;
   }
-  
+
   .title {
     color: grey;
   }
-  
+
   .button {
     border: none;
     outline: 0;
@@ -94,7 +112,7 @@ h1{
     cursor: pointer;
     width: 100%;
   }
-  
+
   .button:hover {
     background-color: #555;
   }
@@ -109,17 +127,17 @@ h1{
     margin: 5px 2px;
     border-radius: 50%;
   }
-  
+
   .fa:hover {
       opacity: 0.7;
       scale: 2;
   }
-  
+
   .fa-facebook {
     background: #3B5998;
     color: white;
   }
-  
+
   .fa-twitter {
     background: #55ACEE;
     color: white;
@@ -178,4 +196,3 @@ a{
     font-family: 'retro';
     src: url('../../assets/fonts/emulogic.ttf');
   }
-  
