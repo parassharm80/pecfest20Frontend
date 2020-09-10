@@ -15,11 +15,11 @@ import {CookieService} from 'ngx-cookie-service';
 @NgModule({
   declarations: [LoginComponent, RegisterComponent, ResetpasswordComponent, ChangePasswordComponent, ConfirmEmailComponent],
   imports: [
-    CommonModule,
     AuthRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
   exports: [
     LoginComponent,
