@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./team.component.css']
 })
 export class TeamComponent implements OnInit {
+  title: string;
   coreTeam;
-  constructor() { 
+  constructor() {
+    this.title =  'Team';
+
     this.coreTeam=[
       {
         "name": 'sd',
