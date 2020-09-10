@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "laser";
+  src: url("../../../assets/fonts/Lazer84.ttf") format("truetype");
+}
+.event-container {
+  color: white;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1));
+}
+
+.laser,
+label {
+  font-family: "laser";
+  letter-spacing: 2px;
+  padding: 0 5px;
+  background: -webkit-linear-gradient(#f06060, #eeee00);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
