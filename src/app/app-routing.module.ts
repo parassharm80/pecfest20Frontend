@@ -28,6 +28,10 @@ const routes: Routes = [
     loadChildren: () => import('./website-team/website-team.module').then(m => m.WebsiteTeamModule)
   },
   {
+    path: 'sponsors',
+    loadChildren: () => import('./sponser/sponser.module').then(m => m.SponsorModule)
+  },
+  {
     path: '**',
     redirectTo: ''
   }

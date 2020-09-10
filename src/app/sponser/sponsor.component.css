@@ -1,0 +1,9 @@
+.heading{
+    padding-top: 3vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    min-width: 280px;
+    text-align: center;
+}
