@@ -3,7 +3,7 @@
   <nav class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand"
        [routerLink]="['']"><img src="../../assets/pecfest_logo.png" class="logo"></a>
-    <button class="navbar-toggler" 
+    <button class="navbar-toggler"
             type="button"
             data-toggle="collapse"
             data-target="#navbarNav"
@@ -24,6 +24,10 @@
         </li>
         <li class="nav-item">
           <a class = "nav-link"
+             [routerLink]="['profile']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="bt"><p class="text">PROFILE</p></button></a>
+        </li>
+        <li class="nav-item">
+          <a class = "nav-link"
              [routerLink]="['reset-password']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="bt"><p class="text">SPONSORS</p></button></a>
         </li>
         <li class="nav-item">
@@ -36,7 +40,11 @@
         </li>
         <li class="nav-item">
           <a class="nav-link"
-              [routerLink]="['team']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="bt"><p class="text">TEAM</p></button></a>
+             [routerLink]="['website-team']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="bt"><p class="text">TEAM</p></button></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+              [routerLink]="['team']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="bt"><p class="text">CONTACT US</p></button></a>
         </li>
       </ul>
     </div>
