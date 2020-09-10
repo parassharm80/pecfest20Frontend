@@ -8,10 +8,11 @@ import { ResetpasswordComponent } from './components/resetpassword/resetpassword
 import {FormsModule} from "@angular/forms";
 import {ChangePasswordComponent} from "./components/change-password/change-password.component";
 import { ConfirmEmailComponent } from './components/confirm-email/confirm-email.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, ResetpasswordComponent, ChangePasswordComponent, ConfirmEmailComponent],
+  declarations: [LoginComponent, RegisterComponent, ResetpasswordComponent, ChangePasswordComponent, ConfirmEmailComponent, ProfileComponent],
   imports: [
     CommonModule,
     AuthRoutingModule,
@@ -22,7 +23,8 @@ import { ConfirmEmailComponent } from './components/confirm-email/confirm-email.
     RegisterComponent,
     ResetpasswordComponent,
     ChangePasswordComponent,
-    ConfirmEmailComponent
+    ConfirmEmailComponent,
+    ProfileComponent
   ]
 })
 export class AuthModule { }

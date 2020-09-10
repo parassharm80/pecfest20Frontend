@@ -5,10 +5,12 @@ import {RegisterComponent} from "./components/register/register.component";
 import {ResetpasswordComponent} from "./components/resetpassword/resetpassword.component";
 import {ChangePasswordComponent} from "./components/change-password/change-password.component";
 import {ConfirmEmailComponent} from "./components/confirm-email/confirm-email.component";
+import {ProfileComponent} from "./components/profile/profile.component";
 
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
+  { path: 'profile', component: ProfileComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'reset-password', component: ResetpasswordComponent},
   { path: 'change-password', component: ChangePasswordComponent},
