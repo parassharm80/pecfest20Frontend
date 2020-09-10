@@ -9,16 +9,22 @@ import {tap} from 'rxjs/operators';
 })
 export class ValidationGuard implements CanActivate {
 
+
   constructor(private validationService:ValidationService,private router:Router ) {}
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;
-        return this.validationService.verifySessionId().pipe(tap(response => {
-          this.validationService.isLoggedIn = !!response;
-          if(!response)
-            this.router.navigate(['../events'])
-          this.validationService.stateChecked=true;
+        return this.validationService.verifySessionId(state.url).pipe(tap(response => {
+          if(!response){
+            if(state.url=="/login")
+              this.router.navigate(['../events']);
+            else if(state.url=="/profile")
+              this.router.navigate(['../login']);
+            else if(state.url=="/register")
+              this.router.navigate(['../profile']);
+            else
+              this.router.navigate(['..']);
+          }
         }));
   }
 

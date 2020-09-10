@@ -18,11 +18,11 @@
           <a class = "nav-link"
              [routerLink]="['register']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="bt"><p class="text">REGISTER</p></button></a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!validationGuardService.isLoggedIn">
           <a class = "nav-link"
              [routerLink]="['login']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="bt"><p class="text">LOGIN</p></button></a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="validationGuardService.isLoggedIn">
           <a class = "nav-link"
              [routerLink]="['profile']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="bt"><p class="text">PROFILE</p></button></a>
         </li>

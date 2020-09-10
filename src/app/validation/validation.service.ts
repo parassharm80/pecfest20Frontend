@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {CookieService} from 'ngx-cookie-service';
 import {WrapperResponse} from '../auth/components/login/login.service';
+import { map, catchError } from 'rxjs/operators';
 import {of} from 'rxjs';
 
 @Injectable({
@@ -17,11 +18,43 @@ export class ValidationService {
     this.routeSet.add("/confirm-email");
   }
 
-  public  verifySessionId() {
-    if(this.stateChecked)
-      return of(this.isLoggedIn);
+  public  verifySessionId(stateUrl) {
 
-    return this.http.get<boolean>(this.url,{headers:this.getHttpHeaders()});
+    if(this.stateChecked){
+      if(this.isLoggedIn){
+        if(stateUrl=="/register"||stateUrl=="/login")
+          return of(!this.isLoggedIn);
+        else
+          return of(this.isLoggedIn);
+      }
+      else{
+        if(stateUrl!=="/profile")
+          return of(this.isLoggedIn);
+        else
+          return of(true);
+      }
+    }
+
+    return this.http.get<boolean>(this.url,{headers:this.getHttpHeaders()}).pipe(
+      map((response) => {
+        this.isLoggedIn=response;
+        this.stateChecked=true;
+        if(this.isLoggedIn){
+          if(stateUrl=="/register"||stateUrl=="/login")
+            return !this.isLoggedIn;
+          else
+              return response;
+        }
+        else{
+          if(stateUrl!=="/profile")
+              return this.isLoggedIn;
+          else
+              return !response;
+        }
+
+      })
+    );
+
   }
 
   private getHttpHeaders() {
