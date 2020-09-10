@@ -8,12 +8,13 @@ import { ResetpasswordComponent } from './components/resetpassword/resetpassword
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ChangePasswordComponent} from "./components/change-password/change-password.component";
 import { ConfirmEmailComponent } from './components/confirm-email/confirm-email.component';
+import { ProfileComponent } from './components/profile/profile.component';
 import {HttpClientModule} from '@angular/common/http';
 import {CookieService} from 'ngx-cookie-service';
 
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, ResetpasswordComponent, ChangePasswordComponent, ConfirmEmailComponent],
+  declarations: [LoginComponent, RegisterComponent, ResetpasswordComponent, ChangePasswordComponent, ConfirmEmailComponent, ProfileComponent],
   imports: [
     AuthRoutingModule,
     FormsModule,
@@ -27,6 +28,7 @@ import {CookieService} from 'ngx-cookie-service';
     ResetpasswordComponent,
     ChangePasswordComponent,
     ConfirmEmailComponent,
+    ProfileComponent
   ],
   providers:[CookieService]
 })

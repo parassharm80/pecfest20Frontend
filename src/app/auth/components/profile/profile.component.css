@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Mrs+Sheppards&display=swap");
+.box {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 40%;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+h1{
+  color: whitesmoke;
+}
+h2{
+  color: whitesmoke;
+}
+#event-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#event-title h1 {
+  transform: rotate(-10deg);
+  color: #ff6666;
+  font-family: "Mrs Sheppards", cursive;
+  font-size: 1000%;
+  line-height: 1;
+  text-shadow: 5px 5px 0 #6699ff, 10px 10px 0 #00131e;
+
+}
+button{
+  margin-right: 10%;
+  margin-left: 7%;
+  margin-bottom: 5%;
+}
