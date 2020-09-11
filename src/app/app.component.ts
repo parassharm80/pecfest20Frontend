@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Event, NavigationEnd, NavigationStart, Router} from "@angular/router";
+import {EventService} from './events/event.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import {Event, NavigationEnd, NavigationStart, Router} from "@angular/router";
 export class AppComponent {
   title = 'PECFEST\'20';
   showLoading = true;
-  constructor(private router: Router) {
+  constructor(private router: Router,public eventService:EventService) {
     this.router.events.subscribe((routerEvent: Event) => {
 
         if(routerEvent instanceof NavigationStart) {
