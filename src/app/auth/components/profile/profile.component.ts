@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
+import {FormComponent} from "./form/form.component";
 
 @Component({
   selector: 'app-profile',
@@ -8,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class ProfileComponent implements OnInit {
   public profile: profileType;
   public title: String;
-  constructor() {
+  constructor(private formComponent: FormComponent,public dialog: MatDialog) {
     this.profile =
       {
           name: "Paras Sharma",
@@ -22,8 +24,18 @@ export class ProfileComponent implements OnInit {
     this.title =  'Profile';
 
 
+
   }
 
+  edit(profile){
+    this.formComponent.populateForm(profile);
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "60%";
+    console.log('hi')
+    this.dialog.open(FormComponent, dialogConfig);
+  }
   ngOnInit(): void {
   }
 

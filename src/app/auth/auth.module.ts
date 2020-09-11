@@ -11,16 +11,53 @@ import { ConfirmEmailComponent } from './components/confirm-email/confirm-email.
 import { ProfileComponent } from './components/profile/profile.component';
 import {HttpClientModule} from '@angular/common/http';
 import {CookieService} from 'ngx-cookie-service';
+import {FormComponent} from "./components/profile/form/form.component";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatSelectModule} from "@angular/material/select";
+import {MatIconModule} from "@angular/material/icon";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatInputModule} from "@angular/material/input";
+import {MatRadioModule} from "@angular/material/radio";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {DragDropModule} from "@angular/cdk/drag-drop";
+import {MatGridListModule} from "@angular/material/grid-list";
+import {MatSortModule} from "@angular/material/sort";
+import {MatTableModule} from "@angular/material/table";
+import {MAT_DIALOG_DATA, MatDialogModule, MatDialogRef} from "@angular/material/dialog";
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, ResetpasswordComponent, ChangePasswordComponent, ConfirmEmailComponent, ProfileComponent],
+  declarations: [LoginComponent, RegisterComponent, ResetpasswordComponent, ChangePasswordComponent, ConfirmEmailComponent, ProfileComponent, FormComponent],
+  providers:[        { provide: MatDialogRef, useValue: {} },
+    { provide: MAT_DIALOG_DATA, useValue: [FormComponent] },
+
+  ],
   imports: [
     AuthRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    MatTableModule,
+    MatSortModule,
+    DragDropModule,
+    MatTableModule,
+    MatIconModule,
+    MatButtonModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatGridListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatSnackBarModule,
+    MatDialogModule,
+    MatToolbarModule,
   ],
   exports: [
     LoginComponent,
@@ -28,8 +65,8 @@ import {CookieService} from 'ngx-cookie-service';
     ResetpasswordComponent,
     ChangePasswordComponent,
     ConfirmEmailComponent,
-    ProfileComponent
+    ProfileComponent,
+    FormComponent
   ],
-  providers:[CookieService]
 })
 export class AuthModule { }
