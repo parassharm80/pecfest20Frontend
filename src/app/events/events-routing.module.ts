@@ -5,11 +5,13 @@ import { CulturalComponent } from './types/cultural/cultural.component';
 import { TechnicalComponent } from './types/technical/technical.component';
 import { AcademicComponent } from './types/academic/academic.component';
 import { EventComponent } from './event/event.component';
+import {ValidationGuard} from '../validation/validation.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: EventsComponent,
+    canActivate:[ValidationGuard]
   },
   {
     path: 'cultural',
@@ -22,7 +24,8 @@ const routes: Routes = [
         path: ':name',
         component: CulturalComponent,
       },
-    ]
+    ],
+    canActivate:[ValidationGuard]
   },
   {
     path: 'technical',
@@ -35,7 +38,8 @@ const routes: Routes = [
         path: ':name',
         component: TechnicalComponent,
       },
-    ]
+    ],
+    canActivate:[ValidationGuard]
   },
   {
     path: 'workshops',
@@ -48,7 +52,8 @@ const routes: Routes = [
         path: ':name',
         component: AcademicComponent,
       },
-    ]
+    ],
+    canActivate:[ValidationGuard]
   },
   {
     path: 'lectures',
@@ -61,11 +66,13 @@ const routes: Routes = [
         path: ':name',
         component: AcademicComponent,
       },
-    ]
+    ],
+    canActivate:[ValidationGuard]
   },
   {
     path: ':id',
     component: EventComponent,
+    canActivate:[ValidationGuard]
   },
   {},
 ];

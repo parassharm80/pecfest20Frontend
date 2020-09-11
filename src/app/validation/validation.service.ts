@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {CookieService} from 'ngx-cookie-service';
 import {WrapperResponse} from '../auth/components/login/login.service';
+import { map, catchError } from 'rxjs/operators';
 import {of} from 'rxjs';
 
 @Injectable({
@@ -20,7 +21,6 @@ export class ValidationService {
   public  verifySessionId() {
     if(this.stateChecked)
       return of(this.isLoggedIn);
-
     return this.http.get<boolean>(this.url,{headers:this.getHttpHeaders()});
   }
 

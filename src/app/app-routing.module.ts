@@ -6,7 +6,8 @@ import {ValidationGuard} from './validation/validation.guard';
 const routes: Routes = [
   {
     path:"",
-    component:HomeComponent
+    component:HomeComponent,
+    canActivate:[ValidationGuard]
   },
   {
     path: '',
