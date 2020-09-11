@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {head} from "./heads";
 @Component({
   selector: 'app-team',
   templateUrl: './team.component.html',
@@ -13,50 +13,63 @@ export class TeamComponent implements OnInit {
       "fb": "dsds",
       "insta": 'dss',
       "post": "Convener",
-      "photo": "name of photo",
-      "wh":"8787678767",
+      "photo": "",
+      "ph":"8787678767",
+      // "wh":"8787678767",
+      "linked":""
     },
     {
       "name": 'Anirudh Gargya',
       "fb": "Co-Convener",
       "insta": 'dss',
       "post": "Co-Convener",
-      "photo": "name of photo",
-      "wh":"8787678767",
+      "photo": "",
+      // "wh":"8787678767",
+      "ph":"8787678767",
+      "linked":""
     },
     {
-      "name": 'Ashish Kumar',
-      "post": "Secretary - Infrastructure, Hospitality, Logistics & megashows",
-      "fb": "Secretary - Infrastructure Hospitality Logistics megashows",
-      "insta": 'dss',
-      "photo": "name of photo",
-      "wh":"8787678767",
+      "name": 'Ashish Kumar Singh',
+      "post": "Infrastructure, Megashows and Hospitality & Logistics",
+      "fb": "https://www.facebook.com/profile.php?id=100005854021744",
+      "insta": 'https://www.instagram.com/singh_ashish99/',
+      "photo": "Ashish_Kumar_Singh.jpg",
+      // "wh":"9971982018",
+      "ph":"9971982018",
+      "linked":"https://www.linkedin.com/in/singhashish23"
     },
     {
       "name": 'Manan Gupta',
-      "post": "Secretary - Infrastructure, Hospitality, Logistics & megashows",
-      "fb": "Secretary - Finance, Alumni Relations, Marketing",
-      "insta": 'dss',
-      "photo": "name of photo",
-      "wh":"8787678767",
+      "post": "Marketing, Finance and Alumni & Industry Relations",
+      // "fb": "",
+      // "insta": '',
+      "photo": "Manan_Gupta.jpg",
+      // "wh":"",
+      "ph":"9023482677",
+      // "linked":""
     },
     {
-      "name": 'Navteshwar',
-      "post": "Secretary - \"Security Discipline, Prinitng stationary, Creative\"",
-      "fb": "Secretary - Finance, Alumni Relations, Marketing",
-      "insta": 'dss',
-      "photo": "name of photo",
-      "wh":"8787678767",
+      "name": 'Navteshwar Singh',
+      "post": "Discipline, Printing Publishing Stationary, and Creative",
+      // "fb": "",
+      // "insta": '',
+      "photo": "Navteshwar_Singh.jpg",
+      // "wh":"h",
+      "ph":"7717271111",
+      // "linked":""
     },
     {
-      "name": 'Vanshika Jain',
-      "post": "Secretary - \"Public Relations & Media, Website Management\"",
-      "fb": "Secretary - Finance, Alumni Relations, Marketing",
-      "insta": 'dss',
-      "photo": "name of photo",
-      "wh":"8787678767",
+      "name": 'Vanshika',
+      "post": "Public Relations, Media, Publicity, Website Management",
+      "fb": "https://www.facebook.com/vanshika.jain.1610",
+      "insta": 'https://instagram.com/vanshika_vj?igshid=xcsqonhu2qp0',
+      "photo": "Vanshika.jpg",
+      // "wh":"9417428303",
+      "ph":"9417428303",
+      "linked":"https://www.linkedin.com/in/vanshika-jain-6b6024166"
     },
   ];
+  heads=head;
 
  
   constructor() {
