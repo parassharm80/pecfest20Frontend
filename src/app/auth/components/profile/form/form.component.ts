@@ -39,12 +39,9 @@ export class FormComponent implements OnInit {
   }
 
   onClear(){
-    console.log('closed')
     this.form.reset();
     this.initializeFormGroup();
     this.success('::Cleared Successfully');
-    console.log('closed')
-
   }
 
   onClose(){

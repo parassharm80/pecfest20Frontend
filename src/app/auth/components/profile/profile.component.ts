@@ -33,7 +33,6 @@ export class ProfileComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.width = "60%";
-    console.log('hi')
     this.dialog.open(FormComponent, dialogConfig);
   }
   ngOnInit(): void {
