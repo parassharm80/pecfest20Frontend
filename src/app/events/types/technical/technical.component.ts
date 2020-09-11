@@ -1,23 +1,36 @@
-import { Component } from '@angular/core';
+import {AfterViewInit, Component} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import {EventService} from '../../event.service';
+import {newArray} from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-technical',
   templateUrl: './technical.component.html',
   styleUrls: ['../../events.component.css']
 })
-export class TechnicalComponent {
+export class TechnicalComponent implements AfterViewInit{
   name: string;
   title: string
   events: Array<string>
-  constructor(private route: ActivatedRoute) {
+  clubName:Array<string>=[];
+  constructor(private route: ActivatedRoute,private eventService:EventService) {
     this.route.params.subscribe(params => {
       this.name = params['name'];
     });
     this.route.parent.url.subscribe(params => {
-      console.log(params);
       this.title = (this.name != undefined ? `${this.name}` : params[0].path) + ' Events'
+
     });
-    this.events = this.name != undefined ? ['asg', 'asfa', 'berer', 'sddbad'] : ['asfa', 'berer', 'sddbad']
+  }
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.eventService.fetchEvents().subscribe(response => {
+        let myEvents = response.data.technical_event;
+        this.eventService.isFetchingEvents=false;
+        for (let clubEvent of myEvents)
+          this.clubName.push(clubEvent.club_name);
+        this.events = this.clubName;
+      });
+    },0);
   }
 }

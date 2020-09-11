@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {Observable, of} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,17 +11,15 @@ export class EventService {
   isFetchingEvents=false;
   firstTimeFetch=true;
   events:EventResponse;
+  cachedWrapperResponse:EventWrapperResponse;
   constructor(private http:HttpClient) { }
 
-  fetchEvents() {
+  fetchEvents():Observable<EventWrapperResponse> {
     if(this.firstTimeFetch) {
       this.isFetchingEvents = true;
-      this.http.get<EventWrapperResponse>(this.url).subscribe(response => {
-        this.events = response.data;
-        this.firstTimeFetch = false;
-        this.isFetchingEvents=false;
-      });
+      return this.http.get<EventWrapperResponse>(this.url);
     }
+    return of(this.cachedWrapperResponse);
   }
 }
 interface EventWrapperResponse{

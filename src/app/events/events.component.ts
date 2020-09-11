@@ -13,6 +13,11 @@ export class EventsComponent {
   constructor(private route: ActivatedRoute,private eventService:EventService) {
     this.title =  'Events'
     this.events = ['cultural', 'technical', 'workshops', 'lectures']
-    this.eventService.fetchEvents();
+    this.eventService.fetchEvents().subscribe(response => {
+      this.eventService.cachedWrapperResponse=response;
+      this.eventService.events = response.data;
+      this.eventService.firstTimeFetch = false;
+      this.eventService.isFetchingEvents=false;
+    });
   }
 }
