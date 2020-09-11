@@ -20,7 +20,7 @@ export class ValidationGuard implements CanActivate {
       this.validationService.stateChecked=true;
       if(this.validationService.isLoggedIn){
         if(stateUrl=="/register"||stateUrl=="/login") {
-          this.router.navigate(['../events']);
+          this.router.navigate(['..']);
           return !this.validationService.isLoggedIn;
         }
         else
