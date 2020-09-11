@@ -98,10 +98,14 @@
 }
 
 .bg-img {
+  width: 100%;
+  height: auto;
   background-attachment: fixed;
   overflow: hidden;
   background-image:
   url("../assets/events/background.png");
   background-position: center;
   min-height: 100vh; 
+  background-repeat: no-repeat;
+  background-size: cover;
 }
