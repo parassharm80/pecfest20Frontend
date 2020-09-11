@@ -37,6 +37,9 @@
       <div class="alert alert-danger" role="alert" *ngIf="errorMessage!=null" style="margin-top: 10px">
         {{errorMessage}}
       </div>
+      <div class="alert alert-success" role="alert" *ngIf="errorMessage==null&&successMessage!=null" style="margin-top: 10px">
+       Log In Successful.Redirecting to events page.
+      </div>
     </form>
   </div>
 </div>
