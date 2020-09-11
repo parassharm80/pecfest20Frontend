@@ -18,43 +18,10 @@ export class ValidationService {
     this.routeSet.add("/confirm-email");
   }
 
-  public  verifySessionId(stateUrl) {
-
-    if(this.stateChecked){
-      if(this.isLoggedIn){
-        if(stateUrl=="/register"||stateUrl=="/login")
-          return of(!this.isLoggedIn);
-        else
-          return of(this.isLoggedIn);
-      }
-      else{
-        if(stateUrl!=="/profile")
-          return of(this.isLoggedIn);
-        else
-          return of(true);
-      }
-    }
-
-    return this.http.get<boolean>(this.url,{headers:this.getHttpHeaders()}).pipe(
-      map((response) => {
-        this.isLoggedIn=response;
-        this.stateChecked=true;
-        if(this.isLoggedIn){
-          if(stateUrl=="/register"||stateUrl=="/login")
-            return !this.isLoggedIn;
-          else
-              return response;
-        }
-        else{
-          if(stateUrl!=="/profile")
-              return this.isLoggedIn;
-          else
-              return !response;
-        }
-
-      })
-    );
-
+  public  verifySessionId() {
+    if(this.stateChecked)
+      return of(this.isLoggedIn);
+    return this.http.get<boolean>(this.url,{headers:this.getHttpHeaders()});
   }
 
   private getHttpHeaders() {
