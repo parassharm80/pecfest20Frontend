@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
           this.validationService.stateChecked=true;
           this.successMessage="OK";
           setTimeout((router: Router) => {
-            this.router.navigate(["../events"]);
+            this.router.navigate([".."]);
           }, 500);
         }
         },
