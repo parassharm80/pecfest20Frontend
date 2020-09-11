@@ -7,14 +7,14 @@ import { RegisterComponent } from './components/register/register.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ChangePasswordComponent} from "./components/change-password/change-password.component";
-import { ConfirmEmailComponent } from './components/confirm-email/confirm-email.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import {HttpClientModule} from '@angular/common/http';
 import {CookieService} from 'ngx-cookie-service';
+import {VerifyEmailComponent} from './components/verify-email/verify-email.component';
 
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, ResetpasswordComponent, ChangePasswordComponent, ConfirmEmailComponent, ProfileComponent],
+  declarations: [LoginComponent, RegisterComponent, ResetpasswordComponent, ChangePasswordComponent, VerifyEmailComponent, ProfileComponent],
   imports: [
     AuthRoutingModule,
     FormsModule,
@@ -27,7 +27,7 @@ import {CookieService} from 'ngx-cookie-service';
     RegisterComponent,
     ResetpasswordComponent,
     ChangePasswordComponent,
-    ConfirmEmailComponent,
+    VerifyEmailComponent,
     ProfileComponent
   ],
   providers:[CookieService]

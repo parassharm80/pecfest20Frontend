@@ -4,9 +4,9 @@ import {LoginComponent} from "./components/login/login.component";
 import {RegisterComponent} from "./components/register/register.component";
 import {ResetpasswordComponent} from "./components/resetpassword/resetpassword.component";
 import {ChangePasswordComponent} from "./components/change-password/change-password.component";
-import {ConfirmEmailComponent} from "./components/confirm-email/confirm-email.component";
 import {ProfileComponent} from "./components/profile/profile.component";
 import {ValidationGuard} from '../validation/validation.guard';
+import {VerifyEmailComponent} from './components/verify-email/verify-email.component';
 
 
 const routes: Routes = [
@@ -18,7 +18,7 @@ const routes: Routes = [
       {path: 'register', component: RegisterComponent},
       {path: 'reset-password', component: ResetpasswordComponent, canActivate: [ValidationGuard]},
       {path: 'change-password', component: ChangePasswordComponent},
-      {path: 'confirm-email', component: ConfirmEmailComponent}
+      {path: 'verify-email', component: VerifyEmailComponent}
     ]
   }
 ];
