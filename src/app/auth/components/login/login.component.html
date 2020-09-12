@@ -5,14 +5,13 @@
 </div>
 <div class="row">
   <div class="col-md-6 offset-md-3 mt-4">
-    <h3>Login</h3>
     <form [formGroup]="logInForm" >
       <div class="form-group">
         <label for="loginUsername">Email</label>
         <input type="text"
                class="form-control"
                id="loginUsername"
-               placeholder="Enter EmailID" formControlName="email" (keyup)="setErrorToNull()">
+               placeholder="Enter Email ID" formControlName="email" (keyup)="setErrorToNull()">
         <span class="text-danger"
               *ngIf="(logInForm.controls.email.touched || submitted) && logInForm.controls.email.errors?.email">
             Enter a valid email address
@@ -30,7 +29,7 @@
         </span>
       </div>
       <div class="form-group form-check">
-        <a [routerLink]="['/reset-password']">Forgot Password</a>
+        <a [routerLink]="['/reset-password']" class = "link">Forgot Password</a>
       </div>
       <button type="submit" (click)="onLogIn()"
               class="btn btn-primary">Login <i class="fas fa-sign-in-alt" ></i></button>

@@ -12,14 +12,14 @@ li {
 
 #event-title {
   text-align: center;
-  margin-bottom: 50px;
+  margin: 3% 3% 3% 3%;
 }
 
 #event-title h1 {
   transform: rotate(-10deg);
   color: #ff6666;
   font-family: "Mrs Sheppards", cursive;
-  font-size: 1000%;
+  font-size: 700%;
   line-height: 1;
   text-shadow: 5px 5px 0 #6699ff, 10px 10px 0 #00131e;
 }
