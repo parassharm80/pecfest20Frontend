@@ -1,40 +1,38 @@
 <div class="event-container rounded container-sm mx-auto p-3">
   <img class="event-image rounded mx-auto d-block img-fluid"
-    src="https://placehold.it/1000x200/CCCCCC/999999&text=BANNER" alt="event banner">
+    src="https://placehold.it/1000x200/CCCCCC/999999&text={{eventDetails.event_name}}" alt="event banner">
   <!-- <img class="event-image rounded mx-auto d-block img-fluid"
     src="https://togetherinmatson.co.uk/wp-content/uploads/cs-image-placeholder-01-1000x400.jpg"
     alt="event banner"> -->
   <div class="event-content">
     <div class="event-info my-5">
       <div class="my-2 d-flex">
-        <label>Date: </label><span>aaog asgfoa</span>
+        <label>Start Date Time: </label><span>{{eventDetails.event_start_date_and_time}}</span>
       </div>
       <div class="my-2 d-flex">
-        <label>Time: </label><span>aaog asgfoa</span>
+        <label>End Date Time: </label><span>{{eventDetails.event_end_date_and_time}}</span>
       </div>
       <div class="my-2 d-flex">
-        <label>Venue: </label><span>aaog asgfoa</span>
+        <label>Venue: </label><span>{{eventDetails.venue}}</span>
       </div>
       <div class="my-2 d-flex">
-        <label>Prize: </label><span>aaog asgfoa</span>
+        <label>Prize: </label><span>{{eventDetails.prize_money_worth}}</span>
       </div>
       <div class="my-2 d-flex">
-        <label>Team size: </label><span>aaog asgfoa</span>
+        <label>Team size: </label><span>{{eventDetails.min_number_of_participants}}-{{eventDetails.max_number_of_participants}}</span>
       </div>
     </div>
     <div class="event-rules my-5">
       <h2 class="laser">Rules</h2>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro, eligendi obcaecati. Modi harum distinctio
-        quisquam, cupiditate consequatur ab illum libero, eaque repudiandae magni aliquid culpa consectetur dolor
-        architecto! Quidem, aliquam!</p>
+      <p>{{eventDetails.rules==null ? '-' : eventDetails.rules}}</p>
     </div>
     <div class="event-description my-5">
       <h2 class="laser">Description</h2>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis quo facilis porro necessitatibus
-        exercitationem
-        in fugiat reiciendis accusamus minus, perspiciatis velit ex obcaecati a iure hic cupiditate possimus dolor
-        molestias.
+      <p>{{eventDetails.event_description==null ? '-' : eventDetails.event_description}}
       </p>
+    </div>
+    <div class="my-2 d-flex">
+      <label>Organizer Contact no.</label><span>{{eventDetails.organizer_contact_no}}</span>
     </div>
     <button class="event-reg btn btn-primary mx-auto d-block my3">Register</button>
   </div>

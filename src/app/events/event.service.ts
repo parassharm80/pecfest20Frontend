@@ -12,13 +12,13 @@ export class EventService {
   firstTimeFetch=true;
   events:EventResponse;
   cachedWrapperResponse:EventWrapperResponse;
+  clubEvents: Array<any>;
   constructor(private http:HttpClient) { }
 
   fetchEvents():Observable<EventWrapperResponse> {
-    if(this.firstTimeFetch) {
-      this.isFetchingEvents = true;
+    this.isFetchingEvents = true;
+    if(this.firstTimeFetch)
       return this.http.get<EventWrapperResponse>(this.url);
-    }
     return of(this.cachedWrapperResponse);
   }
 }
