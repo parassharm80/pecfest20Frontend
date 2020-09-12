@@ -48,7 +48,10 @@
     background: #3B5998;
     color: white;
   }
-  
+  .fa-linkedin {
+    background:#125688;
+    color: white;
+  }
   .icon {
     color: white;
     font-size: 100px;
@@ -77,9 +80,9 @@
   }
   .fa {
     padding: 5px 5px 5px 5px;
-    font-size: 22px;
-    width: 34px;
-    height: 34px;
+    font-size: 34px;
+    width: 50px;
+    height: 50px;
     text-align: center;
     text-decoration: none;
     margin: 5px 2px;

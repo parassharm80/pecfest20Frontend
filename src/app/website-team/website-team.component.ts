@@ -9,69 +9,63 @@ export class WebsiteTeamComponent implements OnInit {
 
   websiteTeam=[
     {
-      name:'animesh garg',
-      fb:"fdfd",
-      insta:"fdfd",
-      image:"animesh.jpg",
+      name:'Paras Sharma',
+      fb:"lodu",
+      insta:"lodu",
+      image:"Paras.jpg",
       event:false,
-      post:"joint head"
+      // post:"Frontend & Backend"
     },
     {
       name:'animesh garg',
       fb:"fdfd",
       insta:"fdfd",
-      image:"animesh.jpg",
+      image:"ani.jpg",
       event:false,
-      post:"joint head"
+      // post:"Frontend"
     },
     {
-      name:'animesh garg',
+      name:'Gandharv Jaggi',
       fb:"fdfd",
       insta:"fdfd",
-      image:"animesh.jpg",
+      image:"Gandharv Jaggi.jpg",
       event:false,
-      post:"joint head"
+      // post:"Frontend",
+      linked:"sa"
     },
     {
-      name:'animesh garg',
+      name:'Himanshu Gaur',
       fb:"fdfd",
       insta:"fdfd",
-      image:"animesh.jpg",
+      image:"Himanshu Gaur.jpg",
       event:false,
-      post:"joint head"
+      // post:"Backend"
     },
+    
     {
-      name:'animesh garg',
+      name:'Harshit Sharma',
       fb:"fdfd",
       insta:"fdfd",
-      image:"animesh.jpg",
+      image:"Harshit_Sharma.jpg",
       event:false,
-      post:"joint head"
-    },
+      // post:"Backend"
+    } ,
     {
-      name:'animesh garg',
+      name:'Pallavi',
       fb:"fdfd",
       insta:"fdfd",
-      image:"animesh.jpg",
+      image:"demo.jpeg",
       event:false,
-      post:"joint head"
-    },
+      // post:"Backend"
+    } ,
     {
-      name:'animesh garg',
+      name:'Venkatesh',
       fb:"fdfd",
       insta:"fdfd",
-      image:"animesh.jpg",
+      image:"demo.jpeg",
       event:false,
-      post:"joint head"
-    },
-    {
-      name:'animesh garg',
-      fb:"fdfd",
-      insta:"fdfd",
-      image:"animesh.jpg",
-      event:false,
-      post:"joint head"
-    }
+      // post:"Backend"
+    } 
   ]
   constructor() { }
 
