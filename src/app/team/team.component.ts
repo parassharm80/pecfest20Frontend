@@ -71,9 +71,9 @@ export class TeamComponent implements OnInit {
   ];
   heads=head;
 
- 
+
   constructor() {
-    this.title =  'Team';
+    this.title =  'Contact Us';
   }
 
   ngOnInit(): void {
