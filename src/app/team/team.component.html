@@ -5,22 +5,27 @@
 <div class="boundary">
     <section class="team-section my-5">
       <div style="padding: 1px 1px 3% 1px;">
-        <p class="core-team">Core Team</p>
+        <p class="core-team">Core Committee</p>
         <div class="hr"></div>
       </div>
         <div class="row text-center text-md-left">
           <div *ngFor="let i of coreTeam" class=" col-xl-6 col-lg-12 mb-5 d-md-flex justify-content-between" >
             <div class="avatar mb-md-0 mb-4 mx-4">
-              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(32).jpg " class="rounded z-depth-1 monotone">
+              <img src="../../assets/CONTACT US/{{i.photo}}" class="rounded z-depth-1 monotone">
             </div>
             <div class="mx-4">
               <h4 class="font-weight-bold mb-3 name">{{i.name}}</h4>
               <p class="grey-text title">{{i.post}}</p>
-              <p class="grey-text ph">Ph-no {{i.wh}}</p>
+              <p class="grey-text ph"><b>Ph-no {{i.ph}}</b></p>
               <div class="social-buttons">
                 <a *ngIf="i.fb" href="{{i.fb}}" class="social-buttons__button social-button social-button--facebook" aria-label="Facebook">
                   <span class="social-button__inner">
                    <i class="fa fa-facebook"></i>
+                  </span>
+                </a>
+                <a *ngIf="i.fb" href="{{i.linked}}" class="social-buttons__button social-button social-button--linkedin" aria-label="Facebook">
+                  <span class="social-button__inner">
+                   <i class="fa fa-linkedin"></i>
                   </span>
                 </a>
                 <a *ngIf="i.insta" href="{{i.insta}}" class="social-buttons__button social-button social-button--instagram" aria-label="Facebook">
@@ -37,5 +42,44 @@
             </div>
           </div>
         </div>
+
+        <div style="padding: 1px 1px 3% 1px;">
+          <p class="core-team">Committee Heads</p>
+          <div class="hr"></div>
+        </div>
+          <div class="row text-center text-md-left">
+            <div *ngFor="let i of heads" class=" col-xl-6 col-lg-12 mb-5 d-md-flex justify-content-between" >
+              <div class="avatar mb-md-0 mb-4 mx-4">
+                <img src="../../assets/CONTACT US/{{i.photo}}" class="rounded z-depth-1 monotone">
+              </div>
+              <div class="mx-4">
+                <h4 class="font-weight-bold mb-3 name">{{i.name}}</h4>
+                <p class="grey-text title">{{i.post}}</p>
+                <p class="grey-text ph"><b>Ph-no {{i.ph}}</b></p>
+                <div class="social-buttons">
+                  <a *ngIf="i.fb" href="{{i.fb}}" class="social-buttons__button social-button social-button--facebook" aria-label="Facebook">
+                    <span class="social-button__inner">
+                     <i class="fa fa-facebook"></i>
+                    </span>
+                  </a>
+                  <a *ngIf="i.linked" href="{{i.linked}}" class="social-buttons__button social-button social-button--linkedin" aria-label="Facebook">
+                    <span class="social-button__inner">
+                     <i class="fa fa-linkedin"></i>
+                    </span>
+                  </a>
+                  <a *ngIf="i.insta" href="{{i.insta}}" class="social-buttons__button social-button social-button--instagram" aria-label="Facebook">
+                    <span class="social-button__inner">
+                     <i class="fa fa-instagram"></i>
+                    </span>
+                  </a>
+                  <a *ngIf="i.wh" href="{{i.wh}}" class="social-buttons__button social-button social-button--whatsapp" aria-label="Facebook">
+                    <span class="social-button__inner">
+                     <i class="fa fa-whatsapp"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
       </section>
 </div>
