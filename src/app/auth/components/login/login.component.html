@@ -13,7 +13,7 @@
                id="loginUsername"
                placeholder="Enter Email ID" formControlName="email" (keyup)="setErrorToNull()">
         <span class="text-danger"
-              *ngIf="(logInForm.controls.email.touched || submitted) && logInForm.controls.email.errors?.email">
+              *ngIf="(logInForm.controls.email.touched || submitted)&& logInForm.controls.email.errors?.required&& logInForm.controls.email.errors?.email">
             Enter a valid email address
         </span>
       </div>
