@@ -1,14 +1,37 @@
 <html>
+<div class="loadingio-spinner-bean-eater-74c4gotmja5" *ngIf="isFetchingProfile">
+  <div class="ldio-nvnx6loo9jr">
+    <div>
+      <div>
+      </div>
+      <div>
+      </div>
+      <div>
+      </div>
+    </div>
+    <div>
+      <div>
+      </div>
+      <div>
+      </div>
+      <div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="!isFetchingProfile">
   <div id="event-title">
     <h1>{{title}}</h1>
   </div>
   <div class="box">
-    <h1>Name: {{profile.name}}</h1>
-    <h2>Age: {{profile.age}}</h2>
-    <h2>College: {{profile.college}}</h2>
-    <h2>Contact: {{profile.contact}}</h2>
+    <h1>PECFEST Username: {{profile.pec_fest_id}}</h1>
+    <h2>Full Name: {{profile.full_name}}</h2>
     <h2>Email: {{profile.email}}</h2>
+    <h2>College: {{profile.college_name}}</h2>
+    <h2>Year: {{profile.year_of_education}}</h2>
+    <h2>Contact: {{profile.contact_no}}</h2>
     <h2>Gender: {{profile.gender}}</h2>
+
     <button type="submit" (click)="onClick()"
             class="btn btn-primary">LOGOUT <i class="fas fa-sign-in-alt"></i></button>
     <button type="submit"
@@ -21,4 +44,5 @@
     {{successMessage}}
   </div>
   </div>
+</div>
 </html>

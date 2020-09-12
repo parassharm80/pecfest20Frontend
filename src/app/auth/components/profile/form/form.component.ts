@@ -25,11 +25,12 @@ export class FormComponent implements OnInit {
   initializeFormGroup(){
     this.formService.form.setValue({
       $key: null,
-      name: '',
-      age: '',
-      email: '',
-      college: '',
-      contact: '',
+      first_name:'',
+      last_name:'',
+      full_name: '',
+      college_name: '',
+      year_of_education:'',
+      contact_no: '',
       gender: '',
     });
   }
@@ -52,12 +53,13 @@ export class FormComponent implements OnInit {
   populateForm(data) {
     this.form.setValue({
       $key: null,
-      name: data.name,
-      age: data.age,
-      email: data.email,
-      college: data.college,
-      contact: data.contact,
-      gender: data.gender,
+      first_name:data.first_name,
+      last_name:data.last_name,
+      full_name: data.full_name,
+      college_name: data.college_name ? data.college_name : '',
+      year_of_education:data.year_of_education,
+      contact_no: data.contact_no,
+      gender: data.gender ? data.gender : '',
     });
   }
 
