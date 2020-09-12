@@ -9,10 +9,16 @@
     <h2>Contact: {{profile.contact}}</h2>
     <h2>Email: {{profile.email}}</h2>
     <h2>Gender: {{profile.gender}}</h2>
-    <button type="submit"
+    <button type="submit" (click)="onClick()"
             class="btn btn-primary">LOGOUT <i class="fas fa-sign-in-alt"></i></button>
     <button type="submit"
             class="btn btn-primary" (click)="edit(profile)">EDIT <i class="fas fa-sign-in-alt"></i></button>
 
+  <div class="alert alert-danger" role="alert" *ngIf="errorMessage!=null" style="margin-top: 10px">
+    {{errorMessage}}
+  </div>
+  <div class="alert alert-success" role="alert" *ngIf="errorMessage==null&&successMessage!=null" style="margin-top: 10px">
+    {{successMessage}}
+  </div>
   </div>
 </html>
