@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import {FormComponent} from "./form/form.component";
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {CookieService} from 'ngx-cookie-service';
+import {Router} from '@angular/router';
+import {ValidationService} from '../../../validation/validation.service';
 
 @Component({
   selector: 'app-profile',
@@ -10,7 +14,11 @@ import {FormComponent} from "./form/form.component";
 export class ProfileComponent implements OnInit {
   public profile: profileType;
   public title: String;
-  constructor(private formComponent: FormComponent,public dialog: MatDialog) {
+  private url="http://localhost:8080/logout";
+  errorMessage=null;
+  successMessage=null;
+  constructor(private formComponent: FormComponent,public dialog: MatDialog,private http:HttpClient,private cookieService:CookieService
+  ,private validationService:ValidationService,private router:Router) {
     this.profile =
       {
           name: "Paras Sharma",
@@ -38,6 +46,27 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onClick() {
+    this.errorMessage=null;
+    this.successMessage=null;
+    this.http.delete(this.url,{headers:this.getHttpHeaders()}).subscribe(response=>{
+        if(response["http_status"]!="OK")
+          this.errorMessage=response["status_message"];
+        else {
+          this.cookieService.set("session_id",response["data"]);
+          this.validationService.isLoggedIn=false;
+          this.validationService.stateChecked=true;
+          this.successMessage="Logged out. Redirecting to home page";
+          setTimeout((router: Router) => {
+            this.router.navigate([".."]);
+          }, 2000);
+        }
+    });
+  }
+  private getHttpHeaders() {
+    let  headers:HttpHeaders=new HttpHeaders();
+    return headers.set("session_id",this.cookieService.get("session_id"));
+  }
 }
 export interface profileType {
   name: String;
