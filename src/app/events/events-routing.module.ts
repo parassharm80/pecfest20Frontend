@@ -70,7 +70,7 @@ const routes: Routes = [
     canActivate:[ValidationGuard]
   },
   {
-    path: ':id',
+    path: ':event_type/:event_sub_type/:id',
     component: EventComponent,
     canActivate:[ValidationGuard]
   },

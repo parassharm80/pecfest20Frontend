@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-md-6 offset-md-3 mt-4">
+    <h3>Email Confirmation Page</h3>
+    <div class="alert alert-danger" role="alert" *ngIf="message!=null" style="margin-top: 10px">
+      {{message}}
+    </div>
+    <div class="alert alert-success" role="alert" *ngIf="message==null&&successMessage!=null" style="margin-top: 10px">
+      {{successMessage}}
+    </div>
+  </div>
+</div>

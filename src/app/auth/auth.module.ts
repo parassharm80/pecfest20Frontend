@@ -7,10 +7,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ChangePasswordComponent} from "./components/change-password/change-password.component";
-import { ConfirmEmailComponent } from './components/confirm-email/confirm-email.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import {HttpClientModule} from '@angular/common/http';
-import {CookieService} from 'ngx-cookie-service';
 import {FormComponent} from "./components/profile/form/form.component";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatFormFieldModule} from "@angular/material/form-field";
@@ -26,14 +24,16 @@ import {MatSortModule} from "@angular/material/sort";
 import {MatTableModule} from "@angular/material/table";
 import {MAT_DIALOG_DATA, MatDialogModule, MatDialogRef} from "@angular/material/dialog";
 import {MatButtonModule} from "@angular/material/button";
+import {VerifyEmailComponent} from './components/verify-email/verify-email.component';
 
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, ResetpasswordComponent, ChangePasswordComponent, ConfirmEmailComponent, ProfileComponent, FormComponent],
+  declarations: [LoginComponent, RegisterComponent, ResetpasswordComponent, ChangePasswordComponent, VerifyEmailComponent, ProfileComponent, FormComponent],
   providers:[        { provide: MatDialogRef, useValue: {} },
     { provide: MAT_DIALOG_DATA, useValue: [FormComponent] },
 
   ],
+
   imports: [
     AuthRoutingModule,
     FormsModule,
@@ -64,7 +64,7 @@ import {MatButtonModule} from "@angular/material/button";
     RegisterComponent,
     ResetpasswordComponent,
     ChangePasswordComponent,
-    ConfirmEmailComponent,
+    VerifyEmailComponent,
     ProfileComponent,
     FormComponent
   ],

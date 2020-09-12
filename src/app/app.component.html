@@ -1,6 +1,6 @@
 <div class="bg-img">
   <app-header></app-header>
-  <div class="loadingio-spinner-bean-eater-74c4gotmja5" *ngIf="showLoading">
+  <div class="loadingio-spinner-bean-eater-74c4gotmja5" *ngIf="showLoading||eventService.isFetchingEvents||!validationGuard.stateChecked">
     <div class="ldio-nvnx6loo9jr">
       <div>
         <div>
