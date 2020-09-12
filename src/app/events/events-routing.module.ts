@@ -6,6 +6,7 @@ import { TechnicalComponent } from './types/technical/technical.component';
 import { AcademicComponent } from './types/academic/academic.component';
 import { EventComponent } from './event/event.component';
 import {ValidationGuard} from '../validation/validation.guard';
+import {FormComponent} from "./event/form/form.component";
 
 const routes: Routes = [
   {
@@ -73,6 +74,10 @@ const routes: Routes = [
     path: ':event_type/:event_sub_type/:id',
     component: EventComponent,
     canActivate:[ValidationGuard]
+  },
+  {
+    path: ':event_type/:event_sub_type/:id/edit',
+    component: FormComponent,
   },
   {},
 ];

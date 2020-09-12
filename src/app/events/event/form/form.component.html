@@ -1,0 +1,42 @@
+<html>
+<mat-toolbar>
+  <span>{{form.controls['$key'].value?"Register your team": "Register your team"}}</span>
+  <span class = "fill-remaining-space"></span>
+  <button class = "btn-dialog-close" mat-stroked-button (click)="onClose()" tabindex="-1"><mat-icon>clear</mat-icon></button>
+</mat-toolbar>
+<form [formGroup]="form" class = "normal-form" (submit)="newSubmit()">
+  <mat-grid-list cols="1" rowHeight="400px">
+    <mat-grid-tile>
+      <div class = "controls-container">
+        <input type="hidden"  formControlName="$key">
+        <mat-form-field>
+          <input formControlName="username1" matInput placeholder="PECFEST Username of First Person*">
+          <mat-error>This field is mandatory</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="username2" matInput placeholder="PECFEST Username of Second Person*">
+          <mat-error>This field is mandatory</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="username3" matInput placeholder="PECFEST Username of third Person*">
+          <mat-error>This field is mandatory</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="username4" matInput placeholder="PECFEST Username of fourth Person*">
+          <mat-error>This field is mandatory</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="teamname" matInput placeholder="TeamName*">
+          <mat-error>This field is mandatory</mat-error>
+        </mat-form-field>
+        <div class = "button-row">
+          <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid" >Submit</button>
+          <button mat-raised-button color="clear" (click)="onClear()">Clear</button>
+        </div>
+
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>
+
+</html>
