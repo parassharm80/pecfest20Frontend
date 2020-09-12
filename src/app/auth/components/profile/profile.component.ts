@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import {FormComponent} from "./form/form.component";
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {CookieService} from 'ngx-cookie-service';
 import {Router} from '@angular/router';
 import {ValidationService} from '../../../validation/validation.service';
+import {profileService} from './profile.service';
+import {CookieService} from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-profile',
@@ -12,24 +13,31 @@ import {ValidationService} from '../../../validation/validation.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  public profile: profileType;
+  public profile:any;
   public title: String;
   private url="http://localhost:8080/logout";
   errorMessage=null;
   successMessage=null;
-  constructor(private formComponent: FormComponent,public dialog: MatDialog,private http:HttpClient,private cookieService:CookieService
-  ,private validationService:ValidationService,private router:Router) {
-    this.profile =
-      {
-          name: "Paras Sharma",
-          age: 20,
-          email: "Email",
-          college: "PEC",
-          contact: "9999999999",
-          gender: "Male",
-
-      };
-    this.title =  'Profile';
+  isFetchingProfile=true;
+  constructor(private formComponent: FormComponent,public dialog: MatDialog,private http:HttpClient,
+  private validationService:ValidationService,private router:Router,private profile_Service:profileService,private cookieService:CookieService) {
+    this.profile_Service.getUserDetails().subscribe(response=>{
+      if(response["http_status"]=="OK"){
+        this.profile=response["data"];
+        this.isFetchingProfile=false;
+      }
+    });
+    // this.profile =
+    //   {
+    //       name: "Paras Sharma",
+    //       age: 20,
+    //       email: "Email",
+    //       college: "PEC",
+    //       contact: "9999999999",
+    //       gender: "Male",
+    //
+    //   };
+    this.title =  'Your Profile';
 
 
 

@@ -5,11 +5,12 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 export class formService{
   public form: FormGroup = new FormGroup({
     $key: new FormControl(null),
-    name: new FormControl('',Validators.required),
-    age: new FormControl('',Validators.required),
-    email: new FormControl('',Validators.required),
-    college: new FormControl('',Validators.required),
-    contact: new FormControl('',Validators.required),
+    first_name: new FormControl('',Validators.required),
+    last_name:new FormControl('',Validators.required),
+    full_name: new FormControl('',Validators.required),
+    college_name: new FormControl('',Validators.required),
+    contact_no: new FormControl('',Validators.required),
     gender: new FormControl('',Validators.required),
+    year_of_education: new FormControl('',Validators.required)
   })
 }
