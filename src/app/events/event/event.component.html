@@ -1,4 +1,4 @@
-<div class="event-container rounded container-sm mx-auto p-3">
+<div class="event-container rounded container-sm mx-auto p-3" *ngIf="eventDetails!=null">
   <img class="event-image rounded mx-auto d-block img-fluid"
     src="https://placehold.it/1000x200/CCCCCC/999999&text={{eventDetails.event_name}}" alt="event banner">
   <!-- <img class="event-image rounded mx-auto d-block img-fluid"

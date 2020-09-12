@@ -4,7 +4,7 @@
   </div>
   <ul class="events-list list-group text-center">
     <li class="py-2" *ngFor="let event of events;let indexOfelement=index;">
-      <a *ngIf='this.name' routerLink="../../{{indexOfelement+1}}"><img class="event-image rounded img-fluid"
+      <a *ngIf='this.name' routerLink="../../cultural/{{this.name}}/{{indexOfelement+1}}"><img class="event-image rounded img-fluid"
           src="https://placehold.it/1000x200/CCCCCC/999999&text={{event}}" alt="event banner"></a>
       <a *ngIf='!this.name' routerLink="{{event}}">{{ event }}</a>
     </li>

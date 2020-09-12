@@ -14,10 +14,7 @@ export class EventsComponent {
     this.title =  'Events'
     this.events = ['cultural', 'technical', 'workshops', 'lectures']
     this.eventService.fetchEvents().subscribe(response => {
-      this.eventService.cachedWrapperResponse=response;
-      this.eventService.events = response.data;
-      this.eventService.firstTimeFetch = false;
-      this.eventService.isFetchingEvents=false;
+    this.eventService.manipulateResponse(response);
     });
   }
 }

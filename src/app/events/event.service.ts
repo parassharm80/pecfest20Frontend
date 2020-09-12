@@ -21,6 +21,13 @@ export class EventService {
       return this.http.get<EventWrapperResponse>(this.url);
     return of(this.cachedWrapperResponse);
   }
+
+  manipulateResponse(response: EventWrapperResponse) {
+    this.cachedWrapperResponse=response;
+    this.isFetchingEvents=false;
+    this.firstTimeFetch=false;
+    this.events=response.data;
+  }
 }
 interface EventWrapperResponse{
   data:EventResponse;

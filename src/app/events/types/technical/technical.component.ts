@@ -29,8 +29,7 @@ export class TechnicalComponent implements AfterViewInit{
       setTimeout(() => {
         this.eventService.fetchEvents().subscribe(response => {
           let myEvents = response.data.technical_event;
-          this.eventService.isFetchingEvents=false;
-          this.eventService.firstTimeFetch=false;
+          this.eventService.manipulateResponse(response);
           for (let clubEvent of myEvents)
             if(clubEvent.club_name==this.name) {
               this.clubEventsName =clubEvent.event_list.map(event=>event["event_name"]);
@@ -43,9 +42,8 @@ export class TechnicalComponent implements AfterViewInit{
     else
     setTimeout(() => {
       this.eventService.fetchEvents().subscribe(response => {
+        this.eventService.manipulateResponse(response);
         let myEvents = response.data.technical_event;
-        this.eventService.isFetchingEvents=false;
-        this.eventService.firstTimeFetch=false;
         for (let clubEvent of myEvents)
           this.clubName.push(clubEvent.club_name);
         this.events = this.clubName;
