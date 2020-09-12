@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {EventService} from '../event.service';
+import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
+import {FormComponent} from "./form/form.component";
 
 @Component({
   selector: 'app-event',
@@ -12,7 +14,7 @@ export class EventComponent implements OnInit {
   eventType;
   eventSubType;
    eventDetails=null;
-  constructor(private route: ActivatedRoute,private eventService:EventService) {
+  constructor(private formComponent: FormComponent,public dialog: MatDialog,private route: ActivatedRoute,private eventService:EventService) {
     this.eventService.isFetchingEvents=true;
 
     this.route.params.subscribe(params => {
@@ -32,9 +34,25 @@ export class EventComponent implements OnInit {
 
     });
   }
+  public eventadd: EventsType;
+  edit(eventadd){
+    this.formComponent.populateForm(eventadd);
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "40%";
+    this.dialog.open(FormComponent, dialogConfig);
+  }
 
   ngOnInit(): void {
 
   }
 
+}
+export interface EventsType {
+  username1: String,
+  username2: String,
+  username3: String,
+  username4: String,
+  teamname: String,
 }
