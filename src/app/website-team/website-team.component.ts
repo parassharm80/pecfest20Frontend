@@ -14,15 +14,15 @@ export class WebsiteTeamComponent implements OnInit {
       insta:"lodu",
       image:"Paras.jpg",
       event:false,
-      // post:"Frontend & Backend"
+      post:"Full-Stack Developer"
     },
     {
-      name:'animesh garg',
+      name:'Animesh Garg',
       fb:"fdfd",
       insta:"fdfd",
       image:"ani.jpg",
       event:false,
-      // post:"Frontend"
+      post:"Frontend Developer"
     },
     {
       name:'Gandharv Jaggi',
@@ -30,7 +30,7 @@ export class WebsiteTeamComponent implements OnInit {
       insta:"fdfd",
       image:"Gandharv Jaggi.jpg",
       event:false,
-      // post:"Frontend",
+      post:"Frontend Developer",
       linked:"sa"
     },
     {
@@ -39,33 +39,25 @@ export class WebsiteTeamComponent implements OnInit {
       insta:"fdfd",
       image:"Himanshu Gaur.jpg",
       event:false,
-      // post:"Backend"
+      post:"Backend Developer"
     },
-    
+
     {
       name:'Harshit Sharma',
       fb:"fdfd",
       insta:"fdfd",
       image:"Harshit_Sharma.jpg",
       event:false,
-      // post:"Backend"
+      post:"Backend Developer"
     } ,
     {
       name:'Pallavi',
       fb:"fdfd",
       insta:"fdfd",
-      image:"demo.jpeg",
+      // image:"Pallavi.jpg",
       event:false,
-      // post:"Backend"
+      post:"Backend Developer"
     } ,
-    {
-      name:'Venkatesh',
-      fb:"fdfd",
-      insta:"fdfd",
-      image:"demo.jpeg",
-      event:false,
-      // post:"Backend"
-    } 
   ]
   constructor() { }
 

@@ -1,5 +1,14 @@
 export let head=[
-    {
+  {
+    "name":'Paras Sharma',
+    "post": "Publicity(Online and Offline) and Website Management",
+    "insta": "123",
+    "photo": "Paras.jpg",
+    "ph":"9780540036",
+    "wh":"9780540036",
+    "linked":"https://www.linkedin.com/in/ayush-dhar-69374119b"
+  },
+  {
     "name": "Ayush Dhar",
     "post": "Event Coordination (Cultural)",
     "insta": "https://www.instagram.com/_ayush02/",
@@ -16,6 +25,12 @@ export let head=[
     "wh":"9464548668",
     "ph":"9464548668",
     "linked":"https://www.linkedin.com/in/abhishekdhiman20"
+  },
+  {
+    "name": "Yash Poonia",
+    "post": "Finance",
+    "photo": "yash.jpg",
+    "ph":"9417414135"
   },
   {
     "name": "Sahil Mehta",
@@ -46,11 +61,6 @@ export let head=[
     "ph":"8439533078",
     "wh":"8439533078",
     "linked":"https://www.linkedin.com/in/rishabhjain21/"
-  },{
-    "name": "Yash Poonia",
-    "post": "Finance",
-    "photo": "yash.jpg",
-    "ph":"9417414135"
   },{
     "name": "Arshpreet Singh",
     "post": "Megashows",

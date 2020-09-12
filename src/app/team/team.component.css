@@ -2,13 +2,13 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 #event-title {
   text-align: center;
-  margin-bottom: 50px;
+  margin: 3% 3% 3% 3%;
 }
 #event-title h1 {
   transform: rotate(-10deg);
   color: #f5ff66;
   font-family: "Mrs Sheppards", cursive;
-  font-size: 1000%;
+  font-size: 700%;
   line-height: 1;
   text-shadow: 5px 5px 0 #6699ff, 10px 10px 0 #00131e;
 }
@@ -55,7 +55,7 @@
   font-size: 20px;
   font-family: cursive;
   color : wheat;
-} 
+}
 
 .name{
   font-size: 15px;
@@ -172,7 +172,7 @@
     height: 100%;
     margin-left: -50%;
  }
- 
+
   .social-button--facebook {
     color: #3b5999;
  }
@@ -191,7 +191,7 @@
   .social-button--instagram::after {
     background: #e4405f;
  }
-  
+
  .social-button--whatsapp::after {
   background: #115803;
 }
