@@ -1,5 +1,16 @@
 export let head=[
-{
+
+  {
+    "name":'Paras Sharma',
+    "post": "Publicity(Online and Offline) and Website Management",
+    "insta": "https://www.instagram.com/infiniteloop.80/?r=nametag",
+    "photo": "Paras.jpg",
+    "ph":"9780540036",
+    "wh":"9780540036",
+    "linked":"https://www.linkedin.com/in/paras-sharma-b8835715b",
+    "fb":"https://www.facebook.com/people/Paras-Sharma/100004424837970"
+  },
+  {
   "name": "Pranav",
   "post": "Printing, Publishing & Stationary",
   "photo": "Pranav.jpg",
@@ -14,16 +25,6 @@ export let head=[
   "wh":"9463380443",
   "linked":"https://www.linkedin.com/in/aarush-monga-995523190/"
 },
-  {
-    "name":'Paras Sharma',
-    "post": "Publicity(Online and Offline) and Website Management",
-    "insta": "https://www.instagram.com/infiniteloop.80/?r=nametag",
-    "photo": "Paras.jpg",
-    "ph":"9780540036",
-    "wh":"9780540036",
-    "linked":"https://www.instagram.com/infiniteloop.80/?r=nametag",
-    "fb":"https://www.facebook.com/people/Paras-Sharma/100004424837970"
-  },
   {
     "name": "Ayush Dhar",
     "post": "Event Coordination (Cultural)",
@@ -93,7 +94,7 @@ export let head=[
     "wh":"8146361663",
     "linked":"https://www.linkedin.com/in/apoorva-suri"
   },
-  
+
   {
     "name": "Sakshi Mittal",
     "post": "Creative",
