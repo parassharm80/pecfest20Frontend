@@ -9,24 +9,24 @@ export class TeamComponent implements OnInit {
   title: string;
   coreTeam=[
     {
-      "name": 'Parth Gauba',
-      "fb": "dsds",
-      "insta": 'dss',
+      "name": 'Paarth Gauba',
+      // "fb": "dsds",
+      // "insta": 'dss',
       "post": "Convener",
-      "photo": "",
+      "photo": "Paarth_Gauba.jpg",
       "ph":"8787678767",
       // "wh":"8787678767",
-      "linked":""
+      // "linked":""
     },
     {
       "name": 'Anirudh Gargya',
-      "fb": "Co-Convener",
-      "insta": 'dss',
+      // "fb": "Co-Convener",
+      // "insta": 'dss',
       "post": "Co-Convener",
       "photo": "",
       // "wh":"8787678767",
-      "ph":"8787678767",
-      "linked":""
+      // "ph":"8787678767",
+      // "linked":""
     },
     {
       "name": 'Ashish Kumar Singh',

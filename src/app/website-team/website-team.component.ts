@@ -10,53 +10,56 @@ export class WebsiteTeamComponent implements OnInit {
   websiteTeam=[
     {
       name:'Paras Sharma',
-      fb:"lodu",
-      insta:"lodu",
+      fb:"https://www.facebook.com/people/Paras-Sharma/100004424837970",
+      insta:"https://www.instagram.com/infiniteloop.80/?r=nametag",
       image:"Paras.jpg",
       event:false,
-      post:"Full-Stack Developer"
+      post:"Full-Stack Developer",
+      linked:"https://www.linkedin.com/in/paras-sharma-b8835715b"
     },
     {
       name:'Animesh Garg',
-      fb:"fdfd",
-      insta:"fdfd",
+      insta:"https://www.instagram.com/animesh_garg07/",
       image:"ani.jpg",
       event:false,
-      post:"Frontend Developer"
+      post:"Frontend Developer",
+      linked:"https://www.linkedin.com/in/animesh-garg-15997a145/"
     },
     {
       name:'Gandharv Jaggi',
-      fb:"fdfd",
-      insta:"fdfd",
+      fb:"",
+      insta:"",
       image:"Gandharv Jaggi.jpg",
       event:false,
       post:"Frontend Developer",
-      linked:"sa"
+      linked:""
     },
     {
       name:'Himanshu Gaur',
-      fb:"fdfd",
-      insta:"fdfd",
+      fb:"https://www.facebook.com/himanshu.gaur.3192",
+      insta:"https://www.instagram.com/poetic.himanshu/?r=nametag",
       image:"Himanshu Gaur.jpg",
       event:false,
-      post:"Backend Developer"
+      post:"Backend Developer",
+      linked:"https://www.linkedin.com/in/himanshu-gaur-149101163"
     },
 
     {
       name:'Harshit Sharma',
-      fb:"fdfd",
-      insta:"fdfd",
+      fb:"",
+      insta:"",
       image:"Harshit_Sharma.jpg",
       event:false,
       post:"Backend Developer"
     } ,
     {
       name:'Pallavi',
-      fb:"fdfd",
-      insta:"fdfd",
-      // image:"Pallavi.jpg",
+      fb:"",
+      insta:"",
+      image:"Pallavi.jpg",
       event:false,
-      post:"Backend Developer"
+      post:"Backend Developer",
+      linked:"https://www.linkedin.com/in/pallavi-dua-808432181"
     } ,
   ]
   constructor() { }

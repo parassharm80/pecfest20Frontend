@@ -9,8 +9,8 @@ import {of} from 'rxjs';
   providedIn: 'root'
 })
 export class ValidationService {
-  public isLoggedIn=false;
-  public stateChecked=false;
+  public isLoggedIn=true;
+  public stateChecked=true;
   public routeSet:Set<string>=new Set();
   private url="http://localhost:8080/session/verify"
   constructor(private http:HttpClient,private cookieService:CookieService) {
