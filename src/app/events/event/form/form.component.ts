@@ -30,12 +30,14 @@ export class FormComponent implements OnInit {
   onClear(){
     this.maxLimitMessage=null;
     this.formService.form.reset();
+    this.formService.createForm(this.formService.localEventDetails);
     this.success('::Cleared Successfully');
   }
 
   onClose(){
     this.maxLimitMessage=null;
     this.formService.form.reset();
+    this.formService.createForm(this.formService.localEventDetails);
     this.dialogRef.close();
   }
   populateForm(eventDetails) {
