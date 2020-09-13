@@ -70,16 +70,16 @@
         />
       </div>
       <div class="form-group">
-        <label class="laser" for="registerPassword">College</label>
+        <label class="laser" for="registercollegeName">College</label>
         <input
           type="text"
-          name="college"
+          name="college_name"
           ngModel
           required
           class="form-control"
-          id="registerCollege"
+          id="registercollegeName"
           placeholder="Enter your College Name"
-          formControlName="college"
+          formControlName="college_name"
         />
       </div>
       <div class="form-group">
@@ -93,6 +93,19 @@
           id="registerYear"
           placeholder="Enter your Year"
           formControlName="year_of_education"
+        />
+      </div>
+      <div class="form-group">
+        <label class="laser" for="registerGender">Gender</label>
+        <input
+          type="text"
+          name="gender"
+          ngModel
+          required
+          class="form-control"
+          id="registerGender"
+          placeholder="Enter your Gender"
+          formControlName="gender"
         />
       </div>
       <button type="submit" (click)="onSubmit()" class="btn btn-primary laser-white">

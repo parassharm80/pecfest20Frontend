@@ -20,6 +20,7 @@ export class RegisterService {
     last_name:registrationForm.controls["last_name"].value,
     contact_no:registrationForm.controls["contact_no"].value,
     year_of_education:registrationForm.controls["year_of_education"].value,
-    college:registrationForm.controls["college"].value});
+      college_name:registrationForm.controls["college_name"].value,
+    gender:registrationForm.controls["gender"].value});
   }
 }
