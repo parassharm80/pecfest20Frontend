@@ -1,8 +1,25 @@
 <div class="event-title">
   <h1 class="sheppard">Login</h1>
 </div>
+
 <div class="row">
   <div class="col-md-6 offset-md-3 mt-4">
+    <div
+      class="alert alert-success"
+      role="alert"
+      *ngIf="errorMessage == null && successMessage != null"
+      style="margin-top: 10px">
+      Log In Successful.Redirecting to Home page.
+    </div>
+    <div
+      class="alert alert-danger"
+      role="alert"
+      *ngIf="errorMessage != null"
+      style="margin-top: 10px"
+    >
+      {{ errorMessage }}
+    </div>
+
     <form [formGroup]="logInForm">
       <div class="form-group">
         <label class="laser" for="loginUsername">Email</label>
@@ -51,22 +68,6 @@
       <button type="submit" (click)="onLogIn()" class="btn btn-primary laser-white">
         Login <i class="fas fa-sign-in-alt"></i>
       </button>
-      <div
-        class="alert alert-danger"
-        role="alert"
-        *ngIf="errorMessage != null"
-        style="margin-top: 10px"
-      >
-        {{ errorMessage }}
-      </div>
-      <div
-        class="alert alert-success"
-        role="alert"
-        *ngIf="errorMessage == null && successMessage != null"
-        style="margin-top: 10px"
-      >
-        Log In Successful.Redirecting to Home page.
-      </div>
     </form>
   </div>
 </div>
