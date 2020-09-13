@@ -10,13 +10,6 @@
   <label class="laser">Contact:</label><h2>{{ profile.contact_no }}</h2>
   <label class="laser">Gender:</label><h2>{{ profile.gender }}</h2>
 
-  <button type="submit" (click)="onClick()" class="btn btn-primary laser-white">
-    LOGOUT <i class="fas fa-sign-in-alt"></i>
-  </button>
-  <button type="submit" class="btn btn-primary laser-white" (click)="edit(profile)">
-    EDIT <i class="fas fa-sign-in-alt"></i>
-  </button>
-
   <div
     class="alert alert-danger"
     role="alert"
@@ -33,4 +26,12 @@
   >
     {{ successMessage }}
   </div>
+
+  <button type="submit" (click)="onClick()" class="btn btn-primary laser-white">
+    LOGOUT <i class="fas fa-sign-in-alt"></i>
+  </button>
+  <button type="submit" class="btn btn-primary laser-white" (click)="edit(profile)">
+    EDIT <i class="fas fa-sign-in-alt"></i>
+  </button>
+
 </div>
