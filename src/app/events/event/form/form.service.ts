@@ -31,7 +31,7 @@ export class formService{
       return null;
     }
     else
-      return "Max team size limit reached"
+      return "Limit Reached"
   }
 
   registerTeam(pecfestIdList,team_name) {
