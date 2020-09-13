@@ -56,7 +56,7 @@ export class FormComponent implements OnInit {
     this.errorMessage=null;
     this.successMessage=null;
     let mySet:Set<any>=new Set<any>();
-    let array:Array<string>=[];
+    let pecFestIdList:Array<string>=[];
     for(let teamMemberControl of this.formService.form.controls['team_members']['controls']){
       let username=teamMemberControl.value;
       username=username.toUpperCase();
@@ -65,11 +65,11 @@ export class FormComponent implements OnInit {
         this.errorMessage="No two PECFEST usernames could be same";
         return ;
       }
-      array.push(username);
+      pecFestIdList.push(username);
       mySet.add(username);
     }
     if(this.formService.form.valid)
-    this.formService.registerTeam(array,this.formService.form.controls["teamname"].value).subscribe(response=>{
+    this.formService.registerTeam(pecFestIdList,this.formService.form.controls["teamname"].value).subscribe(response=>{
       if(response["http_status"]!="OK")
         this.errorMessage=response["status_message"];
       else
