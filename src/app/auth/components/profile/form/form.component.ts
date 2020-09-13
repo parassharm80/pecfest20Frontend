@@ -4,6 +4,8 @@ import {MatDialog, MatDialogConfig, MatDialogRef} from "@angular/material/dialog
 import {FormGroup, Validators} from "@angular/forms";
 import {formService} from "./form.service";
 import {MatSnackBar, MatSnackBarConfig} from "@angular/material/snack-bar";
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-form',
@@ -12,9 +14,13 @@ import {MatSnackBar, MatSnackBarConfig} from "@angular/material/snack-bar";
 })
 @Injectable({ providedIn: 'root'})
 export class FormComponent implements OnInit {
+  private userId=null;
+  private url: string="http://localhost:8080/user"
+   errorMessage=null;
+   successMessage=null;
 
   constructor(private profileService: profileService,private dialog: MatDialog,private snackBar: MatSnackBar,
-              private formService: formService, private dialogRef: MatDialogRef<FormComponent>) { }
+              private formService: formService, private dialogRef: MatDialogRef<FormComponent>,private http:HttpClient) { }
   public form: FormGroup = this.formService.form;
   config: MatSnackBarConfig = {
     duration: 3000,
@@ -23,6 +29,8 @@ export class FormComponent implements OnInit {
   };
 
   initializeFormGroup(){
+    this.errorMessage=null;
+    this.successMessage=null;
     this.formService.form.setValue({
       $key: null,
       first_name:'',
@@ -40,17 +48,24 @@ export class FormComponent implements OnInit {
   }
 
   onClear(){
+    this.errorMessage=null;
+    this.successMessage=null;
     this.form.reset();
     this.initializeFormGroup();
     this.success('::Cleared Successfully');
   }
 
   onClose(){
+    this.errorMessage=null;
+    this.successMessage=null;
     this.form.reset();
     this.initializeFormGroup();
     this.dialogRef.close();
   }
   populateForm(data) {
+    this.errorMessage=null;
+    this.successMessage=null;
+    this.formService.userId=data.id;
     this.form.setValue({
       $key: null,
       first_name:data.first_name,
@@ -64,21 +79,25 @@ export class FormComponent implements OnInit {
   }
 
   newSubmit() {
+
+    this.errorMessage=null;
+    this.successMessage=null;
     if(this.form.valid) {
-      if (this.form.get('$key').value) {
-        // this.profileService.editConfigurations(this.form.get('$key').value, this.form.value)
-        //   .subscribe(() => {
-        //
-        //   });
-      }
-      this.form.reset();
-      this.initializeFormGroup();
-      this.success('::Submitted Successfully');
-      this.onClose();
+        this.sendToBackend().subscribe(response=>{
+          if(response["http_status"]!="OK")
+            this.errorMessage=response["status_message"];
+          else
+            this.successMessage="Successfully Edited. Refresh your profile page";
+        })
     }
   }
 
   ngOnInit(): void {
   }
 
+  private sendToBackend():Observable<any> {
+    return this.http.put(this.url+`/${this.formService.userId}`,{first_name:this.form.controls["first_name"].value,last_name:this.form.controls["last_name"].value,
+      gender:this.form.controls["gender"].value,contact_no:this.form.controls["contact_no"].value,college_name:this.form.controls["college_name"].value,
+      year_of_education:this.form.controls["year_of_education"].value})
+  }
 }

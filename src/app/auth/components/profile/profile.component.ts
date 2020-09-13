@@ -27,19 +27,7 @@ export class ProfileComponent implements OnInit {
         this.isFetchingProfile=false;
       }
     });
-    // this.profile =
-    //   {
-    //       name: "Paras Sharma",
-    //       age: 20,
-    //       email: "Email",
-    //       college: "PEC",
-    //       contact: "9999999999",
-    //       gender: "Male",
-    //
-    //   };
     this.title =  'Your Profile';
-
-
 
   }
 
