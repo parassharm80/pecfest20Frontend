@@ -27,12 +27,12 @@ export class WebsiteTeamComponent implements OnInit {
     },
     {
       name:'Gandharv Jaggi',
-      fb:"",
-      insta:"",
+      fb:"https://www.facebook.com/gandharv.jaggi",
+      insta:"https://www.instagram.com/gandharv_jaggi/",
       image:"Gandharv Jaggi.jpg",
       event:false,
       post:"Frontend Developer",
-      linked:""
+      linked:"https://www.linkedin.com/in/gandharv-jaggi-26778a182"
     },
     {
       name:'Himanshu Gaur',

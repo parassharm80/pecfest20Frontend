@@ -17,10 +17,10 @@ const routes: Routes = [
     path: 'events',
     loadChildren: () => import('./events/events.module').then(m => m.EventsModule),
   },
-  {
-    path: 'accomodation',
-    loadChildren: () => import('./accomodation/accomodation.module').then(m => m.AccomodationModule)
-  },
+  // {
+  //   path: 'accomodation',
+  //   loadChildren: () => import('./accomodation/accomodation.module').then(m => m.AccomodationModule)
+  // },
   {
     path: 'team',
     loadChildren: () => import('./team/team.module').then(m => m.TeamModule)
