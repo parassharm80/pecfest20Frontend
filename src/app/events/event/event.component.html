@@ -52,7 +52,7 @@
       ><span>{{ eventDetails.organizer_contact_no }}</span>
     </div>
     <button *ngIf="eventDetails.event_count=='INDIVIDUAL'" class="laser-white event-reg btn btn-primary mx-auto d-block my3" (click)="registerForIndividual()">Register</button>
-    <button *ngIf="eventDetails.event_count=='TEAM'" class="event-reg btn btn-primary mx-auto d-block my3" (click)="registerForTeam()">Register</button>
+    <button *ngIf="eventDetails.event_count=='TEAM'" class="laser-white event-reg btn btn-primary mx-auto d-block my3" (click)="registerForTeam()">Register</button>
   </div>
   <div class="alert alert-danger" role="alert" *ngIf="errorMessage!=null" style="margin-top: 10px">
     {{errorMessage}}
