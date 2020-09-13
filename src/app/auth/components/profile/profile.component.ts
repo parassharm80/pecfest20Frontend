@@ -48,7 +48,7 @@ export class ProfileComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    dialogConfig.width = "60%";
+    dialogConfig.width = "70%";
     this.dialog.open(FormComponent, dialogConfig);
   }
   ngOnInit(): void {

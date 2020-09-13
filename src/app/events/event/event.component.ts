@@ -42,7 +42,7 @@ export class EventComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    dialogConfig.width = "40%";
+    dialogConfig.width = "70%";
     this.dialog.open(FormComponent, dialogConfig);
   }
 
