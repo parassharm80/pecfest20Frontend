@@ -10,3 +10,9 @@
   background-size: cover;
   min-height: 100vh;
 }
+
+@media screen and (max-width: 650px) {
+  .bg-img{
+    background-size: auto;
+  }
+}
