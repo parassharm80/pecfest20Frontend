@@ -21,7 +21,8 @@ export class LoginService {
   }
 
   setSessionId(sessionId:string) {
-    this.cookieService.set("session_id",sessionId);
+    this.cookieService.delete("session_id","/");
+    this.cookieService.set("session_id",sessionId,50,"/");
   }
 }
 export interface WrapperResponse{
