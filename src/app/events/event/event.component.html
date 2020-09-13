@@ -1,39 +1,63 @@
-<div class="event-container rounded container-sm mx-auto p-3" *ngIf="eventDetails!=null">
-  <img class="event-image rounded mx-auto d-block img-fluid"
-    src="https://placehold.it/1000x200/CCCCCC/999999&text={{eventDetails.event_name}}" alt="event banner">
-  <!-- <img class="event-image rounded mx-auto d-block img-fluid"
-    src="https://togetherinmatson.co.uk/wp-content/uploads/cs-image-placeholder-01-1000x400.jpg"
-    alt="event banner"> -->
+<div class="event-container rounded container-sm mx-auto p-3">
+  <img
+    class="event-image rounded mx-auto d-block img-fluid"
+    src="https://placehold.it/1000x200/CCCCCC/999999&text={{
+      eventDetails.event_name
+    }}"
+    alt="event banner"
+  />
   <div class="event-content">
     <div class="event-info my-5">
       <div class="my-2 d-flex">
-        <label>Start Date Time: </label><span>{{eventDetails.event_start_date_and_time}}</span>
+        <label class="laser">Start Date Time:</label
+        ><span>{{ eventDetails.event_start_date_and_time }}</span>
       </div>
       <div class="my-2 d-flex">
-        <label>End Date Time: </label><span>{{eventDetails.event_end_date_and_time}}</span>
+        <label class="laser">End Date Time:</label
+        ><span>{{ eventDetails.event_end_date_and_time }}</span>
       </div>
       <div class="my-2 d-flex">
-        <label>Venue: </label><span>{{eventDetails.venue}}</span>
+        <label class="laser">Venue:</label
+        ><span>{{ eventDetails.venue }}</span>
       </div>
       <div class="my-2 d-flex">
-        <label>Prize: </label><span>{{eventDetails.prize_money_worth}}</span>
+        <label class="laser">Prize:</label
+        ><span>{{ eventDetails.prize_money_worth }}</span>
       </div>
       <div class="my-2 d-flex">
-        <label>Team size: </label><span>{{eventDetails.min_number_of_participants}}-{{eventDetails.max_number_of_participants}}</span>
+        <label class="laser">Team size:</label
+        ><span
+          >{{ eventDetails.min_number_of_participants }}-{{
+            eventDetails.max_number_of_participants
+          }}</span
+        >
       </div>
     </div>
     <div class="event-rules my-5">
       <h2 class="laser">Rules</h2>
-      <p>{{eventDetails.rules==null ? '-' : eventDetails.rules}}</p>
+      <p>{{ eventDetails.rules == null ? "-" : eventDetails.rules }}</p>
     </div>
     <div class="event-description my-5">
       <h2 class="laser">Description</h2>
-      <p>{{eventDetails.event_description==null ? '-' : eventDetails.event_description}}
+      <p>
+        {{
+          eventDetails.event_description == null
+            ? "-"
+            : eventDetails.event_description
+        }}
       </p>
     </div>
     <div class="my-2 d-flex">
-      <label>Organizer Contact no.</label><span>{{eventDetails.organizer_contact_no}}</span>
+      <label class="laser">Organizers:</label
+      ><span>{{ eventDetails.organizer_contact_no }}</span>
     </div>
-    <button class="event-reg btn btn-primary mx-auto d-block my3" (click)="edit(eventadd)">Register</button>
+    <button *ngIf="eventDetails.event_count=='INDIVIDUAL'" class="laser-white event-reg btn btn-primary mx-auto d-block my3" (click)="registerForIndividual()">Register</button>
+    <button *ngIf="eventDetails.event_count=='TEAM'" class="laser-white event-reg btn btn-primary mx-auto d-block my3" (click)="registerForTeam()">Register</button>
+  </div>
+  <div class="alert alert-danger" role="alert" *ngIf="errorMessage!=null" style="margin-top: 10px">
+    {{errorMessage}}
+  </div>
+  <div class="alert alert-success" role="alert" *ngIf="errorMessage==null&&successMessage!=null" style="margin-top: 10px">
+    {{successMessage}}
   </div>
 </div>

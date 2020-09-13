@@ -1,5 +1,7 @@
 form.normal-form{
-  margin: 10px;
+  flex: auto;
+  margin: 2%;
+  overflow: auto;
 }
 .controls-container{
   width: 100%;
@@ -9,7 +11,8 @@ form.normal-form{
   width: 100%;
 }
 .button-row button{
-  margin: 3px;
+  margin: 1%;
+  position: relative;
 }
 .add-bottom-padding{
   padding-bottom: 5%;

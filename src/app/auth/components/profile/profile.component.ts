@@ -48,7 +48,7 @@ export class ProfileComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    dialogConfig.width = "60%";
+    dialogConfig.width = "70%";
     this.dialog.open(FormComponent, dialogConfig);
   }
   ngOnInit(): void {
@@ -61,7 +61,7 @@ export class ProfileComponent implements OnInit {
         if(response["http_status"]!="OK")
           this.errorMessage=response["status_message"];
         else {
-          this.cookieService.set("session_id",response["data"]);
+          this.cookieService.delete("session_id","/");
           this.validationService.isLoggedIn=false;
           this.validationService.stateChecked=true;
           this.successMessage="Logged out. Redirecting to home page";

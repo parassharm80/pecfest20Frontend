@@ -1,93 +1,42 @@
-@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
-
-.heading{
-    padding-top: 3vh;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40%;
-    min-width: 280px;
-    text-align: center;
+.heading {
+  display: block;
+  margin: auto;
+  width: 30%;
+  min-width: 280px;
 }
-.d{
-    background-color: transparent;
+.team-grid {
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
-
+.image {
+  width: 250px;
+  margin: 20px;
+}
 .overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: .3s ease;
-    background-color: white;
-  }
-  
-  .fa {
-    padding: 20px;
-    font-size: 30px;
-    width: 30px;
-    text-align: center;
-    text-decoration: none;
-    margin: 5px 2px;
-    border-radius: 50%;
-  }
-  .fa-instagram {
-    background: #125688;
-    color: white;
-  }
-  
-  .fa:hover {
-      opacity: 0.9;
-  }
-  
-  .fa-facebook {
-    background: #3B5998;
-    color: white;
-  }
-  .fa-linkedin {
-    background:#125688;
-    color: white;
-  }
-  .icon {
-    color: white;
-    font-size: 100px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;
-  }
-  
-  .fa-user:hover {
-    color: #eee;
-  }
-  .p{
-      padding: 30% 35% 30% 35%;
-  }
-  a{
-      padding: 200px;
-      width: 10px;
-      height: 10px;
-  }
-
-  .image:hover .overlay {
-    opacity: 0.9;
-  }
-  .fa {
-    padding: 5px 5px 5px 5px;
-    font-size: 34px;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    text-decoration: none;
-    margin: 5px 2px;
-    border-radius: 50%;
-  }
-  .image {
-    border-radius: 10%;
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.3s ease;
+  background-color: #343a40;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+.image:hover .overlay {
+  opacity: 0.9;
+}
+.card-body {
+  font-family: monospace;
+  color: rgb(116, 116, 116);
+}
+.card-body h4 {
+  font-family: titlium;
+  color: black;
+}
+.fa:hover {
+  color: white;
+  text-decoration: none;
+}
