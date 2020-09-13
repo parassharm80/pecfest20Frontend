@@ -17,7 +17,7 @@ const routes: Routes = [
       {path: 'profile', component: ProfileComponent},
       {path: 'register', component: RegisterComponent},
       {path: 'reset-password', component: ResetpasswordComponent, canActivate: [ValidationGuard]},
-      {path: 'change-password', component: ChangePasswordComponent},
+      {path: 'reset-password/:user_id/:verification_code', component: ChangePasswordComponent},
       {path: 'verify-email', component: VerifyEmailComponent}
     ]
   }
