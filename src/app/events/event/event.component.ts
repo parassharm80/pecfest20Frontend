@@ -37,8 +37,8 @@ export class EventComponent implements OnInit {
     });
   }
   public eventadd: EventsType;
-  edit(eventadd){
-    this.formComponent.populateForm(eventadd);
+  registerForTeam(){
+    this.formComponent.populateForm(this.eventDetails);
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;

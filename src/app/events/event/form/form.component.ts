@@ -2,7 +2,7 @@ import {Component, Injectable, OnInit} from '@angular/core';
 import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {formService} from "./form.service";
 import {MatSnackBar, MatSnackBarConfig} from "@angular/material/snack-bar";
-import {FormGroup} from "@angular/forms";
+import {FormArray, FormControl, FormGroup, Validators} from '@angular/forms';
 import {eventService} from "../event.service";
 
 @Component({
@@ -12,71 +12,66 @@ import {eventService} from "../event.service";
 })
 @Injectable({ providedIn: 'root'})
 export class FormComponent implements OnInit {
+  errorMessage=null;
+  successMessage=null;
 
   constructor(private eventService: eventService,private dialog: MatDialog,private snackBar: MatSnackBar,
-              private formService: formService, private dialogRef: MatDialogRef<FormComponent>) { }
-  public form: FormGroup = this.formService.form;
+              public formService: formService, private dialogRef: MatDialogRef<FormComponent>) { }
   config: MatSnackBarConfig = {
     duration: 3000,
     horizontalPosition: "right",
     verticalPosition: "top"
   };
-
-  initializeFormGroup(){
-    this.formService.form.setValue({
-      $key: null,
-      username1: '',
-      username2: '',
-      username3: '',
-      username4: '',
-      teamname: '',
-    });
-  }
-
+  maxLimitMessage=null;
   success(msg){
     this.snackBar.open(msg,'',this.config);
   }
 
   onClear(){
-    this.form.reset();
-    this.initializeFormGroup();
+    this.maxLimitMessage=null;
+    this.formService.form.reset();
     this.success('::Cleared Successfully');
   }
 
   onClose(){
-    this.form.reset();
-    this.initializeFormGroup();
+    this.maxLimitMessage=null;
+    this.formService.form.reset();
     this.dialogRef.close();
   }
-  populateForm(data) {
-    this.form.setValue({
-      $key: null,
-      username1: '',
-      username2: '',
-      username3: '',
-      username4: '',
-      teamname: '',
-    });
+  populateForm(eventDetails) {
+    this.maxLimitMessage=null;
+    this.formService.createForm(eventDetails);
   }
-
-  newSubmit() {
-    if(this.form.valid) {
-      if (this.form.get('$key').value) {
-        // this.eventService.editConfigurations(this.form.get('$key').value, this.form.value)
-        //   .subscribe(() => {
-        //  Enter call to event service here
-        //
-        //   });
-      }
-      this.form.reset();
-      this.initializeFormGroup();
-      this.success('::Submitted Successfully');
-      this.onClose();
-    }
-  }
-
 
   ngOnInit(): void {
   }
 
+  addTeamMember() {
+    this.maxLimitMessage=this.formService.addTeamMember();
+  }
+
+  onSubmit() {
+    this.errorMessage=null;
+    this.successMessage=null;
+    let mySet:Set<any>=new Set<any>();
+    let array:Array<string>=[];
+    for(let teamMemberControl of this.formService.form.controls['team_members']['controls']){
+      let username=teamMemberControl.value;
+      username=username.toUpperCase();
+      if(mySet.has(username))
+      {
+        this.errorMessage="No two PECFEST usernames could be same";
+        return ;
+      }
+      array.push(username);
+      mySet.add(username);
+    }
+    if(this.formService.form.valid)
+    this.formService.registerTeam(array,this.formService.form.controls["teamname"].value).subscribe(response=>{
+      if(response["http_status"]!="OK")
+        this.errorMessage=response["status_message"];
+      else
+        this.successMessage="Successfully Registered";
+    });
+  }
 }
