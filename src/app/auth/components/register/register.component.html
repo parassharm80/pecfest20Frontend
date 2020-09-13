@@ -1,83 +1,103 @@
-<div id = "container">
-  <div id="text">
-    <h1>Register</h1>
-  </div>
+<div class="event-title">
+  <h1 class="sheppard">Register</h1>
 </div>
 <div class="row">
   <div class="col-md-6 offset-md-3 mt-4">
     <form [formGroup]="registrationForm">
       <div class="form-group">
-        <label for="registerfirstname">First Name</label>
-        <input type="text"
-               name="firstname"
-               ngModel
-               required
-               class="form-control"
-               id="registerfirstname"
-               placeholder="Enter first name" formControlName="first_name">
+        <label class="laser" for="registerfirstname">First Name</label>
+        <input
+          type="text"
+          name="firstname"
+          ngModel
+          required
+          class="form-control"
+          id="registerfirstname"
+          placeholder="Enter first name"
+          formControlName="first_name"
+        />
       </div>
       <div class="form-group">
-        <label for="registerlastname">Last Name</label>
-        <input type="text"
-               name="lastname"
-               ngModel
-               required
-               class="form-control"
-               id="registerlastname"
-               placeholder="Enter last name" formControlName="last_name">
+        <label class="laser" for="registerlastname">Last Name</label>
+        <input
+          type="text"
+          name="lastname"
+          ngModel
+          required
+          class="form-control"
+          id="registerlastname"
+          placeholder="Enter last name"
+          formControlName="last_name"
+        />
       </div>
       <div class="form-group">
-        <label for="registerPassword">Contact No.</label>
-        <input type="number"
-               name="contact"
-               ngModel
-               required
-               class="form-control"
-               id="contact"
-               placeholder="Enter your Contact number" formControlName="contact_no">
+        <label class="laser" for="registerPassword">Contact No.</label>
+        <input
+          type="number"
+          name="contact"
+          ngModel
+          required
+          class="form-control"
+          id="contact"
+          placeholder="Enter your Contact number"
+          formControlName="contact_no"
+        />
       </div>
       <div class="form-group">
-        <label for="registerEmail">Email</label>
-        <input type="email"
-               name="email"
-               ngModel
-               required
-               class="form-control"
-               id="registerEmail"
-               placeholder="Enter email" formControlName="email">
+        <label class="laser" for="registerEmail">Email</label>
+        <input
+          type="email"
+          name="email"
+          ngModel
+          required
+          class="form-control"
+          id="registerEmail"
+          placeholder="Enter email"
+          formControlName="email"
+        />
       </div>
       <div class="form-group">
-        <label for="registerPassword">Password</label>
-        <input type="password"
-               name="password"
-               ngModel
-               required
-               class="form-control"
-               id="registerPassword"
-               placeholder="Password" formControlName="password">
+        <label class="laser" for="registerPassword">Password</label>
+        <input
+          type="password"
+          name="password"
+          ngModel
+          required
+          class="form-control"
+          id="registerPassword"
+          placeholder="Password"
+          formControlName="password"
+        />
       </div>
       <div class="form-group">
-        <label for="registerPassword">College</label>
-        <input type="text"
-               name="college"
-               ngModel
-               required
-               class="form-control"
-               id="registerCollege"
-               placeholder="Enter your College Name" formControlName="college">
+        <label class="laser" for="registerPassword">College</label>
+        <input
+          type="text"
+          name="college"
+          ngModel
+          required
+          class="form-control"
+          id="registerCollege"
+          placeholder="Enter your College Name"
+          formControlName="college"
+        />
       </div>
       <div class="form-group">
-        <label for="registerPassword">Year of Study</label>
-        <input type="text"
-               name="yearofstudy"
-               ngModel
-               required
-               class="form-control"
-               id="registerYear"
-               placeholder="Enter your Year" formControlName="year_of_education">
+        <label class="laser" for="registerPassword">Year of Study</label>
+        <input
+          type="text"
+          name="yearofstudy"
+          ngModel
+          required
+          class="form-control"
+          id="registerYear"
+          placeholder="Enter your Year"
+          formControlName="year_of_education"
+        />
       </div>
-      <button type="submit" (click)="onSubmit()"
-              class="btn btn-primary">Register <i class="fas fa-sign-in-alt"></i></button>
+      <button type="submit" (click)="onSubmit()" class="btn btn-primary laser-white">
+        Register <i class="fas fa-sign-in-alt"></i>
+      </button>
     </form>
   </div>
 </div>

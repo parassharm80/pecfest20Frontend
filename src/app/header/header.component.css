@@ -1,28 +1,19 @@
-
-.logo{
-    width: 100px;
-    height: 100px;
+.header {
+  padding: 0.5vh;
 }
-.bt{
-    padding: 1px 1px 1px 1px;
-    border-color: transparent;
-    background-color: transparent;
+.logo {
+  width: 100px;
+  height: 100px;
 }
-.text{
-    height: 20%;
-    color: whitesmoke;
-    font-size: 25px;
-    font-family:  quantico;
-    font-weight: 2000;
+.hbtn {
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
 }
-.gap{
-    padding-top: 0.5vh;
-    padding-left: 3vh;
+.text {
+  color: whitesmoke;
+  font-size: 150%;
+  font-family: 'quantico';
+  font-style: italic;
 }
-
-@font-face {
-    font-family: 'quantico';
-    src: url('../../assets/fonts/quantico.ttf');
-
-    font-style: italic;
-  }

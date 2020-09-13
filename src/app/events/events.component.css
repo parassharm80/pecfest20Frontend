@@ -1,36 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Mrs+Sheppards&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Pacifico");
 a {
   text-decoration: none;
-  color: black;
+  color: whitesmoke;
 }
 
 li {
   list-style: none;
-  font-size: 3vmax;
-}
-
-#event-title {
-  text-align: center;
-  margin: 3% 3% 3% 3%;
-}
-
-#event-title h1 {
-  transform: rotate(-10deg);
-  color: #ff6666;
-  font-family: "Mrs Sheppards", cursive;
-  font-size: 700%;
-  line-height: 1;
-  text-shadow: 5px 5px 0 #6699ff, 10px 10px 0 #00131e;
-}
-
-#event-title h2 {
-  transform: rotate(-5deg);
-  color: #ff6666;
-  font-family: "Mrs Sheppards", cursive;
-  font-size: 700%;
-  line-height: 1;
-  text-shadow: 5px 5px 0 #6699ff, 10px 10px 0 #00131e;
 }
 
 .events-list{
@@ -100,19 +75,9 @@ li {
 .events-info h3 {
   font-family: "Pacifico", cursive;
   font-weight: 400;
-  color: white;
-  font-size: 42px;
+  font-size: 300%;
   text-transform: capitalize;
   margin: 0 30px;
-  padding: 110px 0 0 0;
+  padding-top: 170px;
   line-height: 1.5;
-}
-
-.events-info p {
-  font-family: "Source Sans Pro", sans-serif;
-  color: white;
-  padding: 4px 5px;
-  margin: 0 30px;
-  font-size: 14px;
-  line-height: 2;
 }

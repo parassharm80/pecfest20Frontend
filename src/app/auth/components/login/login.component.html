@@ -1,43 +1,71 @@
-<div id = "container">
-  <div id="text">
-    <h1>Login</h1>
-  </div>
+<div class="event-title">
+  <h1 class="sheppard">Login</h1>
 </div>
 <div class="row">
   <div class="col-md-6 offset-md-3 mt-4">
-    <form [formGroup]="logInForm" >
+    <form [formGroup]="logInForm">
       <div class="form-group">
-        <label for="loginUsername">Email</label>
-        <input type="text"
-               class="form-control"
-               id="loginUsername"
-               placeholder="Enter Email ID" formControlName="email" (keyup)="setErrorToNull()">
-        <span class="text-danger"
-              *ngIf="(logInForm.controls.email.touched || submitted)&& logInForm.controls.email.errors?.required&& logInForm.controls.email.errors?.email">
-            Enter a valid email address
+        <label class="laser" for="loginUsername">Email</label>
+        <input
+          type="text"
+          class="form-control"
+          id="loginUsername"
+          placeholder="Enter Email ID"
+          formControlName="email"
+          (keyup)="setErrorToNull()"
+        />
+        <span
+          class="text-danger"
+          *ngIf="
+            (logInForm.controls.email.touched || submitted) &&
+            logInForm.controls.email.errors?.required &&
+            logInForm.controls.email.errors?.email
+          "
+        >
+          Enter a valid email address
         </span>
       </div>
       <div class="form-group">
-        <label for="loginPassword">Password</label>
-        <input type="password"
-               class="form-control"
-               id="loginPassword"
-               placeholder="Password" formControlName="password" (keyup)="setErrorToNull()">
-        <span class="text-danger"
-              *ngIf="(logInForm.controls.password.touched || submitted) && logInForm.controls.password.errors?.required">
-            Required field
+        <label class="laser" for="loginPassword">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="loginPassword"
+          placeholder="Password"
+          formControlName="password"
+          (keyup)="setErrorToNull()"
+        />
+        <span
+          class="text-danger"
+          *ngIf="
+            (logInForm.controls.password.touched || submitted) &&
+            logInForm.controls.password.errors?.required
+          "
+        >
+          Required field
         </span>
       </div>
-      <div class="form-group form-check">
-        <a [routerLink]="['/reset-password']" class = "link">Forgot Password</a>
+      <div class="form-group">
+        <a [routerLink]="['/reset-password']" class="link laser-white">Forgot Password</a>
       </div>
-      <button type="submit" (click)="onLogIn()"
-              class="btn btn-primary">Login <i class="fas fa-sign-in-alt" ></i></button>
-      <div class="alert alert-danger" role="alert" *ngIf="errorMessage!=null" style="margin-top: 10px">
-        {{errorMessage}}
+      <button type="submit" (click)="onLogIn()" class="btn btn-primary laser-white">
+        Login <i class="fas fa-sign-in-alt"></i>
+      </button>
+      <div
+        class="alert alert-danger"
+        role="alert"
+        *ngIf="errorMessage != null"
+        style="margin-top: 10px"
+      >
+        {{ errorMessage }}
       </div>
-      <div class="alert alert-success" role="alert" *ngIf="errorMessage==null&&successMessage!=null" style="margin-top: 10px">
-       Log In Successful.Redirecting to Home page.
+      <div
+        class="alert alert-success"
+        role="alert"
+        *ngIf="errorMessage == null && successMessage != null"
+        style="margin-top: 10px"
+      >
+        Log In Successful.Redirecting to Home page.
       </div>
     </form>
   </div>

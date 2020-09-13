@@ -1,48 +1,36 @@
-<html>
-<div class="loadingio-spinner-bean-eater-74c4gotmja5" *ngIf="isFetchingProfile">
-  <div class="ldio-nvnx6loo9jr">
-    <div>
-      <div>
-      </div>
-      <div>
-      </div>
-      <div>
-      </div>
-    </div>
-    <div>
-      <div>
-      </div>
-      <div>
-      </div>
-      <div>
-      </div>
-    </div>
+<div class="event-title">
+  <h1 class="sheppard">{{ title }}</h1>
+</div>
+<div class="box">
+  <label class="laser">PECFEST Username:</label><h1>{{ profile.pec_fest_id }}</h1>
+  <label class="laser">Full Name:</label><h2>{{ profile.full_name }}</h2>
+  <label class="laser">Email:</label><h2>{{ profile.email }}</h2>
+  <label class="laser">College:</label><h2>{{ profile.college_name }}</h2>
+  <label class="laser">Year:</label><h2>{{ profile.year_of_education }}</h2>
+  <label class="laser">Contact:</label><h2>{{ profile.contact_no }}</h2>
+  <label class="laser">Gender:</label><h2>{{ profile.gender }}</h2>
+
+  <button type="submit" (click)="onClick()" class="btn btn-primary laser-white">
+    LOGOUT <i class="fas fa-sign-in-alt"></i>
+  </button>
+  <button type="submit" class="btn btn-primary laser-white" (click)="edit(profile)">
+    EDIT <i class="fas fa-sign-in-alt"></i>
+  </button>
+
+  <div
+    class="alert alert-danger"
+    role="alert"
+    *ngIf="errorMessage != null"
+    style="margin-top: 10px"
+  >
+    {{ errorMessage }}
+  </div>
+  <div
+    class="alert alert-success"
+    role="alert"
+    *ngIf="errorMessage == null && successMessage != null"
+    style="margin-top: 10px"
+  >
+    {{ successMessage }}
   </div>
 </div>
-<div *ngIf="!isFetchingProfile">
-  <div id="event-title">
-    <h1>{{title}}</h1>
-  </div>
-  <div class="box">
-    <h1>PECFEST Username: {{profile.pec_fest_id}}</h1>
-    <h2>Full Name: {{profile.full_name}}</h2>
-    <h2>Email: {{profile.email}}</h2>
-    <h2>College: {{profile.college_name}}</h2>
-    <h2>Year: {{profile.year_of_education}}</h2>
-    <h2>Contact: {{profile.contact_no}}</h2>
-    <h2>Gender: {{profile.gender}}</h2>
-
-    <button type="submit" (click)="onClick()"
-            class="btn btn-primary">LOGOUT <i class="fas fa-sign-in-alt"></i></button>
-    <button type="submit"
-            class="btn btn-primary" (click)="edit(profile)">EDIT <i class="fas fa-sign-in-alt"></i></button>
-
-  <div class="alert alert-danger" role="alert" *ngIf="errorMessage!=null" style="margin-top: 10px">
-    {{errorMessage}}
-  </div>
-  <div class="alert alert-success" role="alert" *ngIf="errorMessage==null&&successMessage!=null" style="margin-top: 10px">
-    {{successMessage}}
-  </div>
-  </div>
-</div>
-</html>

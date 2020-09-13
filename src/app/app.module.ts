@@ -13,11 +13,13 @@ import {CommonModule} from "@angular/common";
 import { HomeComponent } from './home/home.component';
 import {HttpClientModule} from '@angular/common/http';
 import {CookieService} from 'ngx-cookie-service';
+import { PacmanComponent } from './pacman/pacman.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    PacmanComponent
   ],
   imports: [
     CommonModule,

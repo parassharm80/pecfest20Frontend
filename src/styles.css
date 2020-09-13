@@ -1,5 +1,94 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~bootstrap/dist/css/bootstrap.css';
-body,.main-container{
+@import url("~bootstrap/dist/css/bootstrap.css");
+@import url("https://fonts.googleapis.com/css2?family=Mrs+Sheppards&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+body,
+.main-container {
   min-height: 100vh;
+  color: whitesmoke !important;
+}
+@font-face {
+  font-family: "quantico";
+  src: url("./assets/fonts/quantico.ttf") format("truetype");
+}
+@font-face {
+  font-family: "titlium";
+  src: url("./assets/fonts/titlium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "retro";
+  src: url("./assets/fonts/emulogic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "laser";
+  src: url("./assets/fonts/Lazer84.ttf") format("truetype");
+}
+.laser {
+  font-family: "laser";
+  letter-spacing: 2px;
+  padding: 0 5px;
+  background: -webkit-linear-gradient(#ff6666, #f5ff66);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.laser-white {
+  font-family: "laser";
+  letter-spacing: 2px;
+  padding: 0 5px;
+}
+.event-title {
+  text-align: center;
+  margin: 3%;
+}
+.sheppard {
+  transform: rotate(-5deg);
+  color: #f5ff66;
+  font-family: "Mrs Sheppards", cursive;
+  font-size: 700%;
+  line-height: 1;
+  text-transform: capitalize;
+  text-shadow: 3px 3px 0 #ff6666, 6px 6px 0 #00131e;
+}
+.fa {
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  color: black;
+  border-radius: 50%;
+  background-color: white;
+  text-decoration: none;
+  transition: 0.5s;
+}
+.fa-facebook:hover {
+  background-color: #3b5998;
+}
+.fa-linkedin:hover {
+  background-color: #007bb5;
+}
+.fa-instagram:hover {
+  background: #d6249f;
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+}
+/* .fa-whatsapp:hover {
+  background-color: #25d366;
+} */
+.fa-youtube:hover {
+  background: #bb0000;
+}
+
+@media(max-width: 600px){
+  .sheppard {
+  font-size: 500%;
+}
 }
