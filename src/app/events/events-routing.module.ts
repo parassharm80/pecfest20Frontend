@@ -79,7 +79,7 @@ const routes: Routes = [
     path: ':event_type/:event_sub_type/:id/edit',
     component: FormComponent,
   },
-  {},
+
 ];
 
 @NgModule({

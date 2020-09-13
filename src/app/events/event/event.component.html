@@ -34,6 +34,13 @@
     <div class="my-2 d-flex">
       <label>Organizer Contact no.</label><span>{{eventDetails.organizer_contact_no}}</span>
     </div>
-    <button class="event-reg btn btn-primary mx-auto d-block my3" (click)="edit(eventadd)">Register</button>
+    <button *ngIf="eventDetails.event_count=='INDIVIDUAL'" class="event-reg btn btn-primary mx-auto d-block my3" (click)="registerForIndividual()">Register</button>
+    <button *ngIf="eventDetails.event_count=='TEAM'" class="event-reg btn btn-primary mx-auto d-block my3" (click)="registerForTeam()">Register</button>
+  </div>
+  <div class="alert alert-danger" role="alert" *ngIf="errorMessage!=null" style="margin-top: 10px">
+    {{errorMessage}}
+  </div>
+  <div class="alert alert-success" role="alert" *ngIf="errorMessage==null&&successMessage!=null" style="margin-top: 10px">
+    {{successMessage}}
   </div>
 </div>

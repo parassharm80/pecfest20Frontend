@@ -14,6 +14,8 @@ export class EventComponent implements OnInit {
   eventType;
   eventSubType;
    eventDetails=null;
+  errorMessage=null;
+  successMessage=null;
   constructor(private formComponent: FormComponent,public dialog: MatDialog,private route: ActivatedRoute,private eventService:EventService) {
     this.eventService.isFetchingEvents=true;
 
@@ -35,8 +37,8 @@ export class EventComponent implements OnInit {
     });
   }
   public eventadd: EventsType;
-  edit(eventadd){
-    this.formComponent.populateForm(eventadd);
+  registerForTeam(){
+    this.formComponent.populateForm(this.eventDetails);
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
@@ -48,6 +50,16 @@ export class EventComponent implements OnInit {
 
   }
 
+  registerForIndividual() {
+    this.errorMessage=null;
+    this.successMessage=null
+    this.eventService.registerIndividual(this.eventDetails.event_id).subscribe(response=>{
+      if(response["http_status"]!="OK")
+        this.errorMessage=response["status_message"];
+      else
+        this.successMessage="Registration for "+`${this.eventDetails.event_name}`+" is successful."
+    });
+  }
 }
 export interface EventsType {
   username1: String,
