@@ -4,9 +4,18 @@
   z-index: -10;
   background: url("../assets/events/background.png") no-repeat center center;
   background-attachment: fixed;
-  -webkit-background-size: auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+@media screen and (max-width: 650px) {
+  .bg-img{
+    background-size: auto;
+    -webkit-background-size: auto;
   -moz-background-size: auto;
   -o-background-size: auto;
-  background-size: auto;
-  min-height: 100vh;
+  }
 }

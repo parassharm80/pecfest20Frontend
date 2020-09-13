@@ -43,7 +43,7 @@ hr {
   width: 40%;
 }
 .name {
-  font-size: 20px;
+  font-size: 17px;
   font-family: "retro";
 }
 .title {
@@ -59,6 +59,21 @@ hr {
   color: white;
   text-decoration: none;
 }
+.fa{
+  width: 43px;
+  height: 43px;
+}
+.fa-facebook{
+  font-size: 25px;
+}
+.fa-linkedin{
+  font-size: 25px;
+}
+
+.fa-instagram{
+  font-size: 25px;
+}
+
 
 @media screen and (max-width: 650px) {
   .team-item {

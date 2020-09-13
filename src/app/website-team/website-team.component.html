@@ -18,9 +18,9 @@
       alt="{{ member.name }}"
     />
     <div class="overlay d-flex">
-      <a class="fa fa-facebook" href="{{ member.fb }}"></a>
-      <a class="fa fa-linkedin" href="{{ member.linked }}"></a>
-      <a class="fa fa-instagram" href="{{ member.insta }}"></a>
+      <a *ngIf="member.fb" class="fa fa-facebook" href="{{ member.fb }}"></a>
+      <a *ngIf="member.linked" class="fa fa-linkedin" href="{{ member.linked }}"></a>
+      <a *ngIf="member.insta" class="fa fa-instagram" href="{{ member.insta }}"></a>
     </div>
     <div class="card-body text-center">
       <h4>
