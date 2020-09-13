@@ -1,7 +1,7 @@
 <div class="event-title">
   <h1 class="sheppard">{{ title }}</h1>
 </div>
-<div class="box">
+<div class="box" *ngIf="!isFetchingProfile">
   <label class="laser">PECFEST Username:</label><h1>{{ profile.pec_fest_id }}</h1>
   <label class="laser">Full Name:</label><h2>{{ profile.full_name }}</h2>
   <label class="laser">Email:</label><h2>{{ profile.email }}</h2>
