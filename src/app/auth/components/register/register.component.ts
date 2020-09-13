@@ -17,8 +17,9 @@ export class RegisterComponent implements OnInit {
               private snackBar: MatSnackBar,private dialogRef: MatDialogRef<RegisterComponent>) {
     this.registrationForm=this.formBuilder.group({first_name:['',Validators.required],last_name:['',Validators.required],
     contact_no:['',Validators.minLength(10)],
-    email:['',Validators.email],password:['',Validators.required],college:['',Validators.required],
-    year_of_education:['',Validators.required]});
+    email:['',Validators.email],password:['',Validators.required],college_name:['',Validators.required],
+    year_of_education:['',Validators.required],
+    gender:['',Validators.required]});
   }
   config: MatSnackBarConfig = {
     duration: 3000,
@@ -42,6 +43,7 @@ export class RegisterComponent implements OnInit {
           }
           else
           {
+            this.snackBar.open("Check your Email for verification",'',this.config);
             // redirecting for verification
           }
         },
