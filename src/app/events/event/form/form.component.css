@@ -1,5 +1,7 @@
 form.normal-form{
-  margin: 10px;
+  flex: auto;
+  margin: 2%;
+  overflow: auto;
 }
 .controls-container{
   width: 100%;
