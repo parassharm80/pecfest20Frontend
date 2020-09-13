@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {RegisterService} from './register.service';
+import {MatSnackBar, MatSnackBarConfig} from "@angular/material/snack-bar";
+import {MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-register',
@@ -11,12 +13,19 @@ export class RegisterComponent implements OnInit {
   registrationForm: FormGroup;
   submitted: boolean=false;
   errorMessage=null;
-  constructor(private formBuilder:FormBuilder,private regService:RegisterService) {
+  constructor(private formBuilder:FormBuilder,private regService:RegisterService,
+              private snackBar: MatSnackBar,private dialogRef: MatDialogRef<RegisterComponent>) {
     this.registrationForm=this.formBuilder.group({first_name:['',Validators.required],last_name:['',Validators.required],
     contact_no:['',Validators.minLength(10)],
     email:['',Validators.email],password:['',Validators.required],college:['',Validators.required],
     year_of_education:['',Validators.required]});
   }
+  config: MatSnackBarConfig = {
+    duration: 3000,
+    horizontalPosition: "right",
+    verticalPosition: "top"
+  };
+
 
   ngOnInit(): void {
   }
@@ -27,8 +36,10 @@ export class RegisterComponent implements OnInit {
     if(this.registrationForm.valid){
       let hashedPassword=this.regService.hashPassword(this.registrationForm.controls['password'].value);
       this.regService.sendRegistrationReqToBackend(this.registrationForm,hashedPassword).subscribe(response=>{
-          if(response["http_status"]!="OK")
-            this.errorMessage=response["status_message"];
+          if(response["http_status"]!="OK") {
+            this.errorMessage = response["status_message"];
+            this.snackBar.open(this.errorMessage,'',this.config);
+          }
           else
           {
             // redirecting for verification
@@ -38,6 +49,5 @@ export class RegisterComponent implements OnInit {
           this.errorMessage=error.toString();
         });
     }
-    console.log(this.registrationForm);
   }
 }
