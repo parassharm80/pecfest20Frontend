@@ -34,6 +34,10 @@ const routes: Routes = [
     loadChildren: () => import('./sponser/sponser.module').then(m => m.SponsorModule)
   },
   {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+  },
+  {
     path: '**',
     redirectTo: ''
   }

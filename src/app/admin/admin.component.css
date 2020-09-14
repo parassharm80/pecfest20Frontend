@@ -1,0 +1,38 @@
+table {
+  width: 100%;
+}
+
+form.normal-form{
+  margin: 10px;
+}
+.controls-container{
+  width: 100%;
+  padding: 5%;
+}
+.controls-container > * {
+  width: 100%;
+}
+.button-row button{
+  margin: 5px;
+}
+.add-bottom-padding{
+  padding-bottom: 10px;
+}
+mat-radio-group mat-radio-button{
+  margin-left: 5px;
+}
+.separate{
+  margin-top: 30px;
+}
+.search-form-field{
+  font-size: 14px;
+  width: 90%;
+  padding-left: 5px;
+}
+mat-cell, .mat-cell{
+  padding: 5px 5px 5px 0;
+}
+h1{
+  text-align: center;
+  font-weight: bold;
+}
