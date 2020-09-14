@@ -38,7 +38,7 @@ export class ChangePasswordComponent implements OnInit {
   changePasswordRequest() {
     this.errorMessage=null;
     this.successMessage=null;
-    console.log(this.changePasswordForm);
+
     if(this.changePasswordForm.valid&&(this.changePasswordForm.controls["password"].value==this.changePasswordForm.controls["confirm_password"].value))
       this.http.post(this.url,{user_id:this.userId,verification_code:this.verificationCode,password:sha512(this.changePasswordForm.controls["password"].value)}).subscribe(
         response=>{
