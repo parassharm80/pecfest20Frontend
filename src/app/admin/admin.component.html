@@ -8,7 +8,7 @@
 
       </button>
       <mat-form-field class = "search-form-field" floatLabel="never">
-        <input matInput  [(ngModel)]="searchKey" name = "search" (keyup)="applyFilter()" placeholder="Search" autocomplete="off">
+        <input matInput  [(ngModel)]="searchKey" name = "search" (keyup)="applyFilter()" placeholder="Search" autocomplete="off" style="background-color: white;color: darkslateblue;">
         <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClick()">
           <mat-icon>close</mat-icon>
         </button>
