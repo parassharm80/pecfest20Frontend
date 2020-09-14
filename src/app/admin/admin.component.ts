@@ -6,22 +6,29 @@ import {MatTableDataSource} from "@angular/material/table";
 import {AdminService} from "./admin.service";
 import {ActivatedRoute} from "@angular/router";
 import {FormComponent} from "./form/form.component";
+import {animate, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css']
+  styleUrls: ['./admin.component.css'],
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed', style({height: '0px', minHeight: '0'})),
+      state('expanded', style({height: '*'})),
+      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+    ]),
+  ],
 })
 export class AdminComponent implements OnInit {
 
   displayedColumns: string[] = ['event_id','event_name','event_type','event_count','organizing_club',
-    'organizer_contact_no','min_number_of_participants','max_number_of_participants'
-    ,'event_start_date_and_time','event_end_date_and_time','event_description'
-    ,'prize_money_worth','venue','rules','Edit','Delete'];
+    'organizer_contact_no','venue','prize_money_worth','Edit','Delete'];
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator
   public searchKey: string;
   public listData=null;
+  expandedElement=null;
 
 
   constructor(private route: ActivatedRoute,public dialog: MatDialog,private adminService: AdminService,
@@ -74,7 +81,6 @@ export class AdminComponent implements OnInit {
 
   ngOnInit(){
     this.refresh();
-
   }
 
 }
