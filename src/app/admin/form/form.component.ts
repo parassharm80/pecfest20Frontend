@@ -3,6 +3,7 @@ import {MatSnackBar, MatSnackBarConfig} from "@angular/material/snack-bar";
 import {FormService} from "./form.service";
 import {FormGroup} from "@angular/forms";
 import {MatDialogRef} from "@angular/material/dialog";
+import {AdminService} from '../admin.service';
 
 @Component({
   selector: 'app-form',
@@ -13,7 +14,7 @@ import {MatDialogRef} from "@angular/material/dialog";
 export class FormComponent implements OnInit {
 
   constructor(private formService: FormService,private snackBar: MatSnackBar,
-              private dialogRef: MatDialogRef<FormComponent>) { }
+              private dialogRef: MatDialogRef<FormComponent>,private adminService:AdminService) { }
 
   public form: FormGroup = this.formService.form;
 
@@ -93,10 +94,15 @@ export class FormComponent implements OnInit {
       }
       else
       {
-        //ADD Functionality here
+        this.adminService.addEvent(this.form).subscribe(response=>{
+          if(response["http_status"]=="OK")
+            this.success('::Added Successfully');
+          else
+            this.success('Oops! Some error occurred');
+        })
 
       }
-      this.success('::Submitted Successfully');
+
     }
   }
 
