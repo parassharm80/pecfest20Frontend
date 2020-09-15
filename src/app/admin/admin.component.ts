@@ -73,7 +73,6 @@ export class AdminComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.width = "60%";
     this.dialog.open(FormComponent, dialogConfig);
-    this.refresh();
   }
 
   onEdit(row){
@@ -90,11 +89,11 @@ export class AdminComponent implements OnInit {
     if(confirm('Are you sure to delete this record?')){
       return this.adminService.deleteEvent(eventDetails.event_id).subscribe(response=>{
         if(response["http_status"]=="OK")
-          this.snackBar.open("Deleted Successfully",'',this.config);
+          this.snackBar.open("Deleted Successfully. Refresh your page",'',this.config);
         else
           this.snackBar.open("Oops! Some error occurred",'',this.config);
 
-      });
+      },error =>this.snackBar.open("Oops! Some error occurred",'',this.config) );
     }
 
   }
