@@ -45,9 +45,13 @@
           <a class="nav-link"
               [routerLink]="['team']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="hbtn"><p class="text">CONTACT US</p></button></a>
         </li>
-        <li class="nav-item">
+        <li *ngIf="view==true" class="nav-item">
           <a class="nav-link"
              [routerLink]="['admin']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="hbtn"><p class="text">ADMIN</p></button></a>
+        </li>
+        <li *ngIf="view==true" class="nav-item">
+          <a class="nav-link"
+             [routerLink]="['admin']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="hbtn"><p class="text">EDIT TEAM</p></button></a>
         </li>
       </ul>
     </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ValidationService} from '../validation/validation.service';
+import {HeaderService} from "./header.service";
 
 @Component({
   selector: 'app-header',
@@ -8,9 +9,17 @@ import {ValidationService} from '../validation/validation.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public validationGuardService:ValidationService) { }
+  constructor(public validationGuardService:ValidationService, private headerService: HeaderService) { }
 
   ngOnInit(): void {
+    this.access();
   }
-
+  view = false;
+  access() {
+    this.headerService.getEventDetails().subscribe(
+      (response) => {
+        if(response["http_status"]=="OK")
+          this.view = true;
+      })
+  }
 }
