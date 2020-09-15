@@ -6,7 +6,7 @@
   <hr />
   <div class="section text-center d-flex">
     <div *ngFor="let i of coreTeam" class="d-flex team-item">
-      <img
+      <img *ngIf="i.photo"
         src="../../assets/CONTACT US/{{ i.photo }}"
         class="avatar rounded z-depth-1"
       />
