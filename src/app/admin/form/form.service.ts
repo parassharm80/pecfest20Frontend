@@ -18,5 +18,6 @@ export class FormService{
     prize_money_worth: new FormControl('', Validators.required),
     venue: new FormControl('', Validators.required),
     rules: new FormControl('', Validators.required),
+    event_banner_image_url:new FormControl('', Validators.required),
   })
 }

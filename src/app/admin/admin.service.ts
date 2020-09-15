@@ -4,11 +4,11 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 @Injectable({providedIn: 'root'})
 export class AdminService{
-  private url="http://localhost:8080/event/all"
+  private url="http://localhost:8080/event/admin"
   constructor(private http: HttpClient,private cookieService:CookieService) {
   }
   getEventDetails():Observable<any> {
-    return this.http.get(this.url);
+    return this.http.get(this.url,{headers:this.getHttpHeader()});
   }
 
   private getHttpHeader() {
@@ -17,5 +17,8 @@ export class AdminService{
   }
 
 
+  deleteEvent(event_id: any) :Observable<any>{
+    return this.http.delete(this.url+`/${event_id}`,{headers:this.getHttpHeader()});
+  }
 }
 

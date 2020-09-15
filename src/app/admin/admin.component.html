@@ -95,20 +95,18 @@
           (click)="expandedElement = expandedElement === element ? null : element">
       </tr>
       <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
-      <div
-        class="alert alert-info"
-        role="alert"
-        *ngIf="listData==null||listData.length==0"
-        style="margin-top: 10px">
-        Oops! No Events
-      </div>
+
     </table>
     <mat-paginator
       [pageSize]="10"
       [pageSizeOptions]="[5, 10, 25, 100, 1000]" showFirstLastButtons>
     </mat-paginator>
-
-
-
+    <div
+      class="alert alert-danger"
+      role="alert"
+      *ngIf="message!=null"
+      style="margin-top: 10px">
+      {{message}}
+    </div>
   </div>
 </div>

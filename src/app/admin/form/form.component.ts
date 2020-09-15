@@ -24,6 +24,7 @@ export class FormComponent implements OnInit {
     horizontalPosition: "right",
     verticalPosition: "top"
   };
+  categories=["TECHNICAL","CULTURAL","WORKSHOP","LECTURE"];
 
   initializeFormGroup(){
     this.formService.form.setValue({
@@ -41,6 +42,7 @@ export class FormComponent implements OnInit {
       prize_money_worth:'',
       venue: '',
       rules:'',
+      event_banner_image_url:''
     });
   }
 
@@ -78,6 +80,7 @@ export class FormComponent implements OnInit {
       prize_money_worth: data.prize_money_worth,
       venue: data.venue,
       rules: data.rules,
+      event_banner_image_url:data.event_banner_image_url
     });
 
   }
@@ -93,10 +96,7 @@ export class FormComponent implements OnInit {
         //ADD Functionality here
 
       }
-      this.form.reset();
-      this.initializeFormGroup();
       this.success('::Submitted Successfully');
-      this.onClose();
     }
   }
 

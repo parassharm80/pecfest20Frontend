@@ -7,6 +7,7 @@ import {AdminService} from "./admin.service";
 import {ActivatedRoute} from "@angular/router";
 import {FormComponent} from "./form/form.component";
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import {MatSnackBar, MatSnackBarConfig} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-admin',
@@ -29,19 +30,33 @@ export class AdminComponent implements OnInit {
   public searchKey: string;
   public listData=null;
   expandedElement=null;
-
+  config: MatSnackBarConfig = {
+    duration: 3000,
+    horizontalPosition: "right",
+    verticalPosition: "top"
+  };
+  message=null;
 
   constructor(private route: ActivatedRoute,public dialog: MatDialog,private adminService: AdminService,
-              private changeRef:ChangeDetectorRef, public form: FormComponent) {
+              private changeRef:ChangeDetectorRef, public form: FormComponent,private snackBar:MatSnackBar) {
 
   }
   refresh(){
+    this.message=null;
     this.adminService.getEventDetails().subscribe(
       (response) => {
-        this.listData = new MatTableDataSource(response.data.technical_event);
-        this.listData.sort = this.sort;
-        this.listData.paginator = this.paginator;
-        this.changeRef.detectChanges();
+        if(response["http_status"]!="OK")
+            this.message="Oops! you are not authorized to view."
+        else
+          if(response.data==null||response.data.length==0)
+            this.message="Oops! no registered events of your cell/club"
+        else
+          {
+          this.listData = new MatTableDataSource(response.data);
+          this.listData.sort = this.sort;
+          this.listData.paginator = this.paginator;
+          this.changeRef.detectChanges();
+        }
       })
   }
 
@@ -71,9 +86,15 @@ export class AdminComponent implements OnInit {
     this.refresh();
   }
 
-  onDelete(val){
+  onDelete(eventDetails){
     if(confirm('Are you sure to delete this record?')){
-      //DELETE HERE
+      return this.adminService.deleteEvent(eventDetails.event_id).subscribe(response=>{
+        if(response["http_status"]=="OK")
+          this.snackBar.open("Deleted Successfully",'',this.config);
+        else
+          this.snackBar.open("Oops! Some error occurred",'',this.config);
+
+      });
     }
 
   }
