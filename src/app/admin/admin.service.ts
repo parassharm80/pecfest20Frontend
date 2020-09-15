@@ -8,7 +8,7 @@ export class AdminService{
   constructor(private http: HttpClient,private cookieService:CookieService) {
   }
   getEventDetails():Observable<any> {
-    return this.http.get(this.url+"/club-admin/SCC",{headers:this.getHttpHeader()});
+    return this.http.get(this.url+"/admin",{headers:this.getHttpHeader()});
   }
 
   private getHttpHeader() {

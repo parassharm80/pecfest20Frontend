@@ -35,18 +35,28 @@ export class AdminComponent implements OnInit {
     horizontalPosition: "right",
     verticalPosition: "top"
   };
+  message=null;
 
   constructor(private route: ActivatedRoute,public dialog: MatDialog,private adminService: AdminService,
               private changeRef:ChangeDetectorRef, public form: FormComponent,private snackBar:MatSnackBar) {
 
   }
   refresh(){
+    this.message=null;
     this.adminService.getEventDetails().subscribe(
       (response) => {
-        this.listData = new MatTableDataSource(response.data);
-        this.listData.sort = this.sort;
-        this.listData.paginator = this.paginator;
-        this.changeRef.detectChanges();
+        if(response["http_status"]!="OK")
+            this.message="Oops! you are not authorized to view."
+        else
+          if(response.data==null||response.data.length==0)
+            this.message="Oops! no registered events of your cell/club"
+        else
+          {
+          this.listData = new MatTableDataSource(response.data);
+          this.listData.sort = this.sort;
+          this.listData.paginator = this.paginator;
+          this.changeRef.detectChanges();
+        }
       })
   }
 
