@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <mat-toolbar>
-  <span>{{form.controls['$key'].value?"Modify Entity": "Add Entity"}}</span>
+  <span>{{form.controls['$key'].value?"Modify Event": "Add Event"}}</span>
   <span class = "fill-remaining-space"></span>
   <button class = "btn-dialog-close" mat-stroked-button (click)="onClose()" tabindex="-1"><mat-icon>clear</mat-icon></button>
 </mat-toolbar>
@@ -15,16 +15,24 @@
           <input formControlName="event_name" matInput placeholder="Event Name*">
           <mat-error>This field is mandatory</mat-error>
         </mat-form-field>
+
         <mat-form-field>
-          <mat-label>Type*</mat-label>
-          <input formControlName="event_type" matInput placeholder="Type*">
-          <mat-error>This field is mandatory</mat-error>
+          <mat-label>Event Category</mat-label>
+          <mat-select formControlName="event_type" required>
+            <mat-option *ngFor="let category of categories" [value]="category">
+              {{category}}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
+
         <mat-form-field>
-          <mat-label>Count*</mat-label>
-          <input formControlName="event_count" matInput placeholder="Event Count*">
-          <mat-error>This field is mandatory</mat-error>
+          <mat-label>Event Type</mat-label>
+          <mat-select formControlName="event_count" required>
+          <mat-option>INDIVIDUAL</mat-option>
+            <mat-option>TEAM</mat-option>
+          </mat-select>
         </mat-form-field>
+
         <mat-form-field>
           <mat-label>Club*</mat-label>
           <input formControlName="organizing_club" matInput placeholder="Club*">

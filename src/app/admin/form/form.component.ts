@@ -24,6 +24,7 @@ export class FormComponent implements OnInit {
     horizontalPosition: "right",
     verticalPosition: "top"
   };
+  categories=["TECHNICAL","CULTURAL","WORKSHOP","LECTURE"];
 
   initializeFormGroup(){
     this.formService.form.setValue({
@@ -93,10 +94,7 @@ export class FormComponent implements OnInit {
         //ADD Functionality here
 
       }
-      this.form.reset();
-      this.initializeFormGroup();
       this.success('::Submitted Successfully');
-      this.onClose();
     }
   }
 
