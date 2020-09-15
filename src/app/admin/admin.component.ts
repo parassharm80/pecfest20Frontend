@@ -94,7 +94,7 @@ export class AdminComponent implements OnInit {
         else
           this.snackBar.open("Oops! Some error occurred",'',this.config);
 
-      });
+      },error =>this.snackBar.open("Oops! Some error occurred",'',this.config) );
     }
 
   }

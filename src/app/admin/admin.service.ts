@@ -34,5 +34,9 @@ export class AdminService{
     venue:form.controls["venue"].value,rules:form.controls["rules"].value,event_description:form.controls["event_description"].value,
       event_start_date_and_time:form.controls["event_start_date_and_time"].value,event_end_date_and_time:form.controls["event_end_date_and_time"].value};
   }
+
+  editEvent(form: FormGroup) {
+    return this.http.put(this.url+`/${form.controls["$key"].value}`,this.getEventRequestBody(form),{headers:this.getHttpHeader()})
+  }
 }
 

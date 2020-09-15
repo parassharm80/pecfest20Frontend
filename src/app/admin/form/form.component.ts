@@ -89,7 +89,12 @@ export class FormComponent implements OnInit {
   newSubmit(){
     if(this.form.valid){
       if(this.form.get('$key').value){
-        //EDIT functionality here
+        this.adminService.editEvent(this.form).subscribe(response=>{
+          if(response["http_status"]=="OK")
+            this.success('::Added Successfully');
+          else
+            this.success(response["status_message"]);
+        },error => this.success('Oops! Some error occurred'))
 
       }
       else
@@ -98,8 +103,8 @@ export class FormComponent implements OnInit {
           if(response["http_status"]=="OK")
             this.success('::Added Successfully');
           else
-            this.success('Oops! Some error occurred');
-        })
+            this.success(response["status_message"]);
+        },error => this.success('Oops! Some error occurred'))
 
       }
 
