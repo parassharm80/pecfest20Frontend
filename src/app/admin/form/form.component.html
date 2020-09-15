@@ -11,7 +11,7 @@
       <div class = "controls-container">
         <input type="hidden" formControlName="$key">
         <mat-form-field>
-          <mat-label>Name*</mat-label>
+          <mat-label>Event Name*</mat-label>
           <input formControlName="event_name" matInput placeholder="Event Name*">
           <mat-error>This field is mandatory</mat-error>
         </mat-form-field>
@@ -34,24 +34,24 @@
         </mat-form-field>
 
         <mat-form-field>
-          <mat-label>Club*</mat-label>
+          <mat-label>Organizing Club*</mat-label>
           <input formControlName="organizing_club" matInput placeholder="Club*">
           <mat-error>This field is mandatory</mat-error>
         </mat-form-field>
         <mat-form-field>
-          <mat-label>Contact No*</mat-label>
+          <mat-label>Organizer Contact No*</mat-label>
           <input formControlName="organizer_contact_no" matInput placeholder="Contact No*">
           <mat-error>This field is mandatory</mat-error>
         </mat-form-field>
 
         <mat-form-field>
-          <mat-label>Minimum Number*</mat-label>
+          <mat-label>Min Team Size*</mat-label>
           <input formControlName="min_number_of_participants" matInput placeholder="Min Number*">
           <mat-error>This field is mandatory</mat-error>
         </mat-form-field>
 
         <mat-form-field>
-          <mat-label>Max Number*</mat-label>
+          <mat-label>Max Team Size*</mat-label>
           <input formControlName="max_number_of_participants" matInput placeholder="Max Number*">
           <mat-error>This field is mandatory</mat-error>
         </mat-form-field>
@@ -89,6 +89,11 @@
         <mat-form-field>
           <mat-label>Rules*</mat-label>
           <input formControlName="rules" matInput placeholder="Rules*">
+          <mat-error>This field is mandatory</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Event Banner Link*</mat-label>
+          <input formControlName="event_banner_image_url" matInput placeholder="Rules*">
           <mat-error>This field is mandatory</mat-error>
         </mat-form-field>
         <div class = "button-row">

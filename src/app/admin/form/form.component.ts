@@ -42,6 +42,7 @@ export class FormComponent implements OnInit {
       prize_money_worth:'',
       venue: '',
       rules:'',
+      event_banner_image_url:''
     });
   }
 
@@ -79,6 +80,7 @@ export class FormComponent implements OnInit {
       prize_money_worth: data.prize_money_worth,
       venue: data.venue,
       rules: data.rules,
+      event_banner_image_url:data.event_banner_image_url
     });
 
   }
