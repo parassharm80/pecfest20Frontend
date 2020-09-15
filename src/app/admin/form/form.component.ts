@@ -4,6 +4,7 @@ import {FormService} from "./form.service";
 import {FormGroup} from "@angular/forms";
 import {MatDialogRef} from "@angular/material/dialog";
 import {AdminService} from '../admin.service';
+import {ProdEnvService} from '../../prod-env.service';
 
 @Component({
   selector: 'app-form',
@@ -14,7 +15,7 @@ import {AdminService} from '../admin.service';
 export class FormComponent implements OnInit {
 
   constructor(private formService: FormService,private snackBar: MatSnackBar,
-              private dialogRef: MatDialogRef<FormComponent>,private adminService:AdminService) { }
+              private dialogRef: MatDialogRef<FormComponent>,private adminService:AdminService,public  prodEnvService:ProdEnvService) { }
 
   public form: FormGroup = this.formService.form;
 
@@ -91,7 +92,7 @@ export class FormComponent implements OnInit {
       if(this.form.get('$key').value){
         this.adminService.editEvent(this.form).subscribe(response=>{
           if(response["http_status"]=="OK")
-            this.success('::Added Successfully');
+            this.success('::Edited Successfully. Refresh your page');
           else
             this.success(response["status_message"]);
         },error => this.success('Oops! Some error occurred'))
@@ -101,7 +102,7 @@ export class FormComponent implements OnInit {
       {
         this.adminService.addEvent(this.form).subscribe(response=>{
           if(response["http_status"]=="OK")
-            this.success('::Added Successfully');
+            this.success('::Added Successfully. Refresh your page');
           else
             this.success(response["status_message"]);
         },error => this.success('Oops! Some error occurred'))

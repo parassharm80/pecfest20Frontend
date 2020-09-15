@@ -35,8 +35,11 @@
 
         <mat-form-field>
           <mat-label>Organizing Club*</mat-label>
-          <input formControlName="organizing_club" matInput placeholder="Club*">
-          <mat-error>This field is mandatory</mat-error>
+          <mat-select formControlName="organizing_club" required >
+            <mat-option *ngFor="let club of prodEnvService.clubNames" [value]="club">
+              {{club}}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
         <mat-form-field>
           <mat-label>Organizer Contact No*</mat-label>
