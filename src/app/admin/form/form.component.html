@@ -18,7 +18,7 @@
 
         <mat-form-field>
           <mat-label>Event Category</mat-label>
-          <mat-select formControlName="event_type" required>
+          <mat-select formControlName="event_type" required >
             <mat-option *ngFor="let category of categories" [value]="category">
               {{category}}
             </mat-option>
@@ -28,8 +28,8 @@
         <mat-form-field>
           <mat-label>Event Type</mat-label>
           <mat-select formControlName="event_count" required>
-          <mat-option>INDIVIDUAL</mat-option>
-            <mat-option>TEAM</mat-option>
+          <mat-option value="INDIVIDUAL">INDIVIDUAL</mat-option>
+            <mat-option value="TEAM">TEAM</mat-option>
           </mat-select>
         </mat-form-field>
 
