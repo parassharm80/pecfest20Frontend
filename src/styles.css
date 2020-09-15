@@ -2,6 +2,7 @@
 @import url("~bootstrap/dist/css/bootstrap.css");
 @import url("https://fonts.googleapis.com/css2?family=Mrs+Sheppards&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@1,200&display=swap');
 body,
 .main-container {
   min-height: 100vh;
@@ -80,9 +81,6 @@ body,
     #285aeb 90%
   );
 }
-/* .fa-whatsapp:hover {
-  background-color: #25d366;
-} */
 .fa-youtube:hover {
   background: #bb0000;
 }
