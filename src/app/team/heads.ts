@@ -115,7 +115,7 @@ export let head=[
   {
     "name": "Noor Goyal",
     "post": "Public Relations and Media",
-    // "photo": "Noor Goyal.jpeg",
+    "photo": "Noor Goyal.jpeg",
     "ph":"8968400096"
   },
 ];
