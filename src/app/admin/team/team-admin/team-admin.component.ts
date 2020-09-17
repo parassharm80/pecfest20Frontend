@@ -4,11 +4,13 @@ import {MatPaginator} from '@angular/material/paginator';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {MatSnackBar, MatSnackBarConfig} from '@angular/material/snack-bar';
 import {ActivatedRoute} from '@angular/router';
-import {MatDialog} from '@angular/material/dialog';
+import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import {AdminService} from '../../admin.service';
 import {TeamFormComponent} from '../team-form/team-form.component';
 import {TeamAdminService} from './team-admin.service';
 import {MatTableDataSource} from '@angular/material/table';
+import {FormComponent} from '../../form/form.component';
+import {FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-team-admin',
@@ -25,7 +27,7 @@ import {MatTableDataSource} from '@angular/material/table';
 export class TeamAdminComponent implements OnInit {
   searchKey;
   listData=null;
-  displayedColumns;
+  displayedColumns=["event_id","event_name","organizing_club","team_id","team_name","leader_pec_fest_id"];
   expandedElement;
   message=null;
   @ViewChild(MatSort) sort: MatSort;
@@ -35,18 +37,26 @@ export class TeamAdminComponent implements OnInit {
     horizontalPosition: "right",
     verticalPosition: "top"
   };
+  eventName=new FormControl('',Validators.required);
   constructor(private teamAdminService:TeamAdminService,private route: ActivatedRoute,public dialog: MatDialog,private adminService: AdminService,
   private changeRef:ChangeDetectorRef, public form: TeamFormComponent,private snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
   }
 
-  onCreate() {
-
+  onSearchClick(){
+    this.searchKey="";
   }
-
-  applyFilter() {
-
+  applyFilter(){
+    this.listData.filter = this.searchKey.trim().toLowerCase();
+  }
+  onCreate() {
+    this.form.initializeFormGroup();
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "60%";
+    this.dialog.open(FormComponent, dialogConfig);
   }
   refresh(event_name){
     this.message=null;
@@ -56,7 +66,7 @@ export class TeamAdminComponent implements OnInit {
           this.message="Oops! you are not authorized to view."
         else
         if(response.data==null||response.data.length==0)
-          this.message="Oops! no registered events of your cell/club"
+          this.message=response["status_message"]
         else
         {
           this.listData = new MatTableDataSource(response.data);
@@ -67,15 +77,15 @@ export class TeamAdminComponent implements OnInit {
       })
   }
 
-  onSearchClick() {
-
-  }
-
   onEdit(row: any) {
 
   }
 
   onDelete(row: any) {
 
+  }
+
+  onSubmitEventName() {
+    this.refresh(this.eventName.value);
   }
 }
