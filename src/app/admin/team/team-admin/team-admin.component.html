@@ -1,15 +1,15 @@
 <html>
 <h1>DASHBOARD</h1>
 <div id="submit_form">
-  <label class="laser" >Event Name</label>
+
   <input
     type="text"
     class="form-control"
     placeholder="Event Name"
     [formControl]="eventName"
   />
-  <button type="submit" (click)="onSubmitEventName()" class="btn btn-primary laser-white">
-    Login <i class="fas fa-sign-in-alt"></i>
+  <button type="submit" (click)="onSubmitEventName()" class="btn btn-primary">
+    Submit <i class="fas fa-sign-in-alt"></i>
   </button>
 </div>
 <div id="content" *ngIf="listData!=null">
