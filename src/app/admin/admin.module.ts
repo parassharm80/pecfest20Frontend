@@ -20,10 +20,12 @@ import {MAT_DIALOG_DATA, MatDialogModule, MatDialogRef} from "@angular/material/
 import {MatButtonModule} from "@angular/material/button";
 import {AdminComponent} from "./admin.component";
 import { FormComponent } from './form/form.component';
+import { TeamAdminComponent } from './team/team-admin/team-admin.component';
+import { TeamFormComponent } from './team/team-form/team-form.component';
 
 
 @NgModule({
-  declarations: [AdminComponent, FormComponent],
+  declarations: [AdminComponent, FormComponent, TeamAdminComponent, TeamFormComponent],
   providers: [{ provide: MatDialogRef, useValue: {} },
     { provide: MAT_DIALOG_DATA, useValue: [FormComponent] }],
   imports: [
