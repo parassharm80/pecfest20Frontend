@@ -9,7 +9,6 @@ import {AdminService} from '../../admin.service';
 import {TeamFormComponent} from '../team-form/team-form.component';
 import {TeamAdminService} from './team-admin.service';
 import {MatTableDataSource} from '@angular/material/table';
-import {FormComponent} from '../../form/form.component';
 import {FormControl, Validators} from '@angular/forms';
 
 @Component({
@@ -56,7 +55,7 @@ export class TeamAdminComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.width = "60%";
-    this.dialog.open(FormComponent, dialogConfig);
+    this.dialog.open(TeamFormComponent, dialogConfig);
   }
   refresh(event_name){
     this.message=null;
