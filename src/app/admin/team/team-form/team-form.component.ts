@@ -48,7 +48,9 @@ export class TeamFormComponent implements OnInit {
   }
 
   onClose() {
-
+    this.form.reset();
+    this.initializeFormGroup();
+    this.dialogRef.close();
   }
 
   newSubmit() {

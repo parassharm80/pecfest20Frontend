@@ -8,25 +8,27 @@
     placeholder="Event Name"
     [formControl]="eventName"
   />
-  <button type="submit" (click)="onSubmitEventName()" class="btn btn-primary">
+  <button type="submit" (click)="onSubmitEventRegs()" class="btn btn-primary">
     Submit <i class="fas fa-sign-in-alt"></i>
   </button>
 </div>
-<div id="content" *ngIf="listData!=null">
+<div id="content" >
   <div>
     <div class = "search-div">
       <button mat-raised-button (click)="onCreate()">
         <mat-icon>add</mat-icon>Register
 
       </button>
-      <mat-form-field class = "search-form-field" floatLabel="never">
+      <button mat-raised-button (click)="onForceRefresh()">Refresh
+      </button>
+      <mat-form-field class = "search-form-field" floatLabel="never" *ngIf="listData!=null">
         <input matInput  [(ngModel)]="searchKey" name = "search" (keyup)="applyFilter()" placeholder="Search" autocomplete="off" style="background-color: white;color: darkslateblue;">
         <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClick()">
           <mat-icon>close</mat-icon>
         </button>
       </mat-form-field>
     </div>
-    <table mat-table [dataSource]="listData" class="mat-elevation-z8" matSort multiTemplateDataRows>
+    <table mat-table [dataSource]="listData" class="mat-elevation-z8" matSort multiTemplateDataRows *ngIf="listData!=null">
       <ng-container matColumnDef="expandedDetail">
         <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
           <div class="example-element-detail"

@@ -5,12 +5,11 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 import {MatSnackBar, MatSnackBarConfig} from '@angular/material/snack-bar';
 import {ActivatedRoute} from '@angular/router';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
-import {AdminService} from '../../admin.service';
 import {TeamFormComponent} from '../team-form/team-form.component';
 import {TeamAdminService} from './team-admin.service';
 import {MatTableDataSource} from '@angular/material/table';
 import {FormControl, Validators} from '@angular/forms';
-import {FormComponent} from '../../form/form.component';
+
 
 @Component({
   selector: 'app-team-admin',
@@ -27,7 +26,7 @@ import {FormComponent} from '../../form/form.component';
 export class TeamAdminComponent implements OnInit {
   searchKey;
   listData=null;
-  displayedColumns=["event_id","event_name","organizing_club","team_id","team_name","leader_pec_fest_id"];
+  displayedColumns=["event_id","event_name","organizing_club","team_id","team_name","leader_pec_fest_id",'Edit','Delete'];
   expandedElement;
   message=null;
   @ViewChild(MatSort) sort: MatSort;
@@ -38,7 +37,7 @@ export class TeamAdminComponent implements OnInit {
     verticalPosition: "top"
   };
   eventName=new FormControl('',Validators.required);
-  constructor(private teamAdminService:TeamAdminService,private route: ActivatedRoute,public dialog: MatDialog,private adminService: AdminService,
+  constructor(private teamAdminService:TeamAdminService,private route: ActivatedRoute,public dialog: MatDialog,private adminService: TeamAdminService,
   private changeRef:ChangeDetectorRef, public form: TeamFormComponent,private snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
@@ -60,13 +59,14 @@ export class TeamAdminComponent implements OnInit {
   }
   refresh(event_name){
     this.message=null;
+    this.listData=null;
     this.teamAdminService.getRegsDetails(event_name).subscribe(
       (response) => {
         if(response["http_status"]!="OK")
           this.message="Oops! you are not authorized to view."
         else
         if(response.data==null||response.data.length==0)
-          this.message=response["status_message"]
+          this.message="No teams registered"
         else
         {
           this.listData = new MatTableDataSource(response.data);
@@ -84,12 +84,11 @@ export class TeamAdminComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.width = "60%";
     this.dialog.open(TeamFormComponent, dialogConfig);
-    this.refresh(this.eventName.value);
   }
 
-  onDelete(eventDetails){
+  onDelete(regDetails){
     if(confirm('Are you sure to delete this record?')){
-      return this.adminService.deleteEvent(eventDetails.event_id).subscribe(response=>{
+      return this.adminService.deleteEventRegs(regDetails.team_id).subscribe(response=>{
         if(response["http_status"]=="OK")
           this.snackBar.open("Deleted Successfully. Refresh your page",'',this.config);
         else
@@ -100,7 +99,11 @@ export class TeamAdminComponent implements OnInit {
 
   }
 
-  onSubmitEventName() {
+  onSubmitEventRegs() {
+    this.refresh(this.eventName.value);
+  }
+
+  onForceRefresh() {
     this.refresh(this.eventName.value);
   }
 }

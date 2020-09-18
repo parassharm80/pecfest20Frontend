@@ -3,7 +3,6 @@ import {ProdEnvService} from '../../../prod-env.service';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {FormGroup} from '@angular/forms';
-import {split} from 'ts-node';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +16,7 @@ export class TeamAdminService {
   }
 
   editEvent(form: FormGroup) {
-    return this.http.get(this.prodEnvService.prodUrl+"/admin/pecfest-registration/"+event_name,{headers:this.prodEnvService.getHttpHeaders()});
+    return this.http.put(this.prodEnvService.prodUrl+"/admin/pecfest-registration/"+form.controls["$key"].value,{new_team_name:form.controls["team_name"].value,member_pec_fest_id_list:this.getPecFestIds(form.controls["member_pec_fest_id_list"].value),leader_pec_fest_id:form.controls["leader_pec_fest_id"].value},{headers:this.prodEnvService.getHttpHeaders()});
   }
 
   addEvent(form: FormGroup) {
@@ -26,5 +25,9 @@ export class TeamAdminService {
   }
   getPecFestIds(pecFestIds:string){
     return pecFestIds.split(',');
+  }
+
+  deleteEventRegs(team_id: any) {
+    return this.http.delete(this.prodEnvService.prodUrl+"/admin/pecfest-registration/"+team_id,{headers:this.prodEnvService.getHttpHeaders()});
   }
 }
