@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<mat-toolbar>
+  <span>{{form.controls['$key'].value?"Edit Registration": "Register"}}</span>
+  <span class = "fill-remaining-space"></span>
+  <button class = "btn-dialog-close" mat-stroked-button (click)="onClose()" tabindex="-1"><mat-icon>clear</mat-icon></button>
+</mat-toolbar>
+<form [formGroup]="form" class = "normal-form" (submit)="newSubmit()">
+  <mat-grid-list cols="2" rowHeight="520px" id="content">
+    <mat-grid-tile>
+      <div class = "controls-container">
+        <input type="hidden" formControlName="$key">
+        <mat-form-field>
+          <mat-label>Event Name*</mat-label>
+          <input formControlName="event_name" matInput placeholder="Event Name*">
+          <mat-error>This field is mandatory</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Organizing Club*</mat-label>
+          <mat-select formControlName="organizing_club" required >
+            <mat-option *ngFor="let club of prodEnvService.clubNames" [value]="club">
+              {{club}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+          <mat-form-field>
+            <mat-label>Team Name*</mat-label>
+            <input formControlName="team_name" matInput placeholder="Team Name*">
+            <mat-error>This field is mandatory</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Leader PecFestId*</mat-label>
+            <input formControlName="leader_pec_fest_id" matInput placeholder="Leader PecFestId*">
+            <mat-error>This field is mandatory</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Member PecFestIds*</mat-label>
+            <input formControlName="member_pec_fest_id_list" matInput placeholder="PECFESTHG1,PECFESTVP2,..">
+            <mat-error>This field is mandatory</mat-error>
+          </mat-form-field>
+
+      </div>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+  <div class = "button-row">
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid" >Submit</button>
+    <button mat-raised-button color="clear" (click)="onClear()">Clear</button>
+  </div>
+</form>
+
+</html>
