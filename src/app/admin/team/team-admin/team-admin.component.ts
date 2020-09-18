@@ -10,6 +10,7 @@ import {TeamFormComponent} from '../team-form/team-form.component';
 import {TeamAdminService} from './team-admin.service';
 import {MatTableDataSource} from '@angular/material/table';
 import {FormControl, Validators} from '@angular/forms';
+import {FormComponent} from '../../form/form.component';
 
 @Component({
   selector: 'app-team-admin',
@@ -76,11 +77,26 @@ export class TeamAdminComponent implements OnInit {
       })
   }
 
-  onEdit(row: any) {
-
+  onEdit(row){
+    this.form.populateForm(row);
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "60%";
+    this.dialog.open(TeamFormComponent, dialogConfig);
+    this.refresh(this.eventName.value);
   }
 
-  onDelete(row: any) {
+  onDelete(eventDetails){
+    if(confirm('Are you sure to delete this record?')){
+      return this.adminService.deleteEvent(eventDetails.event_id).subscribe(response=>{
+        if(response["http_status"]=="OK")
+          this.snackBar.open("Deleted Successfully. Refresh your page",'',this.config);
+        else
+          this.snackBar.open("Oops! Some error occurred",'',this.config);
+
+      },error =>this.snackBar.open("Oops! Some error occurred",'',this.config) );
+    }
 
   }
 

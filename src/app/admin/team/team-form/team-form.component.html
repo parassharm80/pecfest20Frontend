@@ -16,7 +16,6 @@
           <mat-error>This field is mandatory</mat-error>
         </mat-form-field>
 
-
         <mat-form-field>
           <mat-label>Organizing Club*</mat-label>
           <mat-select formControlName="organizing_club" required >
@@ -25,62 +24,24 @@
             </mat-option>
           </mat-select>
         </mat-form-field>
-        <mat-form-field>
-          <mat-label>Organizer Contact No*</mat-label>
-          <input formControlName="organizer_contact_no" matInput placeholder="Contact No*">
-          <mat-error>This field is mandatory</mat-error>
-        </mat-form-field>
-
-        <mat-form-field>
-          <mat-label>Min Team Size*</mat-label>
-          <input formControlName="min_number_of_participants" matInput placeholder="Min Number*">
-          <mat-error>This field is mandatory</mat-error>
-        </mat-form-field>
-
-        <mat-form-field>
-          <mat-label>Max Team Size*</mat-label>
-          <input formControlName="max_number_of_participants" matInput placeholder="Max Number*">
-          <mat-error>This field is mandatory</mat-error>
-        </mat-form-field>
-
 
       </div>
     </mat-grid-tile>
     <mat-grid-tile>
       <div class = "controls-container">
         <mat-form-field>
-          <mat-label>Start Date and Time*</mat-label>
-          <input formControlName="event_start_date_and_time" matInput placeholder="Start Date and Time*">
+          <mat-label>Team Name*</mat-label>
+          <input formControlName="team_name" matInput placeholder="Team Name*">
           <mat-error>This field is mandatory</mat-error>
         </mat-form-field>
         <mat-form-field>
-          <mat-label>End Date and Time*</mat-label>
-          <input formControlName="event_end_date_and_time" matInput placeholder="End Date and Time*">
+          <mat-label>Leader PecFestId*</mat-label>
+          <input formControlName="leader_pec_fest_id" matInput placeholder="Leader PecFestId*">
           <mat-error>This field is mandatory</mat-error>
         </mat-form-field>
         <mat-form-field>
-          <mat-label>Description*</mat-label>
-          <input formControlName="event_description" matInput placeholder="Description*">
-          <mat-error>This field is mandatory</mat-error>
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Prize Money*</mat-label>
-          <input formControlName="prize_money_worth" matInput placeholder="Prize Money*">
-          <mat-error>This field is mandatory</mat-error>
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Venue*</mat-label>
-          <input formControlName="venue" matInput placeholder="Venue*">
-          <mat-error>This field is mandatory</mat-error>
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Rules*</mat-label>
-          <input formControlName="rules" matInput placeholder="Rules*">
-          <mat-error>This field is mandatory</mat-error>
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Event Banner Link*</mat-label>
-          <input formControlName="event_banner_image_url" matInput placeholder="Event Banner Link*">
+          <mat-label>Member PecFestIds*</mat-label>
+          <input formControlName="member_pec_fest_id_list" matInput placeholder="PECFESTHG1,PECFESTVP2,..">
           <mat-error>This field is mandatory</mat-error>
         </mat-form-field>
         <div class = "button-row">
