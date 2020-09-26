@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
         else {
           this.logInService.setSessionId(response["data"]);
           this.validationService.isLoggedIn=true;
-          this.validationService.stateChecked=true;
+          this.validationService.stateChecked=false;
           this.successMessage="OK";
           setTimeout((router: Router) => {
             this.router.navigate([".."]);

@@ -7,6 +7,7 @@ import { AcademicComponent } from './types/academic/academic.component';
 import { EventComponent } from './event/event.component';
 import {ValidationGuard} from '../validation/validation.guard';
 import {FormComponent} from "./event/form/form.component";
+import {WorkshopComponent} from './types/workshop/workshop.component';
 
 const routes: Routes = [
   {
@@ -43,21 +44,21 @@ const routes: Routes = [
     canActivate:[ValidationGuard]
   },
   {
-    path: 'workshops',
+    path: 'workshop',
     children: [
       {
         path: '',
-        component: AcademicComponent,
+        component: WorkshopComponent,
       },
       {
         path: ':name',
-        component: AcademicComponent,
+        component: WorkshopComponent,
       },
     ],
     canActivate:[ValidationGuard]
   },
   {
-    path: 'lectures',
+    path: 'lecture',
     children: [
       {
         path: '',

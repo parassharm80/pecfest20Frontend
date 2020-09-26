@@ -22,6 +22,7 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {MAT_DIALOG_DATA, MatDialogModule, MatDialogRef} from "@angular/material/dialog";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { WorkshopComponent } from './types/workshop/workshop.component';
 @NgModule({
   declarations: [
     EventsComponent,
@@ -29,7 +30,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     AcademicComponent,
     CulturalComponent,
     EventComponent,
-    FormComponent
+    FormComponent,
+    WorkshopComponent
   ],
   providers:[        { provide: MatDialogRef, useValue: {} },
     { provide: MAT_DIALOG_DATA, useValue: [FormComponent] },
