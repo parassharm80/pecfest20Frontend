@@ -26,7 +26,8 @@ export class EventComponent implements OnInit {
     });
     this.eventService.fetchEvents().subscribe(response=>{
       this.eventService.manipulateResponse(response);
-      let myEvents=response.data[this.eventType+"_event"];
+      let append= (this.eventType=="cultural"||this.eventType=="technical") ? "_event":"";
+      let myEvents=response.data[this.eventType+append];
       for (let clubEvent of myEvents)
         if(clubEvent.club_name==this.eventSubType) {
           this.eventService.clubEvents=clubEvent.event_list;

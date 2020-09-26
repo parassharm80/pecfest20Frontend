@@ -12,7 +12,7 @@ export class EventsComponent {
   events: Array<string>
   constructor(private route: ActivatedRoute,private eventService:EventService) {
     this.title =  'Events'
-    this.events = ['cultural', 'technical', 'workshops', 'lectures']
+    this.events = ['cultural', 'technical', 'workshop', 'lecture']
     this.eventService.fetchEvents().subscribe(response => {
     this.eventService.manipulateResponse(response);
     });
