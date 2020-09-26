@@ -45,11 +45,11 @@
           <a class="nav-link"
               [routerLink]="['team']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="hbtn"><p class="text">CONTACT US</p></button></a>
         </li>
-        <li *ngIf="view==true" class="nav-item">
+        <li *ngIf="validationGuardService.isAdmin==true" class="nav-item">
           <a class="nav-link"
              [routerLink]="['admin/events']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="hbtn"><p class="text">EVENTS ADMIN</p></button></a>
         </li>
-        <li *ngIf="view==true" class="nav-item">
+        <li *ngIf="validationGuardService.isAdmin==true" class="nav-item">
           <a class="nav-link"
              [routerLink]="['admin/team']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="hbtn"><p class="text">TEAM ADMIN</p></button></a>
         </li>

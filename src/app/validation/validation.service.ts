@@ -11,6 +11,7 @@ import {of} from 'rxjs';
 export class ValidationService {
   public isLoggedIn=false;
   public stateChecked=false;
+  public isAdmin=false;
   public routeSet:Set<string>=new Set();
   private url="http://localhost:8080/session/verify"
   constructor(private http:HttpClient,private cookieService:CookieService) {
@@ -20,12 +21,16 @@ export class ValidationService {
 
   public  verifySessionId() {
     if(this.stateChecked)
-      return of(this.isLoggedIn);
-    return this.http.get<boolean>(this.url,{headers:this.getHttpHeaders()});
+      return of({admin:this.isAdmin,logged_in:this.isLoggedIn});
+    return this.http.get<SessionResponse>(this.url,{headers:this.getHttpHeaders()});
   }
 
   private getHttpHeaders() {
     let  headers:HttpHeaders=new HttpHeaders();
     return headers.set("session_id",this.cookieService.get("session_id"));
   }
+}
+export interface SessionResponse{
+  admin:boolean;
+  logged_in:boolean;
 }
