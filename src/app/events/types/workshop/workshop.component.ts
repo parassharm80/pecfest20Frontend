@@ -5,7 +5,7 @@ import {EventService} from '../../event.service';
 @Component({
   selector: 'app-workshop',
   templateUrl: './workshop.component.html',
-  styleUrls: ['./workshop.component.css']
+  styleUrls: ['../../events.component.css']
 })
 export class WorkshopComponent implements AfterViewInit {
 
