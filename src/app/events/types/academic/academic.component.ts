@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {AfterViewInit, Component} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {EventService} from '../../event.service';
 
@@ -7,11 +7,13 @@ import {EventService} from '../../event.service';
   templateUrl: './academic.component.html',
   styleUrls: ['../../events.component.css']
 })
-export class AcademicComponent {
+export class AcademicComponent implements AfterViewInit {
   name: string;
   title: string
   events: Array<string>
   clubName:Array<string>=[];
+  private clubEventsName: Array<string>;
+
   constructor(private route: ActivatedRoute,private eventService:EventService) {
     this.route.params.subscribe(params => {
       this.name = params['name'];
@@ -19,8 +21,33 @@ export class AcademicComponent {
     this.route.parent.url.subscribe(params => {
       this.title = (this.name != undefined ? `${this.name}` : params[0].path) + ' Events'
     });
-    for(let clubEvent of this.eventService.events.lecture)
-      this.clubName.push(clubEvent.club_name);
-    this.events=this.clubName;
+  }
+
+  ngAfterViewInit(): void {
+    if (this.name != undefined)
+      setTimeout(() => {
+        this.eventService.fetchEvents().subscribe(response => {
+          let myEvents = response.data.lecture;
+          this.eventService.manipulateResponse(response);
+          for (let clubEvent of myEvents)
+            if (clubEvent.club_name == this.name) {
+              this.clubEventsName = clubEvent.event_list.map(event => event["event_name"]);
+              this.eventService.clubEvents = clubEvent.event_list;
+              break;
+            }
+          this.events = this.clubEventsName;
+        });
+      }, 0);
+    else
+      setTimeout(() => {
+        this.eventService.fetchEvents().subscribe(response => {
+          this.eventService.manipulateResponse(response);
+          let myEvents = response.data.lecture;
+          for (let clubEvent of myEvents)
+            this.clubName.push(clubEvent.club_name);
+          this.events = this.clubName;
+        });
+      }, 0);
   }
 }
+

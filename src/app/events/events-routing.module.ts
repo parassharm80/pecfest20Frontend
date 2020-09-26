@@ -7,7 +7,7 @@ import { AcademicComponent } from './types/academic/academic.component';
 import { EventComponent } from './event/event.component';
 import {ValidationGuard} from '../validation/validation.guard';
 import {FormComponent} from "./event/form/form.component";
-import {WorkshopComponent} from './types/workshop/workshop/workshop.component';
+import {WorkshopComponent} from './types/workshop/workshop.component';
 
 const routes: Routes = [
   {

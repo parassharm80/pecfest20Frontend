@@ -43,12 +43,12 @@ li {
   bottom url(../../assets/events/cultural.png);
 }
 
-.events-img-lectures {
+.events-img-lecture {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)),
   bottom url(../../assets/events/lecture.png);
 }
 
-.events-img-workshops {
+.events-img-workshop {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)),
   bottom url(../../assets/events/online_workshop.png);
 }

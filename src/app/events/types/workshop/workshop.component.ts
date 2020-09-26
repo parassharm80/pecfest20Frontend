@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {EventService} from '../../../event.service';
+import {EventService} from '../../event.service';
 
 @Component({
   selector: 'app-workshop',
