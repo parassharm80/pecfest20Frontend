@@ -50,6 +50,8 @@ export class FormComponent implements OnInit {
 
   addTeamMember() {
     this.maxLimitMessage=this.formService.addTeamMember();
+    if(this.maxLimitMessage!=null)
+      this.success(this.maxLimitMessage);
   }
 
   onSubmit() {

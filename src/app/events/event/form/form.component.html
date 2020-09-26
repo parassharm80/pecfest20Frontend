@@ -19,9 +19,6 @@
           <mat-error>This field is mandatory</mat-error>
         </mat-form-field>
         </div>
-        <div class="alert alert-danger" role="alert" *ngIf="maxLimitMessage!=null" style="margin-top: 10px">
-          {{maxLimitMessage}}
-        </div>
         <button  style="margin-top: 10px;width: 120px" class="event-reg btn btn-primary mx-auto d-block my3" (click)="addTeamMember()">Add Member</button>
         <div class = "button-row">
           <button mat-raised-button color="primary" type="submit" [disabled]="formService.form.invalid" style="margin-top: 15px" (click)="onSubmit()">Submit</button>

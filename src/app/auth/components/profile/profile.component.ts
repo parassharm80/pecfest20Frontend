@@ -51,6 +51,7 @@ export class ProfileComponent implements OnInit {
         else {
           this.cookieService.delete("session_id","/");
           this.validationService.isLoggedIn=false;
+          this.validationService.isAdmin=false;
           this.validationService.stateChecked=true;
           this.successMessage="Logged out. Redirecting to home page";
           setTimeout((router: Router) => {
