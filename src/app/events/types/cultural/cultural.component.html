@@ -1,11 +1,11 @@
-<div class="mx-auto m-3">
+<div class="mx-auto m-3" *ngIf="validationService.stateChecked">
   <div class="event-title">
     <h1 class="sheppard">{{title}}</h1>
   </div>
   <ul class="events-list list-group text-center">
     <li class="py-2" *ngFor="let event of events;let indexOfelement=index;">
       <a *ngIf='this.name' routerLink="../../cultural/{{this.name}}/{{indexOfelement+1}}"><img class="event-image rounded img-fluid"
-          src="https://placehold.it/1000x200/CCCCCC/999999&text={{event}}" alt="event banner"></a>
+                                                                                                src="https://placehold.it/1000x200/CCCCCC/999999&text={{event}}" alt="{{event}}}"></a>
       <a *ngIf='!this.name' routerLink="{{event}}">{{ event }}</a>
     </li>
   </ul>

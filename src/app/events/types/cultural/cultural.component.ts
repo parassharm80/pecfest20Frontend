@@ -2,6 +2,7 @@ import {AfterViewInit, Component, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {EventService} from '../../event.service';
 import {delay} from 'rxjs/operators';
+import {ValidationService} from '../../../validation/validation.service';
 
 @Component({
   selector: 'app-cultural',
@@ -13,17 +14,16 @@ export class CulturalComponent implements AfterViewInit{
   title: string
   events: Array<string>
   clubName:Array<string>=[];
-  private clubEventsName: Array<string>;
-
-  constructor(private route: ActivatedRoute,private eventService:EventService) {
+  clubEventsName:Array<string>=[];
+  constructor(private route: ActivatedRoute,private eventService:EventService,public validationService:ValidationService) {
     this.route.params.subscribe(params => {
       this.name = params['name'];
     });
     this.route.parent.url.subscribe(params => {
       this.title = (this.name != undefined ? `${this.name}` : params[0].path) + ' Events'
+
     });
   }
-
   ngAfterViewInit(): void {
     if(this.name!=undefined)
       setTimeout(() => {
