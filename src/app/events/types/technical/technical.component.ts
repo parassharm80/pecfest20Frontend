@@ -2,6 +2,7 @@ import {AfterViewInit, Component} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {EventService} from '../../event.service';
 import {newArray} from '@angular/compiler/src/util';
+import {ValidationService} from '../../../validation/validation.service';
 
 @Component({
   selector: 'app-technical',
@@ -14,7 +15,7 @@ export class TechnicalComponent implements AfterViewInit{
   events: Array<string>
   clubName:Array<string>=[];
   clubEventsName:Array<string>=[];
-  constructor(private route: ActivatedRoute,private eventService:EventService) {
+  constructor(private route: ActivatedRoute,private eventService:EventService,public validationService:ValidationService) {
     this.route.params.subscribe(params => {
       this.name = params['name'];
       console.log(this.name);

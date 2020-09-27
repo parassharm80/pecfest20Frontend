@@ -1,6 +1,7 @@
 import {AfterViewInit, Component} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {EventService} from '../../event.service';
+import {ValidationService} from '../../../validation/validation.service';
 
 @Component({
   selector: 'app-academic',
@@ -14,7 +15,7 @@ export class AcademicComponent implements AfterViewInit {
   clubName:Array<string>=[];
   private clubEventsName: Array<string>;
 
-  constructor(private route: ActivatedRoute,private eventService:EventService) {
+  constructor(private route: ActivatedRoute,private eventService:EventService,public validationService:ValidationService) {
     this.route.params.subscribe(params => {
       this.name = params['name'];
     });

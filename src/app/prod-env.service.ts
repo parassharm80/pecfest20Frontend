@@ -13,6 +13,6 @@ export class ProdEnvService {
   constructor(private cookieService:CookieService) { }
   public getHttpHeaders() {
     let  headers:HttpHeaders=new HttpHeaders();
-    return headers.set("session_id",this.cookieService.get("session_id"));
+    return headers.set("session_id",this.cookieService.getAll()["session_id"]==undefined ? this.cookieService.get("session_id") : this.cookieService.getAll()["session_id"]);
   }
 }
