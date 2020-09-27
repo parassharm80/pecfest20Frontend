@@ -1,5 +1,7 @@
-#submit_form{
-  display: inline-block;
+#submit_form input{
+  display: inline;
+  width: 30%;
+  margin: 2%;
 }
 table {
   width: 100%;
@@ -50,3 +52,8 @@ tr.example-element-row:not(.example-expanded-row):active {
 .example-element-description-attribution {
   opacity: 0.5;
 }
+h1{
+  text-align: center;
+  font-weight: bold;
+}
+
