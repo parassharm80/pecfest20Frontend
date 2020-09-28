@@ -14,7 +14,6 @@ export class ValidationGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;
     let stateUrl=state.url;
     return this.validationService.verifySessionId().pipe(map((response) => {
       this.validationService.isLoggedIn=response.logged_in;
