@@ -3,13 +3,14 @@ import {CookieService} from "ngx-cookie-service";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {FormGroup} from '@angular/forms';
+import {ProdEnvService} from '../prod-env.service';
 @Injectable({providedIn: 'root'})
 export class AdminService{
   private url="http://localhost:8080/event/admin"
-  constructor(private http: HttpClient,private cookieService:CookieService) {
+  constructor(private http: HttpClient,private cookieService:CookieService,private prodEnvService:ProdEnvService) {
   }
   getEventDetails():Observable<any> {
-    return this.http.get(this.url,{headers:this.getHttpHeader()});
+    return this.http.get(this.url+"/event/admin",{headers:this.getHttpHeader()});
   }
 
   private getHttpHeader() {
@@ -19,11 +20,11 @@ export class AdminService{
 
 
   deleteEvent(event_id: any) :Observable<any>{
-    return this.http.delete(this.url+`/${event_id}`,{headers:this.getHttpHeader()});
+    return this.http.delete(this.url+"/event/admin"+`/${event_id}`,{headers:this.getHttpHeader()});
   }
 
   addEvent(form: FormGroup) {
-    return this.http.post(this.url,this.getEventRequestBody(form),{headers:this.getHttpHeader()})
+    return this.http.post(this.url+"/event/admin",this.getEventRequestBody(form),{headers:this.getHttpHeader()})
   }
 
   private getEventRequestBody(form: FormGroup) {
@@ -36,7 +37,7 @@ export class AdminService{
   }
 
   editEvent(form: FormGroup) {
-    return this.http.put(this.url+`/${form.controls["$key"].value}`,this.getEventRequestBody(form),{headers:this.getHttpHeader()})
+    return this.http.put(this.url+`/event/admin/${form.controls["$key"].value}`,this.getEventRequestBody(form),{headers:this.getHttpHeader()})
   }
 }
 

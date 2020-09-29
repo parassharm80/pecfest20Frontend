@@ -2,25 +2,26 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
 import {CookieService} from 'ngx-cookie-service';
+import {ProdEnvService} from '../prod-env.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EventService {
 
-  private url="http://localhost:8080/event/club-wise"
-  private registerUrl="http://localhost:8080/pecfest-registration";
+  private url=this.prodEnvService.prodUrl
+  private registerUrl=this.prodEnvService.prodUrl
   isFetchingEvents=false;
   firstTimeFetch=true;
   events:EventResponse;
   cachedWrapperResponse:EventWrapperResponse;
   clubEvents: Array<any>;
-  constructor(private http:HttpClient,private cookieService:CookieService) { }
+  constructor(private http:HttpClient,private cookieService:CookieService,private prodEnvService:ProdEnvService) { }
 
   fetchEvents():Observable<EventWrapperResponse> {
     this.isFetchingEvents = true;
     if(this.firstTimeFetch)
-      return this.http.get<EventWrapperResponse>(this.url);
+      return this.http.get<EventWrapperResponse>(this.url+"/event/club-wise");
     return of(this.cachedWrapperResponse);
   }
 
@@ -32,7 +33,7 @@ export class EventService {
   }
 
   registerIndividual(event_id):Observable<any> {
-    return this.http.post(this.registerUrl+`/${event_id}`,[],{headers:this.getHttpHeader()});
+    return this.http.post(this.registerUrl+`/pecfest-registration/${event_id}`,[],{headers:this.getHttpHeader()});
   }
   private getHttpHeader() {
     let  headers:HttpHeaders=new HttpHeaders();

@@ -2,13 +2,14 @@ import {Injectable} from "@angular/core";
 import {FormArray, FormControl, FormGroup, Validators} from '@angular/forms';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {CookieService} from 'ngx-cookie-service';
+import {ProdEnvService} from '../../../prod-env.service';
 
 @Injectable({providedIn: 'root'})
 export class formService{
   public form: FormGroup;
   localEventDetails: any;
-  url="http://localhost:8080/pecfest-registration";
-  constructor(private http:HttpClient,private cookieService:CookieService) {
+  url=this.prodEnvService.prodUrl
+  constructor(private http:HttpClient,private cookieService:CookieService,private prodEnvService:ProdEnvService) {
   }
   createForm(eventDetails: any) {
     this.form=new FormGroup({
@@ -35,11 +36,11 @@ export class formService{
   }
 
   registerTeam(pecfestIdList,team_name) {
-    return this.http.post(this.url+`/${this.localEventDetails.event_id}/${team_name}`,pecfestIdList,{headers:this.getHttpHeaders()});
+    return this.http.post(this.url+`/pecfest-registration/${this.localEventDetails.event_id}/${team_name}`,pecfestIdList,{headers:this.getHttpHeaders()});
   }
 
   private getHttpHeaders() {
     let  headers:HttpHeaders=new HttpHeaders();
-    return headers.set("session_id",this.cookieService.get("session_id"));
+    return headers.set("session_id",this.cookieService.getAll()["session_id"]==undefined ? this.cookieService.get("session_id") : this.cookieService.getAll()["session_id"]);
   }
 }
