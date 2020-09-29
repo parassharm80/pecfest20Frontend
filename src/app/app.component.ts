@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { Event, NavigationEnd, NavigationStart, Router } from "@angular/router";
 import { EventService } from './events/event.service';
 import { ValidationService } from './validation/validation.service';
@@ -8,10 +8,12 @@ import { ValidationService } from './validation/validation.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'PECFEST\'20';
   showLoading = true;
+  onMain: Boolean;
   constructor(private router: Router, public eventService: EventService, public validationGuard: ValidationService) {
+    this.onMain = false;
     this.router.events.subscribe((routerEvent: Event) => {
 
       if (routerEvent instanceof NavigationStart) {
@@ -22,5 +24,12 @@ export class AppComponent {
         this.showLoading = false;
       }
     });
+
   }
+  displayCounter(count) {
+    this.onMain = count;
+  }
+  ngOnInit() {
+  }
+
 }
