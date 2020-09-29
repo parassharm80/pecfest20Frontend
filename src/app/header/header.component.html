@@ -2,17 +2,17 @@
   <nav class="navbar navbar-expand-lg navbar-dark">
     <a class="navbar-brand"
        [routerLink]="['']"><img src="../../assets/pecfest_logo.png" class="logo"></a>
-    <button class="navbar-toggler"
+    <button class="navbar-toggler" (click)="this.changeName1(this.navview)"
             type="button"
             data-toggle="collapse"
             data-target="#navbarNav"
             aria-controls="navbarNav"
-            aria-expanded="false"
+            aria-expanded= navview
             aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class= "collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav mr-auto" (click)="this.changeName(this.navview)">
         <li class="nav-item" *ngIf="!validationGuardService.isLoggedIn">
           <a class = "nav-link"
              [routerLink]="['register']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="hbtn"><p class="text">REGISTER</p></button></a>
@@ -31,7 +31,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link"
-              [routerLink]="['events']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="hbtn"><p class="text">EVENTS</p></button></a>
+             [routerLink]="['events']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="hbtn"><p class="text">EVENTS</p></button></a>
         </li>
         <!-- <li class="nav-item">
           <a class="nav-link"
@@ -43,7 +43,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link"
-              [routerLink]="['team']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="hbtn"><p class="text">CONTACT US</p></button></a>
+             [routerLink]="['team']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="hbtn"><p class="text">CONTACT US</p></button></a>
         </li>
         <li *ngIf="validationGuardService.isAdmin==true" class="nav-item">
           <a class="nav-link"
@@ -57,3 +57,4 @@
     </div>
   </nav>
 </div>
+
