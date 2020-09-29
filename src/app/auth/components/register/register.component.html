@@ -1,9 +1,12 @@
+<head>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
 <div class="event-title">
   <h1 class="sheppard">Register</h1>
 </div>
 <div class="row">
   <div class="col-md-6 offset-md-3 mt-4">
-    <form [formGroup]="registrationForm">
+    <form [formGroup]="registrationForm" action="?" method="POST">
       <div class="form-group">
         <label class="laser" for="registerfirstname">First Name</label>
         <input
@@ -107,6 +110,9 @@
           placeholder="Enter your Gender"
           formControlName="gender"
         />
+      </div>
+      <div class="g-recaptcha"
+           data-sitekey="6LfT2tEZAAAAAKURM86lCsRhVkbHVWFCvEsJ_D5Q">
       </div>
       <button type="submit" (click)="onSubmit()" class="btn btn-primary laser-white">
         Register <i class="fas fa-sign-in-alt"></i>
