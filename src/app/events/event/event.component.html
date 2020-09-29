@@ -10,11 +10,11 @@
     <div class="event-info my-5">
       <div class="my-2 d-flex">
         <label class="laser">Start Date Time:</label
-        ><span>{{ eventDetails.event_start_date_and_time }}</span>
+        ><span>{{ eventDetails.event_start_date_and_time.substr(0,10)}}   :   {{ eventDetails.event_start_date_and_time.substr(11,5)}} IST</span>
       </div>
       <div class="my-2 d-flex">
         <label class="laser">End Date Time:</label
-        ><span>{{ eventDetails.event_end_date_and_time }}</span>
+        ><span>{{ eventDetails.event_end_date_and_time.substr(0,10)}}    :  {{ eventDetails.event_end_date_and_time.substr(11,5)}} IST</span>
       </div>
       <div class="my-2 d-flex">
         <label class="laser">Venue:</label

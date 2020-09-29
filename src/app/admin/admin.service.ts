@@ -6,7 +6,7 @@ import {FormGroup} from '@angular/forms';
 import {ProdEnvService} from '../prod-env.service';
 @Injectable({providedIn: 'root'})
 export class AdminService{
-  private url="http://localhost:8080/event/admin"
+  private url=this.prodEnvService.prodUrl
   constructor(private http: HttpClient,private cookieService:CookieService,private prodEnvService:ProdEnvService) {
   }
   getEventDetails():Observable<any> {
