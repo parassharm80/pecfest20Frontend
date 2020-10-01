@@ -20,7 +20,7 @@ export class AcademicComponent implements AfterViewInit {
       this.name = params['name'];
     });
     this.route.parent.url.subscribe(params => {
-      this.title = (this.name != undefined ? `${this.name}` : params[0].path) + ' Events'
+      this.title = (this.name != undefined ? `${this.name}` : params[0].path)
     });
   }
 

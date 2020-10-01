@@ -61,6 +61,12 @@ export class EventComponent implements OnInit {
         this.successMessage="Registration for "+`${this.eventDetails.event_name}`+" is successful."
     });
   }
+
+    manipulateLink() {
+       let arr=this.eventDetails.event_banner_image_url.split('/');
+       return `https://drive.google.com/uc?id=${arr[5]}&export=download`;
+
+    }
 }
 export interface EventsType {
   username1: String,

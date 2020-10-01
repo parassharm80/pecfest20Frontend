@@ -4,7 +4,7 @@
 <div class="box" *ngIf="!isFetchingProfile">
   <label class="laser1">PECFEST Username:</label><h2>{{ profile.pec_fest_id }}</h2>
   <label class="laser1">Full Name:</label><h2>{{ profile.full_name }}</h2>
-  <label class="laser1">Email:</label><h2>{{ profile.email }}</h2>
+  <label class="laser1">Email:</label><h2 class="email">{{ profile.email }}</h2>
   <label class="laser1">College:</label><h2>{{ profile.college_name }}</h2>
   <label class="laser1">Year:</label><h2>{{ profile.year_of_education }}</h2>
   <label class="laser1">Contact:</label><h2>{{ profile.contact_no }}</h2>
