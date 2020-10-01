@@ -1,8 +1,26 @@
+<div *ngIf="loading">
+  <div class="loading-spinner">
+    <div class="ld-dots">
+      <div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="event-container rounded container-sm mx-auto p-3" *ngIf="eventDetails!=null&&eventDetails!=undefined">
   <img *ngIf="eventDetails.event_banner_image_url!='NA'"
     class="event-image rounded mx-auto d-block img-fluid"
     [src]="manipulateLink()"
     alt="event banner"
+       (load)="onLoad()"
+       (loadstart)="this.loading=true"
   />
   <img *ngIf="eventDetails.event_banner_image_url=='NA'"
     class="event-image rounded mx-auto d-block img-fluid"
@@ -10,8 +28,10 @@
       eventDetails.event_name
     }}"
     alt="event banner"
+       (load)="onLoad()"
+       (loadstart)="this.loading=true"
   />
-  <div class="event-content">
+  <div class="event-content" *ngIf="!loading">
     <div class="event-info my-5">
       <div class="my-2 d-flex">
         <label class="laser">Start Date Time:</label
@@ -23,7 +43,7 @@
       </div>
       <div class="my-2 d-flex">
         <label class="laser">Venue:</label
-        ><span>{{ eventDetails.venue }}</span>
+        ><span [innerHTML]="this.eventDetails.venue"></span>
       </div>
       <div class="my-2 d-flex">
         <label class="laser">Prize:</label

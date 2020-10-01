@@ -15,6 +15,8 @@ export class TechnicalComponent implements AfterViewInit{
   events: Array<string>
   clubName:Array<string>=[];
   clubEventsName:Array<string>=[];
+  bannerUrl=[];
+  loading=true;
   constructor(private route: ActivatedRoute,private eventService:EventService,public validationService:ValidationService) {
     this.route.params.subscribe(params => {
       this.name = params['name'];
@@ -34,6 +36,7 @@ export class TechnicalComponent implements AfterViewInit{
           for (let clubEvent of myEvents)
             if(clubEvent.club_name==this.name) {
               this.clubEventsName =clubEvent.event_list.map(event=>event["event_name"]);
+              this.bannerUrl=clubEvent.event_list.map(eventX=>eventX["event_banner_image_url"]);
               this.eventService.clubEvents=clubEvent.event_list;
               break;
             }
@@ -50,5 +53,13 @@ export class TechnicalComponent implements AfterViewInit{
         this.events = this.clubName;
       });
     },0);
+  }
+  manipulateLink(indexOfelement: number) {
+    let event_banner_image_url=this.bannerUrl[indexOfelement];
+    let arr=event_banner_image_url.split('/');
+    return `https://drive.google.com/uc?id=${arr[5]}&export=download`;
+  }
+  onLoad() {
+    this.loading=false;
   }
 }
