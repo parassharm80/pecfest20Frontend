@@ -1,3 +1,4 @@
+
 <div class="event-container rounded container-sm mx-auto p-3" *ngIf="eventDetails!=null&&eventDetails!=undefined">
   <img
     class="event-image rounded mx-auto d-block img-fluid"
@@ -35,7 +36,7 @@
     </div>
     <div class="event-rules my-5">
       <h2 class="laser">Rules</h2>
-      <p>{{ eventDetails.rules == null ? "-" : eventDetails.rules }}</p>
+      <p [innerHTML]="this.eventDetails.rules.replace('\\n', '<br/>')"></p>
     </div>
     <div class="event-description my-5">
       <h2 class="laser">Description</h2>
