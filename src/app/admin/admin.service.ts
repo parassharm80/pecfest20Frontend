@@ -28,6 +28,7 @@ export class AdminService{
   }
 
   private getEventRequestBody(form: FormGroup) {
+    
     return {event_name:form.controls["event_name"].value,event_banner_image_url:form.controls["event_banner_image_url"].value,
     event_type:form.controls["event_type"].value,event_count:form.controls["event_count"].value,organizing_club:form.controls["organizing_club"].value,
       organizer_contact_no:form.controls["organizer_contact_no"].value,min_number_of_participants:form.controls["min_number_of_participants"].value,

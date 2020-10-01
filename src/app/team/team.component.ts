@@ -49,7 +49,7 @@ export class TeamComponent implements OnInit {
     },
     {
       "name": 'Navteshwar Singh',
-      "post": "Discipline, Printing Publishing Stationary, and Creative",
+      "post": "Discipline, Printing Publishing Stationery, and Creative",
       // "fb": "",
       // "insta": '',
       "photo": "Navteshwar_Singh.jpg",

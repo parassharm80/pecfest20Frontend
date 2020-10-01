@@ -22,6 +22,7 @@ import {AdminComponent} from "./admin.component";
 import { FormComponent } from './form/form.component';
 import { TeamAdminComponent } from './team/team-admin/team-admin.component';
 import { TeamFormComponent } from './team/team-form/team-form.component';
+import {NgxMatDatetimePickerModule} from '@angular-material-components/datetime-picker';
 
 
 @NgModule({
@@ -51,7 +52,7 @@ import { TeamFormComponent } from './team/team-form/team-form.component';
     MatSnackBarModule,
     MatDialogModule,
     MatToolbarModule,
-
+    NgxMatDatetimePickerModule
   ],
   exports:[AdminComponent,FormComponent]
 })

@@ -12,7 +12,7 @@
     Submit <i class="fas fa-sign-in-alt"></i>
   </button>
 </div>
-<div id="content" >
+<div id="content" *ngIf="isSubmitted">
   <div>
     <div class = "search-div">
       <button mat-raised-button (click)="onCreate()">
@@ -102,12 +102,13 @@
       [pageSize]="10"
       [pageSizeOptions]="[5, 10, 25, 100, 1000]" showFirstLastButtons>
     </mat-paginator>
-    <div
-      class="alert alert-danger"
-      role="alert"
-      *ngIf="message!=null"
-      style="margin-top: 10px">
-      {{message}}
-    </div>
+
   </div>
+</div>
+<div
+  class="alert alert-danger"
+  role="alert"
+  *ngIf="message!=null"
+  style="margin-top: 10px">
+  {{message}}
 </div>
