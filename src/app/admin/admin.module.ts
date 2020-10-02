@@ -23,10 +23,11 @@ import { FormComponent } from './form/form.component';
 import { TeamAdminComponent } from './team/team-admin/team-admin.component';
 import { TeamFormComponent } from './team/team-form/team-form.component';
 import {NgxMatDatetimePickerModule} from '@angular-material-components/datetime-picker';
+import { UserRegComponent } from './user/user-reg.component';
 
 
 @NgModule({
-  declarations: [AdminComponent, FormComponent, TeamAdminComponent, TeamFormComponent],
+  declarations: [AdminComponent, FormComponent, TeamAdminComponent, TeamFormComponent, UserRegComponent],
   providers: [{ provide: MatDialogRef, useValue: {} },
     { provide: MAT_DIALOG_DATA, useValue: [FormComponent] }],
   imports: [

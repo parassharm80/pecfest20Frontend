@@ -22,7 +22,7 @@ export class TeamComponent implements OnInit {
       // "fb": "Co-Convener",
       // "insta": 'dss',
       "post": "Co-Convener",
-      "photo": "",
+      "photo": "Anirudh_Gargya.jpg",
       // "wh":"8787678767",
       // "ph":"8787678767",
       // "linked":""

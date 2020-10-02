@@ -53,6 +53,10 @@
           <a class="nav-link"
              [routerLink]="['admin/team']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="hbtn"><p class="text">TEAM ADMIN</p></button></a>
         </li>
+        <li *ngIf="validationGuardService.isAdmin==true" class="nav-item">
+          <a class="nav-link"
+             [routerLink]="['admin/user-reg']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="hbtn"><p class="text">USER REG ADMIN</p></button></a>
+        </li>
       </ul>
     </div>
   </nav>
