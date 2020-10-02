@@ -6,6 +6,7 @@ import {Router} from '@angular/router';
 import {ValidationService} from '../../../validation/validation.service';
 import {profileService} from './profile.service';
 import {CookieService} from 'ngx-cookie-service';
+import {ProdEnvService} from '../../../prod-env.service';
 
 @Component({
   selector: 'app-profile',
@@ -15,12 +16,12 @@ import {CookieService} from 'ngx-cookie-service';
 export class ProfileComponent implements OnInit {
   public profile:any;
   public title: String;
-  private url="http://localhost:8080/logout";
+  private url=this.prodEnvService.prodUrl;
   errorMessage=null;
   successMessage=null;
   isFetchingProfile=true;
   constructor(private formComponent: FormComponent,public dialog: MatDialog,private http:HttpClient,
-  private validationService:ValidationService,private router:Router,private profile_Service:profileService,private cookieService:CookieService) {
+  private validationService:ValidationService,private router:Router,private profile_Service:profileService,private cookieService:CookieService,private prodEnvService:ProdEnvService) {
     this.profile_Service.getUserDetails().subscribe(response=>{
       if(response["http_status"]=="OK"){
         this.profile=response["data"];
@@ -45,7 +46,7 @@ export class ProfileComponent implements OnInit {
   onClick() {
     this.errorMessage=null;
     this.successMessage=null;
-    this.http.delete(this.url,{headers:this.getHttpHeaders()}).subscribe(response=>{
+    this.http.delete(this.url+"/logout",{headers:this.getHttpHeaders()}).subscribe(response=>{
         if(response["http_status"]!="OK")
           this.errorMessage=response["status_message"];
         else {

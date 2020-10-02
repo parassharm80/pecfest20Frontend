@@ -6,6 +6,7 @@ import {formService} from "./form.service";
 import {MatSnackBar, MatSnackBarConfig} from "@angular/material/snack-bar";
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {ProdEnvService} from '../../../../prod-env.service';
 
 @Component({
   selector: 'app-form',
@@ -15,12 +16,12 @@ import {Observable} from 'rxjs';
 @Injectable({ providedIn: 'root'})
 export class FormComponent implements OnInit {
   private userId=null;
-  private url: string="http://localhost:8080/user"
+  private url: string=this.prodEnvService.prodUrl;
    errorMessage=null;
    successMessage=null;
 
   constructor(private profileService: profileService,private dialog: MatDialog,private snackBar: MatSnackBar,
-              private formService: formService, private dialogRef: MatDialogRef<FormComponent>,private http:HttpClient) { }
+              private formService: formService, private dialogRef: MatDialogRef<FormComponent>,private http:HttpClient,private prodEnvService:ProdEnvService) { }
   public form: FormGroup = this.formService.form;
   config: MatSnackBarConfig = {
     duration: 3000,
@@ -96,7 +97,7 @@ export class FormComponent implements OnInit {
   }
 
   private sendToBackend():Observable<any> {
-    return this.http.put(this.url+`/${this.formService.userId}`,{first_name:this.form.controls["first_name"].value,last_name:this.form.controls["last_name"].value,
+    return this.http.put(this.url+`/user/${this.formService.userId}`,{first_name:this.form.controls["first_name"].value,last_name:this.form.controls["last_name"].value,
       gender:this.form.controls["gender"].value,contact_no:this.form.controls["contact_no"].value,college_name:this.form.controls["college_name"].value,
       year_of_education:this.form.controls["year_of_education"].value})
   }

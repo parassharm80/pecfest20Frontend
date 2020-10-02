@@ -37,6 +37,7 @@ export class TeamAdminComponent implements OnInit {
     verticalPosition: "top"
   };
   eventName=new FormControl('',Validators.required);
+  isSubmitted: boolean=false;
   constructor(private teamAdminService:TeamAdminService,private route: ActivatedRoute,public dialog: MatDialog,private adminService: TeamAdminService,
   private changeRef:ChangeDetectorRef, public form: TeamFormComponent,private snackBar:MatSnackBar) { }
 
@@ -62,13 +63,20 @@ export class TeamAdminComponent implements OnInit {
     this.listData=null;
     this.teamAdminService.getRegsDetails(event_name).subscribe(
       (response) => {
-        if(response["http_status"]!="OK")
-          this.message="Oops! you are not authorized to view."
+        if(response["http_status"]!="OK") {
+          if (response["http_status"] == "FORBIDDEN")
+            this.message = "Oops! you are not authorized to view."
+          else
+            this.message="No such event name exists. Check for spelling mistakes";
+        }
         else
-        if(response.data==null||response.data.length==0)
-          this.message="No teams registered"
+        if(response.data==null||response.data.length==0) {
+          this.isSubmitted=true;
+          this.message = "No teams registered"
+        }
         else
         {
+          this.isSubmitted=true;
           this.listData = new MatTableDataSource(response.data);
           this.listData.sort = this.sort;
           this.listData.paginator = this.paginator;

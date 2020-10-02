@@ -14,10 +14,14 @@
           <mat-error>This field is mandatory</mat-error>
         </mat-form-field>
         <div *ngFor="let usernameControl of formService.form.controls['team_members']['controls'];index as i">
-        <mat-form-field>
+        <mat-form-field *ngIf="i>0">
           <input [formControl]="usernameControl" matInput placeholder="Member{{i+1}} PECFEST Username">
           <mat-error>This field is mandatory</mat-error>
         </mat-form-field>
+          <mat-form-field *ngIf="i==0">
+            <input [formControl]="usernameControl" matInput placeholder="Leader PECFEST Username">
+            <mat-error>This field is mandatory</mat-error>
+          </mat-form-field>
         </div>
         <button  style="margin-top: 10px;width: 120px" class="event-reg btn btn-primary mx-auto d-block my3" (click)="addTeamMember()">Add Member</button>
         <div class = "button-row">

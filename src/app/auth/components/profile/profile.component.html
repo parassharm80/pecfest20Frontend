@@ -2,6 +2,7 @@
   <h1 class="sheppard">{{ title }}</h1>
 </div>
 <div class="box" *ngIf="!isFetchingProfile">
+
   <label class="laser fonting">PECFEST Username:</label><h2>{{ profile.pec_fest_id }}</h2>
   <label class="laser fonting">Full Name:</label><h2>{{ profile.full_name }}</h2>
   <label class="laser fonting">Email:</label><h2>{{ profile.email }}</h2>
@@ -9,6 +10,7 @@
   <label class="laser fonting">Year:</label><h2>{{ profile.year_of_education }}</h2>
   <label class="laser fonting">Contact:</label><h2>{{ profile.contact_no }}</h2>
   <label class="laser fonting">Gender:</label><h2>{{ profile.gender }}</h2>
+
 
   <div
     class="alert alert-danger"

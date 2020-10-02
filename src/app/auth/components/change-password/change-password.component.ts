@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {sha512} from 'js-sha512';
+import {ProdEnvService} from '../../../prod-env.service';
 
 @Component({
   selector: 'app-change-password',
@@ -17,8 +18,8 @@ export class ChangePasswordComponent implements OnInit {
   successMessage=null;
   userId;
   verificationCode;
-  private url="http://localhost:8080/reset-password"
-  constructor(private router:Router,private formBuilder:FormBuilder,private http:HttpClient,private route: ActivatedRoute) {
+  private url=this.prodEnvService.prodUrl;
+  constructor(private router:Router,private formBuilder:FormBuilder,private http:HttpClient,private route: ActivatedRoute,private prodEnvService:ProdEnvService) {
     this.changePasswordForm=this.formBuilder.group({password:['',Validators.required],confirm_password:['',Validators.required]});
     this.route.params.subscribe(params => {
       this.userId = params['user_id'];
@@ -40,7 +41,7 @@ export class ChangePasswordComponent implements OnInit {
     this.successMessage=null;
 
     if(this.changePasswordForm.valid&&(this.changePasswordForm.controls["password"].value==this.changePasswordForm.controls["confirm_password"].value))
-      this.http.post(this.url,{user_id:this.userId,verification_code:this.verificationCode,password:sha512(this.changePasswordForm.controls["password"].value)}).subscribe(
+      this.http.post(this.url+"/reset-password",{user_id:this.userId,verification_code:this.verificationCode,password:sha512(this.changePasswordForm.controls["password"].value)}).subscribe(
         response=>{
           if(response["http_status"]!="OK")
           {
