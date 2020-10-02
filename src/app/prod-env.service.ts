@@ -7,7 +7,8 @@ import {CookieService} from 'ngx-cookie-service';
 })
 export class ProdEnvService {
 
-  prodUrl="http://localhost:8080"
+  // prodUrl="http://localhost:8080";
+  prodUrl="http://ec2-13-232-246-179.ap-south-1.compute.amazonaws.com"
   clubNames=["SCC","EIC","CIM","EEB","HEB","PEB","Rotaract_Club","PDC","APC","Music_Club","SAASC","Dramatics","NSS","NCC",
   "WEC","IIM","IGS","SESI","ROBOTICS","SAE","IEEE","SME","ASPS","ASCE","ASME","ATS","ACM_CSS","IETE","SPORTS"];
   constructor(private cookieService:CookieService) { }

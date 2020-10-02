@@ -1,11 +1,31 @@
+<div *ngIf="loading&&this.name">
+  <div class="loading-spinner">
+    <div class="ld-dots">
+      <div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="mx-auto m-3" *ngIf="validationService.stateChecked">
-  <div class="event-title">
+  <div class="event-title" *ngIf="!loading||!this.name">
     <h1 class="sheppard">{{title}}</h1>
   </div>
   <ul class="events-list list-group text-center">
     <li class="py-2" *ngFor="let event of events;let indexOfelement=index;">
-      <a *ngIf='this.name' routerLink="../../lecture/{{this.name}}/{{indexOfelement+1}}"><img class="event-image rounded img-fluid"
-                                                                                               src="https://placehold.it/1000x200/CCCCCC/999999&text={{event}}" alt="{{event}}}"></a>
+      <a *ngIf='this.name' routerLink="../../lecture/{{this.name}}/{{indexOfelement+1}}"><img (load)="onLoad()"
+                                                                                              (loadstart)="this.loading=true" class="event-image rounded img-fluid" *ngIf="bannerUrl[indexOfelement]=='NA'"
+                                                                                              src="https://placehold.it/1000x200/CCCCCC/999999&text={{event}}" alt="{{event}}}">
+        <img (load)="onLoad()"
+             (loadstart)="this.loading=true" class="event-image rounded img-fluid" *ngIf="bannerUrl[indexOfelement]!='NA'"
+             [src]="manipulateLink(indexOfelement)" alt="{{event}}}"></a>
       <a *ngIf='!this.name' routerLink="{{event}}">{{ event }}</a>
     </li>
   </ul>

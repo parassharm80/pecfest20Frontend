@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {ActivatedRoute, Router} from '@angular/router';
+import {ProdEnvService} from '../../../prod-env.service';
 
 @Component({
   selector: 'app-verify-email',
@@ -11,13 +12,13 @@ export class VerifyEmailComponent implements OnInit {
 
   message=null;
   successMessage=null;
-  private url="http://localhost:8080/register/verify";
+  private url=this.prodEnvService.prodUrl;
   param:HttpParams=new HttpParams();
-  constructor(private http:HttpClient,private route:ActivatedRoute,private router:Router) { }
+  constructor(private http:HttpClient,private route:ActivatedRoute,private router:Router,private prodEnvService:ProdEnvService) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params=>{
-      this.http.get(this.url,{params:this.param.append("confirmation_token",params["verification_token"])})
+      this.http.get(this.url+"/register/verify",{params:this.param.append("confirmation_token",params["verification_token"])})
         .subscribe(response=>{
           if(response["http_status"]!="OK")
             this.message=response["status_message"];

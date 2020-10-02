@@ -18,6 +18,15 @@ export class WebsiteTeamComponent implements OnInit {
       linked:"https://www.linkedin.com/in/paras-sharma-b8835715b"
     },
     {
+      name:'Himanshu Gaur',
+      fb:"https://www.facebook.com/himanshu.gaur.3192",
+      insta:"https://www.instagram.com/poetic.himanshu/?r=nametag",
+      image:"Himanshu Gaur.jpg",
+      event:false,
+      post:"Full-Stack Developer",
+      linked:"https://www.linkedin.com/in/himanshu-gaur-149101163"
+    },
+    {
       name:'Animesh Garg',
       insta:"https://www.instagram.com/animesh_garg07/",
       image:"ani.jpg",
@@ -33,15 +42,6 @@ export class WebsiteTeamComponent implements OnInit {
       event:false,
       post:"Frontend Developer",
       linked:"https://www.linkedin.com/in/gandharv-jaggi-26778a182"
-    },
-    {
-      name:'Himanshu Gaur',
-      fb:"https://www.facebook.com/himanshu.gaur.3192",
-      insta:"https://www.instagram.com/poetic.himanshu/?r=nametag",
-      image:"Himanshu Gaur.jpg",
-      event:false,
-      post:"Backend Developer",
-      linked:"https://www.linkedin.com/in/himanshu-gaur-149101163"
     },
 
     {

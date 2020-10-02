@@ -12,7 +12,7 @@ export let head=[
   },
   {
   "name": "Pranav",
-  "post": "Printing, Publishing & Stationary",
+  "post": "Printing, Publishing & Stationery",
   "photo": "Pranav.jpg",
   "ph":"9097512881"
 },
@@ -36,7 +36,7 @@ export let head=[
   },
   {
     "name": "Shantnu Chawla",
-    "post": "Event Coordination (Cultural)",
+    "post": "Event Coordination (Technical)",
     "insta": "https://instagram.com/shane_chawla/",
     "photo": "Shantnu_Chawla.jpg",
     "ph":"9041490500",

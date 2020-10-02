@@ -16,6 +16,7 @@ export class EventComponent implements OnInit {
    eventDetails=null;
   errorMessage=null;
   successMessage=null;
+  loading=true;
   constructor(private formComponent: FormComponent,public dialog: MatDialog,private route: ActivatedRoute,private eventService:EventService) {
     this.eventService.isFetchingEvents=true;
 
@@ -60,6 +61,16 @@ export class EventComponent implements OnInit {
       else
         this.successMessage="Registration for "+`${this.eventDetails.event_name}`+" is successful."
     });
+  }
+
+    manipulateLink() {
+       let arr=this.eventDetails.event_banner_image_url.split('/');
+       return `https://drive.google.com/uc?id=${arr[5]}&export=download`;
+
+    }
+
+  onLoad() {
+    this.loading=false;
   }
 }
 export interface EventsType {

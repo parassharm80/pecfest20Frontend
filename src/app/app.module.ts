@@ -16,25 +16,28 @@ import {CookieService} from 'ngx-cookie-service';
 import { PacmanComponent } from './pacman/pacman.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    PacmanComponent
-  ],
-  imports: [
-    CommonModule,
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    RouterModule,
-    HeaderModule,
-    MatCheckboxModule,
-    MatToolbarModule,
-    MatDialogModule,
-    HttpClientModule,
-  ],
-  providers: [CookieService],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HomeComponent,
+        PacmanComponent
+    ],
+    imports: [
+        CommonModule,
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatButtonModule,
+        RouterModule,
+        HeaderModule,
+        MatCheckboxModule,
+        MatToolbarModule,
+        MatDialogModule,
+        HttpClientModule,
+    ],
+    providers: [CookieService],
+    exports: [
+        PacmanComponent
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
