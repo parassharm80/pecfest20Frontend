@@ -23,17 +23,17 @@ export class WebsiteTeamComponent implements OnInit {
       insta:"https://www.instagram.com/poetic.himanshu/?r=nametag",
       image:"Himanshu Gaur.jpg",
       event:false,
-      post:"Full-Stack Developer",
+      post:"",
       linked:"https://www.linkedin.com/in/himanshu-gaur-149101163"
     },
-    // {
-    //   name:'Animesh Garg',
-    //   insta:"https://www.instagram.com/animesh_garg07/",
-    //   image:"ani.jpg",
-    //   event:false,
-    //   post:"Frontend Developer",
-    //   linked:"https://www.linkedin.com/in/animesh-garg-15997a145/"
-    // },
+    {
+      name:'Animesh Garg',
+      insta:"https://www.instagram.com/animesh_garg07/",
+      image:"ani.jpg",
+      event:false,
+      post:"",
+      linked:"https://www.linkedin.com/in/animesh-garg-15997a145/"
+    },
     {
       name:'Gandharv Jaggi',
       fb:"https://www.facebook.com/gandharv.jaggi",

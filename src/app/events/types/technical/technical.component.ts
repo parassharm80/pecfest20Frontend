@@ -23,7 +23,7 @@ export class TechnicalComponent implements AfterViewInit{
       console.log(this.name);
     });
     this.route.parent.url.subscribe(params => {
-      this.title = (this.name != undefined ? `${this.name}` : params[0].path) + ' Events'
+      this.title = (this.name != undefined ? `${this.name}` : params[0].path);
 
     });
   }
