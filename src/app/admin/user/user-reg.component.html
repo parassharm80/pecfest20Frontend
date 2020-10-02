@@ -1,6 +1,6 @@
 <html>
 <h1>User Details</h1>
-<div *ngIf="!isFetching">
+
 <mat-form-field class = "search-form-field" floatLabel="never" *ngIf="listData!=null">
   <input matInput  [(ngModel)]="searchKey" name = "search" (keyup)="applyFilter()" placeholder="Search" autocomplete="off" style="background-color: white;color: darkslateblue;">
   <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClick()">
@@ -8,8 +8,8 @@
   </button>
 </mat-form-field>
 
-<div class="mat-elevation-z8">
-<table mat-table [dataSource]="listData" class="mat-elevation-z8" matSort multiTemplateDataRows>
+<div class="mat-elevation-z8" >
+<table mat-table [dataSource]="listData" class="mat-elevation-z8" matSort >
   <ng-container matColumnDef="pec_fest_id">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>PECFEST ID</th>
     <td mat-cell *matCellDef="let element"> {{element.pec_fest_id}} </td>
@@ -40,5 +40,5 @@
 <mat-paginator       [pageSize]="10"
                      [pageSizeOptions]="[5, 10, 25, 100, 1000]" showFirstLastButtons></mat-paginator>
 </div>
-</div>
+
 </html>

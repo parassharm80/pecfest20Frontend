@@ -35,19 +35,22 @@ export class UserRegComponent implements OnInit {
   message=null;
   isFetching=true;
   url=this.prodEnvService.prodUrl;
-  displayedColumns=["pec_fest_id","full_name","contact_no","college_name","email","year_of_education"];
+  displayedColumns=["pec_fest_id","full_name","contact_no","email","college_name","year_of_education"];
   constructor(private prodEnvService:ProdEnvService,private http:HttpClient,private changeRef:ChangeDetectorRef,private snackBar:MatSnackBar) {
-    this.http.get<WrapperResponse>(this.url+"/user",{headers:this.prodEnvService.getHttpHeaders()}).subscribe(response=>{
-      this.listData = new MatTableDataSource(response.data);
-      this.listData.sort = this.sort;
-      this.listData.paginator = this.paginator;
-      this.changeRef.detectChanges();
-      this.isFetching=false;
-    },error => this.snackBar.open("You are not Authorized",'',this.config)
-  );
+
   }
 
   ngOnInit(): void {
+    this.http.get<WrapperResponse>(this.url+"/user",{headers:this.prodEnvService.getHttpHeaders()}).subscribe(response=>{
+        this.listData = new MatTableDataSource(response.data);
+      this.changeRef.detectChanges();
+        this.listData.sort = this.sort;
+        this.listData.paginator = this.paginator;
+      this.changeRef.detectChanges();
+
+        this.isFetching=false;
+      },error => this.snackBar.open("You are not Authorized",'',this.config)
+    );
   }
   onSearchClick(){
     this.searchKey="";
