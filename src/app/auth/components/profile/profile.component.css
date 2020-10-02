@@ -1,6 +1,6 @@
 .box {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 60%;
+  width: 60%;
   margin: auto;
   text-align: center;
   font-family: arial;
@@ -15,4 +15,14 @@ h2 {
   font-weight: bold;
   font-family: "Grandstander", cursive;
   font-size: 140%;
+}
+
+@media (max-width: 600px) {
+  .box {
+    width: 100%;
+  }
+
+  .email {
+    font-size: 100%;
+  }
 }
