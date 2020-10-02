@@ -131,5 +131,9 @@
   }
   .car img {
     position: fixed;
+
+  }
+  .social-menu{
+    position: fixed;
   }
 }
