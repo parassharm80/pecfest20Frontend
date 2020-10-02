@@ -1,6 +1,5 @@
-
 <div class="bg-img">
-  <app-header (fire)='displayCounter($event)'></app-header>
+  <app-header (fire)="displayCounter($event)"></app-header>
   <app-pacman
     *ngIf="
       showLoading ||
@@ -8,5 +7,5 @@
       !validationGuard.stateChecked
     "
   ></app-pacman>
-  <router-outlet *ngIf="this.onMain==false"></router-outlet>
+  <router-outlet *ngIf="this.onMain == false"></router-outlet>
 </div>

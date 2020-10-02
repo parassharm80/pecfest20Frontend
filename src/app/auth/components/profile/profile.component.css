@@ -8,24 +8,11 @@
 button {
   margin: 1% 10% 5% 10%;
 }
-.laser1 {
-  font-family: "laser";
+.fonting {
   font-size: 150%;
-  letter-spacing: 2px;
-  padding: 0 5px;
-  background: -webkit-linear-gradient(#ff6666, #f5ff66);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
-h2{
-  overflow-x: scroll;
+h2 {
   font-weight: bold;
-  font-family: 'Grandstander', cursive;
+  font-family: "Grandstander", cursive;
   font-size: 140%;
 }
-::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
-}
-
