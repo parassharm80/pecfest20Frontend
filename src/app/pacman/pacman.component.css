@@ -26,7 +26,6 @@
 .ld-dots > div:nth-child(2) div {
   position: fixed;
   top: 40px;
-  left: 40px;
   width: 120px;
   height: 60px;
   border-radius: 120px 120px 0 0;
@@ -77,16 +76,12 @@
   animation-delay: 0s;
 }
 .loading-spinner {
-  width: 200px;
-  height: 200px;
-  display: inline-block;
-  overflow: hidden;
   background: transparent;
 }
 .ld-dots {
   width: 100%;
-  top: 40%;
-  left: 45%;
+  top: calc(50vh - 120px);
+  left: calc(50vw - 60px);
   height: 100%;
   position: fixed;
   transform: translateZ(0) scale(1);
