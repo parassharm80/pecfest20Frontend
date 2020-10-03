@@ -27,14 +27,6 @@ export class WebsiteTeamComponent implements OnInit {
       linked:"https://www.linkedin.com/in/himanshu-gaur-149101163"
     },
     {
-      name:'Animesh Garg',
-      insta:"https://www.instagram.com/animesh_garg07/",
-      image:"ani.jpg",
-      event:false,
-      post:"",
-      linked:"https://www.linkedin.com/in/animesh-garg-15997a145/"
-    },
-    {
       name:'Gandharv Jaggi',
       fb:"https://www.facebook.com/gandharv.jaggi",
       insta:"https://www.instagram.com/gandharv_jaggi/",
