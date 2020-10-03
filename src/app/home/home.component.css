@@ -87,6 +87,11 @@
     transform: translateX(-170vh);
   }
 }
+@keyframes motion1 {
+  100% {
+    transform: translateX(-140vh);
+  }
+}
 
 @keyframes suspension {
   40% {
@@ -119,9 +124,16 @@
     bottom: 0%;
   }
   .surface {
+    animation: motion1 5s linear infinite;
+    height: 70vh;
+    width: calc(140vh+ 110vw);
     position: relative;
   }
   .car img {
+    position: fixed;
+
+  }
+  .social-menu{
     position: fixed;
   }
 }

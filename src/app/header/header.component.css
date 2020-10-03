@@ -1,6 +1,8 @@
 .header {
   padding: 0.5vh;
+  z-index: 1000;
 }
+
 .logo {
   width: 100px;
   height: 100px;

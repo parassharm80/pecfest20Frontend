@@ -23,6 +23,7 @@ h2 {
   }
 
   .email {
+    overflow-x: scroll;
     font-size: 100%;
   }
 }
