@@ -41,12 +41,12 @@
         >
       </li> -->
       <li (click)="this.toggleClose()">
+        <a [routerLink]="['team']" routerLinkActive="active">CONTACT US</a>
+      </li>
+      <li (click)="this.toggleClose()">
         <a [routerLink]="['website-team']" routerLinkActive="active"
           >DEVELOPERS</a
         >
-      </li>
-      <li (click)="this.toggleClose()">
-        <a [routerLink]="['team']" routerLinkActive="active">CONTACT US</a>
       </li>
       <li
         (click)="this.toggleClose()"
