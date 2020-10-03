@@ -19,13 +19,13 @@ export class TeamComponent implements OnInit {
     },
     {
       "name": 'Anirudh Gargya',
-      // "fb": "Co-Convener",
-      // "insta": 'dss',
+      "fb": "https://www.facebook.com/anirudh.gargya.9",
+      "insta": 'https://instagram.com/gargya_jr?igshid=1wc3trbqn1h98',
       "post": "Co-Convener",
       "photo": "Anirudh_Gargya.jpg",
       // "wh":"8787678767",
-      // "ph":"8787678767",
-      // "linked":""
+      "ph":"7999540001",
+      "linked":"http://linkedin.com/in/anirudh-gargya-540545161"
     },
     {
       "name": 'Ashish Kumar Singh',
