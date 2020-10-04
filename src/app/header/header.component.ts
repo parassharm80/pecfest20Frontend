@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ValidationService } from '../validation/validation.service';
 import { HeaderService } from "./header.service";
 
@@ -8,8 +8,6 @@ import { HeaderService } from "./header.service";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Output() fire: EventEmitter<any> = new EventEmitter();
-
   constructor(public validationGuardService: ValidationService, private headerService: HeaderService) {
   }
 
@@ -24,14 +22,5 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.access();
   }
-  // view = false;
-  // access() {
-  //   this.headerService.getEventDetails().subscribe(
-  //     (response) => {
-  //       if(response["http_status"]=="OK")
-  //         this.view = true;
-  //     })
-  // }
 }

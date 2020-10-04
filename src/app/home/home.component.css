@@ -137,3 +137,16 @@
     position: fixed;
   }
 }
+
+.forMobile{
+  display: none;
+}
+
+@media(max-width: 450px){
+  .forDesktop{
+    display: none;
+  }
+  .forMobile{
+    display: flex;
+  }
+}

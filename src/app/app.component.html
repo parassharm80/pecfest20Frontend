@@ -3,6 +3,7 @@
   <app-pacman
     *ngIf="
       showLoading ||
+      imageLoading ||
       eventService.isFetchingEvents ||
       !validationGuard.stateChecked
     "

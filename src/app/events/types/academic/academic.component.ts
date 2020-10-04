@@ -1,25 +1,33 @@
-import {AfterViewInit, Component} from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {EventService} from '../../event.service';
-import {ValidationService} from '../../../validation/validation.service';
+import { EventService } from '../../event.service';
+import { SharedService } from '../shared.service';
+import { ValidationService } from '../../../validation/validation.service';
 
 @Component({
   selector: 'app-academic',
-  templateUrl: './academic.component.html',
+  templateUrl: '../eventType.component.html',
   styleUrls: ['../../events.component.css']
 })
 export class AcademicComponent implements AfterViewInit {
+
   name: string;
   title: string
   events: Array<string>
-  clubName:Array<string>=[];
-  private clubEventsName: Array<string>;
-   bannerUrl=[];
-  loading=true;
+  clubName: Array<string> = [];
+  bannerUrl = [];
+  clubEventsName: Array<string>;
+  type = 'lecture'
+  loading = false;
+  counter = 0;
 
-  constructor(private route: ActivatedRoute,private eventService:EventService,public validationService:ValidationService) {
+  constructor(private route: ActivatedRoute, private eventService: EventService, public validationService: ValidationService, private imageLoader: SharedService<boolean>) {
     this.route.params.subscribe(params => {
       this.name = params['name'];
+      if (this.name) {
+        this.loading = true
+        this.imageLoader.next(true);
+      }
     });
     this.route.parent.url.subscribe(params => {
       this.title = (this.name != undefined ? `${this.name}` : params[0].path)
@@ -35,7 +43,7 @@ export class AcademicComponent implements AfterViewInit {
           for (let clubEvent of myEvents)
             if (clubEvent.club_name == this.name) {
               this.clubEventsName = clubEvent.event_list.map(event => event["event_name"]);
-              this.bannerUrl=clubEvent.event_list.map(eventX=>eventX["event_banner_image_url"]);
+              this.bannerUrl = clubEvent.event_list.map(eventX => eventX["event_banner_image_url"]);
               this.eventService.clubEvents = clubEvent.event_list;
               break;
             }
@@ -54,12 +62,16 @@ export class AcademicComponent implements AfterViewInit {
       }, 0);
   }
   manipulateLink(indexOfelement: number) {
-    let event_banner_image_url=this.bannerUrl[indexOfelement];
-    let arr=event_banner_image_url.split('/');
+    let event_banner_image_url = this.bannerUrl[indexOfelement];
+    let arr = event_banner_image_url.split('/');
     return `https://drive.google.com/uc?id=${arr[5]}&export=download`;
   }
   onLoad() {
-    this.loading=false;
+    this.counter++
+    if (this.counter == this.eventService.clubEvents.length) {
+      this.loading = false
+      this.imageLoader.next(false);
+    }
   }
 }
 

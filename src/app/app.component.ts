@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Event, NavigationEnd, NavigationStart, Router } from "@angular/router";
 import { EventService } from './events/event.service';
+import { SharedService } from './events/types/shared.service';
 import { ValidationService } from './validation/validation.service';
 
 @Component({
@@ -11,8 +12,8 @@ import { ValidationService } from './validation/validation.service';
 export class AppComponent implements OnInit {
   title = 'PECFEST\'20';
   showLoading = true;
-  onMain: Boolean;
-  constructor(private router: Router, public eventService: EventService, public validationGuard: ValidationService) {
+  imageLoading = false;
+  constructor(private router: Router, public eventService: EventService, public validationGuard: ValidationService, private imageLoader: SharedService<boolean>) {
     this.router.events.subscribe((routerEvent: Event) => {
 
       if (routerEvent instanceof NavigationStart) {
@@ -24,8 +25,10 @@ export class AppComponent implements OnInit {
       }
     });
 
+    this.imageLoader.subscribe((bool) => {
+      this.imageLoading = bool
+    })
   }
   ngOnInit() {
   }
-
 }
