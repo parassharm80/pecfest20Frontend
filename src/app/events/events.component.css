@@ -59,6 +59,7 @@ li {
   position: relative;
   border-radius: 10px;
   background-size: contain;
+  background-repeat: no-repeat;
   -webkit-transition: 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
   -moz-transition: 0.3s ease-in-out, -moz-transform 0.3s ease-in-out;
   transition: all 0.3s ease-in-out, transform 0.3s ease-in-out;

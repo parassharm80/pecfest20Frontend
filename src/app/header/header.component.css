@@ -50,13 +50,15 @@ nav ul {
   position: fixed;
   z-index: 100;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   margin: 0%;
   background-color: #00000095;
   display: flex;
   flex-flow: column;
   padding: 120px 10px;
   left: -100%;
+  overflow-y: auto;
   transform: translate(0, 0);
   transition-duration: 500ms;
 }
@@ -104,12 +106,14 @@ nav a {
     z-index: 100;
     width: 100%;
     height: unset;
+    min-height: unset;
     margin: 0%;
     background-color: transparent;
     display: flex;
     flex-basis: auto;
     flex-flow: row;
     padding: 10px;
+    overflow-y: none;
     left: unset;
     transform: translate(0, 0);
     transition-duration: none;

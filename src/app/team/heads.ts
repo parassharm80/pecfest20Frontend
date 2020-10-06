@@ -1,5 +1,4 @@
 export let head = [
-
   {
     "name": "Aarush Monga",
     "post": "Marketing and Sponsorships",
@@ -76,7 +75,6 @@ export let head = [
     "photo": "Pranav.jpg",
     "ph": "9097512881"
   },
-
   {
     "name": "Riya Srivastava",
     "post": "Public Relations and Media ",
@@ -93,7 +91,6 @@ export let head = [
     "linked": "https://www.linkedin.com/in/rishabhjain21/",
     "fb": "https://www.facebook.com/krackerz.rj"
   },
-
   {
     "name": "Shantnu Chawla",
     "post": "Event Coordination (Technical)",
@@ -103,10 +100,6 @@ export let head = [
     "wh": "9592286829",
     "linked": "https://www.linkedin.com/in/shantnu-chawla-440110158"
   },
-
-
-
-
   {
     "name": "Sakshi Mittal",
     "post": "Creative",
@@ -125,5 +118,4 @@ export let head = [
     "photo": "yash.jpg",
     "ph": "9417414135"
   },
-
 ];
