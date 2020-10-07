@@ -17,15 +17,15 @@ export class WebsiteTeamComponent implements OnInit {
       post: "Full-Stack Developer",
       linked: "https://www.linkedin.com/in/paras-sharma-b8835715b"
     },
-    {
-      name: 'Himanshu Gaur',
-      fb: "https://www.facebook.com/himanshu.gaur.3192",
-      insta: "https://www.instagram.com/poetic.himanshu/?r=nametag",
-      image: "Himanshu Gaur.jpg",
-      event: false,
-      post: "",
-      linked: "https://www.linkedin.com/in/himanshu-gaur-149101163"
-    },
+    // {
+    //   name: 'Himanshu Gaur',
+    //   fb: "https://www.facebook.com/himanshu.gaur.3192",
+    //   insta: "https://www.instagram.com/poetic.himanshu/?r=nametag",
+    //   image: "Himanshu Gaur.jpg",
+    //   event: false,
+    //   post: "",
+    //   linked: "https://www.linkedin.com/in/himanshu-gaur-149101163"
+    // },
     // {
     //   name:'Animesh Garg',
     //   insta:"https://www.instagram.com/animesh_garg07/",

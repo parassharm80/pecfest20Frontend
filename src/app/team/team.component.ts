@@ -65,7 +65,7 @@ export class TeamComponent implements OnInit {
       "photo": "Vanshika.jpg",
       // "wh":"9417428303",
       "ph": "9417428303",
-      "linked": "https://www.linkedin.com/in/vanshika-jain-6b6024166"
+      "linked": "www.linkedin.com/in/vanshika-jain754"
     },
   ];
   heads = head;
