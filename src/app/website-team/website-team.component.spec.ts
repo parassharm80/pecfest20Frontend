@@ -8,9 +8,9 @@ describe('WebsiteTeamComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WebsiteTeamComponent ]
+      declarations: [WebsiteTeamComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

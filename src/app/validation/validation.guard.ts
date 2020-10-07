@@ -9,7 +9,6 @@ import { map, tap } from 'rxjs/operators';
 })
 export class ValidationGuard implements CanActivate {
 
-
   constructor(private validationService: ValidationService, private router: Router) { }
   canActivate(
     next: ActivatedRouteSnapshot,

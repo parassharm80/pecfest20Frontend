@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {TeamRoutingModule} from "./team-routing.module"
-import {TeamComponent} from "./team.component";
+import { TeamRoutingModule } from "./team-routing.module"
+import { TeamComponent } from "./team.component";
 
 
 @NgModule({
@@ -12,7 +12,7 @@ import {TeamComponent} from "./team.component";
 
   ],
   exports: [
-    
+
   ]
 })
 export class TeamModule { }

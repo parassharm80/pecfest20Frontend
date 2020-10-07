@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {head} from "./heads";
+import { head } from "./heads";
 @Component({
   selector: 'app-team',
   templateUrl: './team.component.html',
@@ -7,15 +7,15 @@ import {head} from "./heads";
 })
 export class TeamComponent implements OnInit {
   title: string;
-  coreTeam=[
+  coreTeam = [
     {
       "name": 'Paarth Gauba',
       "fb": "https://www.facebook.com/paarth.gauba",
       "insta": 'https://www.instagram.com/paarth22ssb/',
       "post": "Convener",
       "photo": "Paarth_Gauba.jpg",
-      "ph":"9501796743",
-      "linked":"https://www.linkedin.com/in/paarth-gauba-b92a80169/"
+      "ph": "9501796743",
+      "linked": "https://www.linkedin.com/in/paarth-gauba-b92a80169/"
     },
     {
       "name": 'Anirudh Gargya',
@@ -24,8 +24,8 @@ export class TeamComponent implements OnInit {
       "post": "Co-Convener",
       "photo": "Anirudh_Gargya.jpg",
       // "wh":"8787678767",
-      "ph":"7999540001",
-      "linked":"http://linkedin.com/in/anirudh-gargya-540545161"
+      "ph": "7999540001",
+      "linked": "http://linkedin.com/in/anirudh-gargya-540545161"
     },
     {
       "name": 'Ashish Kumar Singh',
@@ -34,8 +34,8 @@ export class TeamComponent implements OnInit {
       "insta": 'https://www.instagram.com/singh_ashish99/',
       "photo": "Ashish_Kumar_Singh.jpg",
       // "wh":"9971982018",
-      "ph":"9971982018",
-      "linked":"https://www.linkedin.com/in/singhashish23"
+      "ph": "9971982018",
+      "linked": "https://www.linkedin.com/in/singhashish23"
     },
     {
       "name": 'Manan Gupta',
@@ -44,7 +44,7 @@ export class TeamComponent implements OnInit {
       // "insta": '',
       "photo": "Manan_Gupta.jpg",
       // "wh":"",
-      "ph":"9023482677",
+      "ph": "9023482677",
       // "linked":""
     },
     {
@@ -54,7 +54,7 @@ export class TeamComponent implements OnInit {
       // "insta": '',
       "photo": "Navteshwar_Singh.jpg",
       // "wh":"h",
-      "ph":"7717271111",
+      "ph": "7717271111",
       // "linked":""
     },
     {
@@ -64,15 +64,15 @@ export class TeamComponent implements OnInit {
       "insta": 'https://instagram.com/vanshika_vj?igshid=xcsqonhu2qp0',
       "photo": "Vanshika.jpg",
       // "wh":"9417428303",
-      "ph":"9417428303",
-      "linked":"https://www.linkedin.com/in/vanshika-jain-6b6024166"
+      "ph": "9417428303",
+      "linked": "https://www.linkedin.com/in/vanshika-jain-6b6024166"
     },
   ];
-  heads=head;
+  heads = head;
 
 
   constructor() {
-    this.title =  'Contact Us';
+    this.title = 'Contact Us';
   }
 
   ngOnInit(): void {

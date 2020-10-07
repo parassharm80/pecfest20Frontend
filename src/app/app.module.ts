@@ -7,12 +7,12 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatDialogModule } from '@angular/material/dialog';
-import {RouterModule} from "@angular/router";
-import {HeaderModule} from "./header/header.module";
-import {CommonModule} from "@angular/common";
+import { RouterModule } from "@angular/router";
+import { HeaderModule } from "./header/header.module";
+import { CommonModule } from "@angular/common";
 import { HomeComponent } from './home/home.component';
-import {HttpClientModule} from '@angular/common/http';
-import {CookieService} from 'ngx-cookie-service';
+import { HttpClientModule } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service';
 import { PacmanComponent } from './pacman/pacman.component';
 
 @NgModule({

@@ -6,22 +6,22 @@ import { TechnicalComponent } from './types/technical/technical.component';
 import { AcademicComponent } from './types/academic/academic.component'
 import { CulturalComponent } from './types/cultural/cultural.component';
 import { EventComponent } from './event/event.component'
-import {MatCardModule} from '@angular/material/card';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { FormComponent } from './event/form/form.component';
-import {MatTableModule} from "@angular/material/table";
-import {MatIconModule} from "@angular/material/icon";
-import {MatButtonModule} from "@angular/material/button";
-import {MatSortModule} from "@angular/material/sort";
-import {MatPaginatorModule} from "@angular/material/paginator";
-import {MatFormFieldModule} from "@angular/material/form-field";
-import {MatInputModule} from "@angular/material/input";
-import {MatSelectModule} from "@angular/material/select";
-import {MatRadioModule} from "@angular/material/radio";
-import {MatSnackBarModule} from "@angular/material/snack-bar";
-import {MAT_DIALOG_DATA, MatDialogModule, MatDialogRef} from "@angular/material/dialog";
-import {MatToolbarModule} from "@angular/material/toolbar";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { MatTableModule } from "@angular/material/table";
+import { MatIconModule } from "@angular/material/icon";
+import { MatButtonModule } from "@angular/material/button";
+import { MatSortModule } from "@angular/material/sort";
+import { MatPaginatorModule } from "@angular/material/paginator";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
+import { MatSelectModule } from "@angular/material/select";
+import { MatRadioModule } from "@angular/material/radio";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from "@angular/material/dialog";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { WorkshopComponent } from './types/workshop/workshop.component';
 @NgModule({
   declarations: [
@@ -33,8 +33,8 @@ import { WorkshopComponent } from './types/workshop/workshop.component';
     FormComponent,
     WorkshopComponent
   ],
-  providers:[        { provide: MatDialogRef, useValue: {} },
-    { provide: MAT_DIALOG_DATA, useValue: [FormComponent] },
+  providers: [{ provide: MatDialogRef, useValue: {} },
+  { provide: MAT_DIALOG_DATA, useValue: [FormComponent] },
 
   ],
 

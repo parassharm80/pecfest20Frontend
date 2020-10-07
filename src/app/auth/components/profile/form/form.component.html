@@ -1,58 +1,101 @@
 <html>
-<mat-toolbar>
-  <span>{{form.controls['$key'].value?"Modify Profile": "Modify Profile"}}</span>
-  <span class = "fill-remaining-space"></span>
-  <button class = "btn-dialog-close" mat-stroked-button (click)="onClose()" tabindex="-1"><mat-icon>clear</mat-icon></button>
-</mat-toolbar>
-<form [formGroup]="form" class = "normal-form" (submit)="newSubmit()">
-  <mat-grid-list cols="2" rowHeight="300px">
-    <mat-grid-tile>
-      <div class = "controls-container">
-        <input type="hidden"  formControlName="$key">
-        <mat-form-field>
-          <input formControlName="first_name" matInput placeholder="First Name*">
-          <mat-error>This field is mandatory</mat-error>
-        </mat-form-field>
-        <mat-form-field>
-          <input formControlName="last_name" matInput placeholder="Last Name*">
-          <mat-error>This field is mandatory</mat-error>
-        </mat-form-field>
-        <mat-form-field>
-          <input formControlName="college_name" matInput placeholder="College*">
-          <mat-error>This field is mandatory</mat-error>
-        </mat-form-field>
-        <mat-form-field>
-          <input formControlName="year_of_education" matInput placeholder="Year*">
-          <mat-error>This field is mandatory</mat-error>
-        </mat-form-field>
-      </div>
-    </mat-grid-tile>
-    <mat-grid-tile>
-
-      <div class = "controls-container">
-      <mat-form-field>
-        <input formControlName="contact_no" matInput placeholder="Contact*">
-        <mat-error>This field is mandatory</mat-error>
-      </mat-form-field>
-
-      <mat-form-field>
-        <input formControlName="gender" matInput placeholder="Gender">
-      </mat-form-field>
-
-      <div class = "button-row">
-        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid" >Submit</button>
-        <button mat-raised-button color="clear" (click)="onClear()">Clear</button>
-      </div>
-      </div>
-
-    </mat-grid-tile>
-  </mat-grid-list>
-  <div class="alert alert-danger" role="alert" *ngIf="errorMessage!=null" style="margin-top: 10px">
-    {{errorMessage}}
-  </div>
-  <div class="alert alert-success" role="alert" *ngIf="errorMessage==null&&successMessage!=null" style="margin-top: 10px">
-    {{successMessage}}
-  </div>
-</form>
-
+  <mat-toolbar>
+    <span>{{
+      form.controls["$key"].value ? "Modify Profile" : "Modify Profile"
+    }}</span>
+    <span class="fill-remaining-space"></span>
+    <button
+      class="btn-dialog-close"
+      mat-stroked-button
+      (click)="onClose()"
+      tabindex="-1"
+    >
+      <mat-icon>clear</mat-icon>
+    </button>
+  </mat-toolbar>
+  <form [formGroup]="form" class="normal-form" (submit)="newSubmit()">
+    <mat-grid-list cols="2" rowHeight="300px">
+      <mat-grid-tile>
+        <div class="controls-container">
+          <input type="hidden" formControlName="$key" />
+          <mat-form-field>
+            <input
+              formControlName="first_name"
+              matInput
+              placeholder="First Name*"
+            />
+            <mat-error>This field is mandatory</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              formControlName="last_name"
+              matInput
+              placeholder="Last Name*"
+            />
+            <mat-error>This field is mandatory</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              formControlName="college_name"
+              matInput
+              placeholder="College*"
+            />
+            <mat-error>This field is mandatory</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              formControlName="year_of_education"
+              matInput
+              placeholder="Year*"
+            />
+            <mat-error>This field is mandatory</mat-error>
+          </mat-form-field>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="controls-container">
+          <mat-form-field>
+            <input
+              formControlName="contact_no"
+              matInput
+              placeholder="Contact*"
+            />
+            <mat-error>This field is mandatory</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="gender" matInput placeholder="Gender" />
+          </mat-form-field>
+          <div class="button-row">
+            <button
+              mat-raised-button
+              color="primary"
+              type="submit"
+              [disabled]="form.invalid"
+            >
+              Submit
+            </button>
+            <button mat-raised-button color="clear" (click)="onClear()">
+              Clear
+            </button>
+          </div>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <div
+      class="alert alert-danger"
+      role="alert"
+      *ngIf="errorMessage != null"
+      style="margin-top: 10px"
+    >
+      {{ errorMessage }}
+    </div>
+    <div
+      class="alert alert-success"
+      role="alert"
+      *ngIf="errorMessage == null && successMessage != null"
+      style="margin-top: 10px"
+    >
+      {{ successMessage }}
+    </div>
+  </form>
 </html>

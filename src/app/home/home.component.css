@@ -131,22 +131,21 @@
   }
   .car img {
     position: fixed;
-
   }
-  .social-menu{
+  .social-menu {
     position: fixed;
   }
 }
 
-.forMobile{
+.forMobile {
   display: none;
 }
 
-@media(max-width: 450px){
-  .forDesktop{
+@media (max-width: 450px) {
+  .forDesktop {
     display: none;
   }
-  .forMobile{
+  .forMobile {
     display: flex;
   }
 }
