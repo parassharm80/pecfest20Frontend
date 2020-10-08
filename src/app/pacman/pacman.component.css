@@ -3,7 +3,7 @@
 }
 
 .mouth div {
-  z-index: 10;
+  z-index: 50;
   position: fixed;
   top: calc(50vh - 60px);
   left: calc(50vw - 90px);
@@ -50,7 +50,7 @@
 }
 
 .dot div {
-  z-index: 10;
+  z-index: 50;
   position: fixed;
   top: calc(50vh - 8px);
   left: calc(50vw - 46px);
