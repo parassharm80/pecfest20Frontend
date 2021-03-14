@@ -166,10 +166,10 @@
   position: relative;
   overflow: hidden;
 }
-.btn1,.btn2{
+.btn1{
   color: #c2fffa;
 }
-.btn1:hover,.btn2:hover{
+.btn1:hover{
   /*color: white;*/
   background-color: #3498db;
 }
