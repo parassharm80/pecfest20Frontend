@@ -1,7 +1,6 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {ValidationService} from '../validation/validation.service';
-import {HeaderService} from "./header.service";
-import {HomeComponent} from "../home/home.component";
+import { Component, OnInit } from '@angular/core';
+import { ValidationService } from '../validation/validation.service';
+import { HeaderService } from "./header.service";
 
 @Component({
   selector: 'app-header',
@@ -9,36 +8,19 @@ import {HomeComponent} from "../home/home.component";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Output() fire: EventEmitter<any> = new EventEmitter();
+  constructor(public validationGuardService: ValidationService, private headerService: HeaderService) {
+  }
 
-  constructor(public validationGuardService:ValidationService, private headerService: HeaderService) {
+  toggle = false;
+
+  toggleBtn() {
+    this.toggle = !this.toggle
   }
-  navview = false;
-  check=false;
-  changeName(navview) {
-    if(this.check==true) {
-      this.check=false;
-      this.navview = !navview
-      this.fire.emit(this.navview);
-    }
-    else{
-      this.navview = false;
-      this.fire.emit(this.navview);
-    }
+
+  toggleClose() {
+    this.toggle = false
   }
-  changeName1(navView){
-    this.check = true;
-    this.changeName(navView);
-  }
+
   ngOnInit(): void {
-    this.access();
-  }
-  view = false;
-  access() {
-    this.headerService.getEventDetails().subscribe(
-      (response) => {
-        if(response["http_status"]=="OK")
-          this.view = true;
-      })
   }
 }

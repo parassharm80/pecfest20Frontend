@@ -8,9 +8,9 @@ describe('PacmanComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PacmanComponent ]
+      declarations: [PacmanComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

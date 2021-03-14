@@ -9,7 +9,7 @@ li {
   list-style: none;
 }
 
-.events-list{
+.events-list {
   font-family: "Pacifico", cursive;
   text-transform: capitalize;
   line-height: 1.5;
@@ -35,22 +35,22 @@ li {
 
 .events-img-technical {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)),
-  url(../../assets/events/technical.png) bottom;
+    url(../../assets/events/technical.png) bottom;
 }
 
 .events-img-cultural {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)),
-  bottom url(../../assets/events/cultural.png);
+    bottom url(../../assets/events/cultural.png);
 }
 
 .events-img-lecture {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)),
-  bottom url(../../assets/events/lecture.png);
+    bottom url(../../assets/events/lecture.png);
 }
 
 .events-img-workshop {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)),
-  bottom url(../../assets/events/online_workshop.png);
+    bottom url(../../assets/events/online_workshop.png);
 }
 
 .events-box {
@@ -59,6 +59,7 @@ li {
   position: relative;
   border-radius: 10px;
   background-size: contain;
+  background-repeat: no-repeat;
   -webkit-transition: 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
   -moz-transition: 0.3s ease-in-out, -moz-transform 0.3s ease-in-out;
   transition: all 0.3s ease-in-out, transform 0.3s ease-in-out;
@@ -81,4 +82,12 @@ li {
   margin: 0 30px;
   padding-top: 170px;
   line-height: 1.5;
+}
+
+.event-image {
+  visibility: visible;
+}
+
+.event-image.hide {
+  visibility: hidden;
 }

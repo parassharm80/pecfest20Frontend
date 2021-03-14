@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ValidationService} from '../validation/validation.service';
+import { ValidationService } from '../validation/validation.service';
+import { EventService } from '../events/event.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,10 @@ import {ValidationService} from '../validation/validation.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private eventService: EventService) {
+    this.eventService.fetchEvents().subscribe(response =>
+      this.eventService.manipulateResponse(response));
+  }
 
   ngOnInit(): void {
   }

@@ -1,60 +1,77 @@
-<div class="header">
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <a class="navbar-brand"
-       [routerLink]="['']"><img src="../../assets/pecfest_logo.png" class="logo"></a>
-    <button class="navbar-toggler" (click)="this.changeName1(this.navview)"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded= navview
-            aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class= "collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mr-auto" (click)="this.changeName(this.navview)">
-        <li class="nav-item" *ngIf="!validationGuardService.isLoggedIn">
-          <a class = "nav-link"
-             [routerLink]="['register']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="hbtn"><p class="text">REGISTER</p></button></a>
-        </li>
-        <li class="nav-item" *ngIf="!validationGuardService.isLoggedIn">
-          <a class = "nav-link"
-             [routerLink]="['login']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="hbtn"><p class="text">LOGIN</p></button></a>
-        </li>
-        <li class="nav-item" *ngIf="validationGuardService.isLoggedIn">
-          <a class = "nav-link"
-             [routerLink]="['profile']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="hbtn"><p class="text">PROFILE</p></button></a>
-        </li>
-        <li class="nav-item">
-          <a class = "nav-link"
-             [routerLink]="['sponsors']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="hbtn"><p class="text">SPONSORS</p></button></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"
-             [routerLink]="['events']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="hbtn"><p class="text">EVENTS</p></button></a>
-        </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link"
-              [routerLink]="['accomodation']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="hbtn"><p class="text">ACCOMODATION</p></button></a>
-        </li> -->
-        <li class="nav-item">
-          <a class="nav-link"
-             [routerLink]="['website-team']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="hbtn"><p class="text">DEVELOPERS</p></button></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"
-             [routerLink]="['team']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="hbtn"><p class="text">CONTACT US</p></button></a>
-        </li>
-        <li *ngIf="validationGuardService.isAdmin==true" class="nav-item">
-          <a class="nav-link"
-             [routerLink]="['admin/events']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="hbtn"><p class="text">EVENTS ADMIN</p></button></a>
-        </li>
-        <li *ngIf="validationGuardService.isAdmin==true" class="nav-item">
-          <a class="nav-link"
-             [routerLink]="['admin/team']" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show"><button class="hbtn"><p class="text">TEAM ADMIN</p></button></a>
-        </li>
-      </ul>
-    </div>
+<header>
+  <a class="logo" [routerLink]="['']">
+    <img src="../../assets/pecfest_logo.png" />
+  </a>
+  <label
+    (click)="this.toggleBtn()"
+    for="toggler"
+    class="burger"
+    [class.fixed]="this.toggle"
+    ><i class="fa fa-bars"></i
+  ></label>
+  <nav>
+    <ul [class.show]="this.toggle">
+      <li
+        (click)="this.toggleClose()"
+        *ngIf="!validationGuardService.isLoggedIn"
+      >
+        <a [routerLink]="['register']" routerLinkActive="active">REGISTER</a>
+      </li>
+      <li
+        (click)="this.toggleClose()"
+        *ngIf="!validationGuardService.isLoggedIn"
+      >
+        <a [routerLink]="['login']" routerLinkActive="active">LOGIN</a>
+      </li>
+      <li
+        (click)="this.toggleClose()"
+        *ngIf="validationGuardService.isLoggedIn"
+      >
+        <a [routerLink]="['profile']" routerLinkActive="active">PROFILE</a>
+      </li>
+      <li (click)="this.toggleClose()">
+        <a [routerLink]="['events']" routerLinkActive="active">EVENTS</a>
+      </li>
+      <!-- <li (click)="this.toggleClose()">
+        <a [routerLink]="['sponsors']" routerLinkActive="active">SPONSORS</a>
+      </li>
+      <li (click)="this.toggleClose()">
+        <a [routerLink]="['accomodation']" routerLinkActive="active"
+          >ACCOMODATION</a
+        >
+      </li> -->
+      <li (click)="this.toggleClose()">
+        <a [routerLink]="['team']" routerLinkActive="active">CONTACT US</a>
+      </li>
+      <li (click)="this.toggleClose()">
+        <a [routerLink]="['website-team']" routerLinkActive="active"
+          >DEVELOPERS</a
+        >
+      </li>
+      <li
+        (click)="this.toggleClose()"
+        *ngIf="validationGuardService.isAdmin == true"
+      >
+        <a [routerLink]="['admin/events']" routerLinkActive="active"
+          >EVENTS ADMIN</a
+        >
+      </li>
+      <li
+        (click)="this.toggleClose()"
+        *ngIf="validationGuardService.isAdmin == true"
+      >
+        <a [routerLink]="['admin/team']" routerLinkActive="active"
+          >TEAM ADMIN</a
+        >
+      </li>
+      <li
+        (click)="this.toggleClose()"
+        *ngIf="validationGuardService.isAdmin == true"
+      >
+        <a [routerLink]="['admin/user-reg']" routerLinkActive="active"
+          >USER ADMIN</a
+        >
+      </li>
+    </ul>
   </nav>
-</div>
-
+</header>

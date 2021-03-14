@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
-import {FormComponent} from "./form/form.component";
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Router} from '@angular/router';
-import {ValidationService} from '../../../validation/validation.service';
-import {profileService} from './profile.service';
-import {CookieService} from 'ngx-cookie-service';
+import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
+import { FormComponent } from "./form/form.component";
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { ValidationService } from '../../../validation/validation.service';
+import { profileService } from './profile.service';
+import { CookieService } from 'ngx-cookie-service';
+import { ProdEnvService } from '../../../prod-env.service';
 
 @Component({
   selector: 'app-profile',
@@ -13,25 +14,24 @@ import {CookieService} from 'ngx-cookie-service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  public profile:any;
+  public profile: any;
   public title: String;
-  private url="http://localhost:8080/logout";
-  errorMessage=null;
-  successMessage=null;
-  isFetchingProfile=true;
-  constructor(private formComponent: FormComponent,public dialog: MatDialog,private http:HttpClient,
-  private validationService:ValidationService,private router:Router,private profile_Service:profileService,private cookieService:CookieService) {
-    this.profile_Service.getUserDetails().subscribe(response=>{
-      if(response["http_status"]=="OK"){
-        this.profile=response["data"];
-        this.isFetchingProfile=false;
+  private url = this.prodEnvService.prodUrl;
+  errorMessage = null;
+  successMessage = null;
+  isFetchingProfile = true;
+  constructor(private formComponent: FormComponent, public dialog: MatDialog, private http: HttpClient,
+    private validationService: ValidationService, private router: Router, private profile_Service: profileService, private cookieService: CookieService, private prodEnvService: ProdEnvService) {
+    this.profile_Service.getUserDetails().subscribe(response => {
+      if (response["http_status"] == "OK") {
+        this.profile = response["data"];
+        this.isFetchingProfile = false;
       }
     });
-    this.title =  'Your Profile';
-
+    this.title = 'Your Profile';
   }
 
-  edit(profile){
+  edit(profile) {
     this.formComponent.populateForm(profile);
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
@@ -43,26 +43,26 @@ export class ProfileComponent implements OnInit {
   }
 
   onClick() {
-    this.errorMessage=null;
-    this.successMessage=null;
-    this.http.delete(this.url,{headers:this.getHttpHeaders()}).subscribe(response=>{
-        if(response["http_status"]!="OK")
-          this.errorMessage=response["status_message"];
-        else {
-          this.cookieService.delete("session_id","/");
-          this.validationService.isLoggedIn=false;
-          this.validationService.isAdmin=false;
-          this.validationService.stateChecked=true;
-          this.successMessage="Logged out. Redirecting to home page";
-          setTimeout((router: Router) => {
-            this.router.navigate([".."]);
-          }, 2000);
-        }
+    this.errorMessage = null;
+    this.successMessage = null;
+    this.http.delete(this.url + "/logout", { headers: this.getHttpHeaders() }).subscribe(response => {
+      if (response["http_status"] != "OK")
+        this.errorMessage = response["status_message"];
+      else {
+        this.cookieService.delete("session_id", "/");
+        this.validationService.isLoggedIn = false;
+        this.validationService.isAdmin = false;
+        this.validationService.stateChecked = true;
+        this.successMessage = "Logged out. Redirecting to home page";
+        setTimeout((router: Router) => {
+          this.router.navigate([".."]);
+        }, 2000);
+      }
     });
   }
   private getHttpHeaders() {
-    let  headers:HttpHeaders=new HttpHeaders();
-    return headers.set("session_id",this.cookieService.getAll()["session_id"]==undefined ? this.cookieService.get("session_id") : this.cookieService.getAll()["session_id"]);
+    let headers: HttpHeaders = new HttpHeaders();
+    return headers.set("session_id", this.cookieService.getAll()["session_id"] == undefined ? this.cookieService.get("session_id") : this.cookieService.getAll()["session_id"]);
   }
 }
 export interface profileType {

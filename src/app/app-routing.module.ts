@@ -29,10 +29,10 @@ const routes: Routes = [
     path: 'website-team',
     loadChildren: () => import('./website-team/website-team.module').then(m => m.WebsiteTeamModule)
   },
-  {
-    path: 'sponsors',
-    loadChildren: () => import('./sponser/sponser.module').then(m => m.SponsorModule)
-  },
+  // {
+  //   path: 'sponsors',
+  //   loadChildren: () => import('./sponser/sponser.module').then(m => m.SponsorModule)
+  // },
   {
     path: 'admin',
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
@@ -44,7 +44,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' , useHash: true })],
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled', useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
