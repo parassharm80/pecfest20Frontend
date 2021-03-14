@@ -1,8 +1,8 @@
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {SponsorRoutingModule} from "./sponser-routing.module";
-import {SponsorComponent} from "./sponser.component";
+import { SponsorRoutingModule } from "./sponser-routing.module";
+import { SponsorComponent } from "./sponser.component";
 
 
 @NgModule({
@@ -12,7 +12,7 @@ import {SponsorComponent} from "./sponser.component";
     SponsorRoutingModule,
   ],
   exports: [
-    
+
   ]
 })
 export class SponsorModule { }

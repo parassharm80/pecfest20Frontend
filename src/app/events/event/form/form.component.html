@@ -1,38 +1,103 @@
 <html>
-<mat-toolbar>
-  <span>{{formService.form.controls['$key'].value?"Register Team": "Register Team"}}</span>
-  <span class = "fill-remaining-space"></span>
-  <button class = "btn-dialog-close" mat-stroked-button (click)="onClose()" tabindex="-1"><mat-icon>clear</mat-icon></button>
-</mat-toolbar>
-<form [formGroup]="formService.form" class = "normal-form" >
-  <mat-grid-list cols="1" rowHeight="500px">
-    <mat-grid-tile>
-      <div class = "controls-container">
-        <input type="hidden"  formControlName="$key">
-        <mat-form-field>
-          <input formControlName="teamname" matInput placeholder="TeamName*">
-          <mat-error>This field is mandatory</mat-error>
-        </mat-form-field>
-        <div *ngFor="let usernameControl of formService.form.controls['team_members']['controls'];index as i">
-        <mat-form-field>
-          <input [formControl]="usernameControl" matInput placeholder="Member{{i+1}} PECFEST Username">
-          <mat-error>This field is mandatory</mat-error>
-        </mat-form-field>
-        </div>
-        <button  style="margin-top: 10px;width: 120px" class="event-reg btn btn-primary mx-auto d-block my3" (click)="addTeamMember()">Add Member</button>
-        <div class = "button-row">
-          <button mat-raised-button color="primary" type="submit" [disabled]="formService.form.invalid" style="margin-top: 15px" (click)="onSubmit()">Submit</button>
-          <button mat-raised-button color="clear" (click)="onClear()" style="margin-top: 15px">Clear</button>
-          <div class="alert alert-danger" role="alert" *ngIf="errorMessage!=null" style="margin-top: 10px">
-            {{errorMessage}}
+  <mat-toolbar>
+    <span>{{
+      formService.form.controls["$key"].value
+        ? "Register Team"
+        : "Register Team"
+    }}</span>
+    <span class="fill-remaining-space"></span>
+    <button
+      class="btn-dialog-close"
+      mat-stroked-button
+      (click)="onClose()"
+      tabindex="-1"
+    >
+      <mat-icon>clear</mat-icon>
+    </button>
+  </mat-toolbar>
+  <form [formGroup]="formService.form" class="normal-form">
+    <mat-grid-list cols="1" rowHeight="500px">
+      <mat-grid-tile>
+        <div class="controls-container">
+          <input type="hidden" formControlName="$key" />
+          <mat-form-field>
+            <input
+              formControlName="teamname"
+              matInput
+              placeholder="TeamName*"
+            />
+            <mat-error>This field is mandatory</mat-error>
+          </mat-form-field>
+          <div
+            *ngFor="
+              let usernameControl of formService.form.controls['team_members'][
+                'controls'
+              ];
+              index as i
+            "
+          >
+            <mat-form-field *ngIf="i > 0">
+              <input
+                [formControl]="usernameControl"
+                matInput
+                placeholder="Member{{ i + 1 }} PECFEST Username"
+              />
+              <mat-error>This field is mandatory</mat-error>
+            </mat-form-field>
+            <mat-form-field *ngIf="i == 0">
+              <input
+                [formControl]="usernameControl"
+                matInput
+                placeholder="Leader PECFEST Username"
+              />
+              <mat-error>This field is mandatory</mat-error>
+            </mat-form-field>
           </div>
-          <div class="alert alert-success" role="alert" *ngIf="errorMessage==null&&successMessage!=null" style="margin-top: 10px">
-            {{successMessage}}
+          <button
+            style="margin-top: 10px; width: 120px"
+            class="event-reg btn btn-primary mx-auto d-block my3"
+            (click)="addTeamMember()"
+          >
+            Add Member
+          </button>
+          <div class="button-row">
+            <button
+              mat-raised-button
+              color="primary"
+              type="submit"
+              [disabled]="formService.form.invalid"
+              style="margin-top: 15px"
+              (click)="onSubmit()"
+            >
+              Submit
+            </button>
+            <button
+              mat-raised-button
+              color="clear"
+              (click)="onClear()"
+              style="margin-top: 15px"
+            >
+              Clear
+            </button>
+            <div
+              class="alert alert-danger"
+              role="alert"
+              *ngIf="errorMessage != null"
+              style="margin-top: 10px"
+            >
+              {{ errorMessage }}
+            </div>
+            <div
+              class="alert alert-success"
+              role="alert"
+              *ngIf="errorMessage == null && successMessage != null"
+              style="margin-top: 10px"
+            >
+              {{ successMessage }}
+            </div>
           </div>
         </div>
-      </div>
-    </mat-grid-tile>
-  </mat-grid-list>
-</form>
-
+      </mat-grid-tile>
+    </mat-grid-list>
+  </form>
 </html>

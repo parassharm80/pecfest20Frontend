@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {ValidationGuard} from "../validation/validation.guard";
 import {AdminComponent} from "./admin.component";
 import {TeamAdminComponent} from './team/team-admin/team-admin.component';
+import {UserRegComponent} from './user/user-reg.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,11 @@ const routes: Routes = [
   {
     path: 'team',
     component: TeamAdminComponent,
+    canActivate:[ValidationGuard]
+  },
+  {
+    path: 'user-reg',
+    component: UserRegComponent,
     canActivate:[ValidationGuard]
   }
 

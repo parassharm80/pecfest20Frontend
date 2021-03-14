@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {WebsiteTeamRoutingModule} from "./website-team-routing";
-import {WebsiteTeamComponent} from "./website-team.component";
+import { WebsiteTeamRoutingModule } from "./website-team-routing";
+import { WebsiteTeamComponent } from "./website-team.component";
 
 
 @NgModule({
@@ -12,7 +12,7 @@ import {WebsiteTeamComponent} from "./website-team.component";
 
   ],
   exports: [
-    
+
   ]
 })
 export class WebsiteTeamModule { }

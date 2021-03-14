@@ -59,21 +59,20 @@ hr {
   color: white;
   text-decoration: none;
 }
-.fa{
+.fa {
   width: 43px;
   height: 43px;
 }
-.fa-facebook{
+.fa-facebook {
   font-size: 25px;
 }
-.fa-linkedin{
-  font-size: 25px;
-}
-
-.fa-instagram{
+.fa-linkedin {
   font-size: 25px;
 }
 
+.fa-instagram {
+  font-size: 25px;
+}
 
 @media screen and (max-width: 650px) {
   .team-item {

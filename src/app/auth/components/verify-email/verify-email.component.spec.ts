@@ -1,7 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import {VerifyEmailComponent} from './verify-email.component';
-
-
+import { VerifyEmailComponent } from './verify-email.component';
 
 describe('ConfirmEmailComponent', () => {
   let component: VerifyEmailComponent;
@@ -9,9 +7,9 @@ describe('ConfirmEmailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VerifyEmailComponent ]
+      declarations: [VerifyEmailComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

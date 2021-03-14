@@ -20,10 +20,10 @@
           <div class="example-element-detail"
                [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
             <div class="example-element-diagram">
-            <div class="example-element-symbol"> <b>Event Timings:</b> {{element.event_start_date_and_time}} - {{element.event_end_date_and_time}} </div>
+            <div class="example-element-symbol"> <b>Event Timings:</b> {{ element.event_start_date_and_time.substr(0,10)}}   :   {{ element.event_start_date_and_time.substr(11,5)}} IST -  {{ element.event_end_date_and_time.substr(0,10)}}   :   {{ element.event_end_date_and_time.substr(11,5)}} IST</div>
               <div class="example-element-symbol"> <b>Team-Size: </b>{{element.min_number_of_participants}}-{{element.max_number_of_participants}} </div>
               <div class="example-element-name"> <b>Description:</b> {{element.event_description}} </div>
-              <div class="example-element-name"> <b>Rules:</b>{{element.prize_money_worth}} </div>
+              <div class="example-element-name"> <b>Rules:</b>{{element.rules}} </div>
             </div>
           </div>
         </td>
