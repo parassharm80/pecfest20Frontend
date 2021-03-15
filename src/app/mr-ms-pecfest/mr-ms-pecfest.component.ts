@@ -8,8 +8,8 @@ import {Component, OnInit} from "@angular/core";
 export class MrMsPecfestComponent implements OnInit {
   public  eventDetails ={
     event_name: "Mr. and Ms. PECFEST",
-    event_start_date_and_time: "15/03/2021",
-    event_end_date_and_time: "21/03/2021",
+    event_start_date_and_time: "15/03/2021T12:00",
+    event_end_date_and_time: "21/03/2021T12:00",
     venue: "Online",
     prize_money_worth: "<ul><li>1st - 2500</li> <li> 2nd - 2500</li></ul>",
     min_number_of_participants: "1",
