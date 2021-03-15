@@ -1,0 +1,89 @@
+<div
+  class="event-container rounded container-sm mx-auto p-3"
+  *ngIf="eventDetails != null && eventDetails != undefined"
+>
+  <img
+    *ngIf="eventDetails.event_banner_image_url != 'NA'"
+    class="event-image rounded mx-auto d-block img-fluid"
+    [src]="manipulateLink()"
+    alt="event banner"
+  />
+  <img
+    *ngIf="eventDetails.event_banner_image_url == 'NA'"
+    class="event-image rounded mx-auto d-block img-fluid"
+    src="https://placehold.it/1000x200/CCCCCC/999999&text={{
+      eventDetails.event_name
+    }}"
+    alt="event banner"
+  />
+  <div class="event-content">
+    <div class="event-info my-5">
+      <div class="my-2 d-flex">
+        <label class="laser">Start Date Time:</label
+        ><span
+      >{{ eventDetails.event_start_date_and_time.substr(0, 10) }} :
+        {{ eventDetails.event_start_date_and_time.substr(11, 5) }} IST</span
+      >
+      </div>
+      <div class="my-2 d-flex">
+        <label class="laser">End Date Time:</label
+        ><span
+      >{{ eventDetails.event_end_date_and_time.substr(0, 10) }} :
+        {{ eventDetails.event_end_date_and_time.substr(11, 5) }} IST</span
+      >
+      </div>
+      <div class="my-2 d-flex">
+        <label class="laser">Venue:</label
+        ><span [innerHTML]="this.eventDetails.venue"></span>
+      </div>
+      <div class="my-2 d-flex">
+        <label class="laser">Prize:</label
+        ><span [innerHTML]="this.eventDetails.prize_money_worth"></span>
+      </div>
+      <div class="my-2 d-flex">
+        <label class="laser">Team size:</label
+        ><span
+      >{{ eventDetails.min_number_of_participants }}-{{
+        eventDetails.max_number_of_participants
+        }}</span
+      >
+      </div>
+    </div>
+    <div class="event-rules my-5">
+      <h2 class="laser">Rules</h2>
+      <p [innerHTML]="this.eventDetails.rules"></p>
+    </div>
+    <div class="event-description my-5">
+      <h2 class="laser">Description</h2>
+      <p [innerHTML]="this.eventDetails.event_description"></p>
+    </div>
+    <div class="my-2 d-flex">
+      <label class="laser">Organizers:</label
+      ><span [innerHTML]="this.eventDetails.organizer_contact_no"></span>
+    </div>
+<!--    <div-->
+<!--      class="alert alert-danger"-->
+<!--      role="alert"-->
+<!--      *ngIf="errorMessage != null"-->
+<!--      style="margin-top: 10px"-->
+<!--    >-->
+<!--      {{ errorMessage }}-->
+<!--    </div>-->
+<!--    <div-->
+<!--      class="alert alert-success"-->
+<!--      role="alert"-->
+<!--      *ngIf="errorMessage == null && successMessage != null"-->
+<!--      style="margin-top: 10px"-->
+<!--    >-->
+<!--      {{ successMessage }}-->
+<!--    </div>-->
+
+    <button
+      *ngIf="eventDetails.event_count == 'INDIVIDUAL'"
+      class="laser-white event-reg btn btn-primary mx-auto d-block my3"
+      onclick="location.href='https://cutt.ly/CzUuL4V';"
+    >
+      Register
+    </button>
+  </div>
+</div>

@@ -29,6 +29,10 @@ const routes: Routes = [
     path: 'website-team',
     loadChildren: () => import('./website-team/website-team.module').then(m => m.WebsiteTeamModule)
   },
+  {
+    path: 'mr-ms-pecfest',
+    loadChildren: () => import('./mr-ms-pecfest/mr-ms-pecfest.module').then(m => m.MrMsPecfestModule)
+  },
   // {
   //   path: 'sponsors',
   //   loadChildren: () => import('./sponser/sponser.module').then(m => m.SponsorModule)
