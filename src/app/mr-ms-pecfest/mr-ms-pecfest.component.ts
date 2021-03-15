@@ -6,7 +6,6 @@ import {Component, OnInit} from "@angular/core";
   styleUrls: ['./mr-ms-pecfest.component.css']
 })
 export class MrMsPecfestComponent implements OnInit {
-  // eventDetails=null;
   public  eventDetails ={
     event_name: "Mr. and Ms. PECFEST",
     event_start_date_and_time: "15/03/2021",
@@ -50,8 +49,6 @@ export class MrMsPecfestComponent implements OnInit {
       "Ayan: 9878740890",
     event_count: "INDIVIDUAL"
   };
-  // eve
-  // eventDetails.name="hi";
   manipulateLink() {
     let arr = this.eventDetails.event_banner_image_url.split('/');
     return `https://drive.google.com/uc?id=${arr[5]}&export=download`;
