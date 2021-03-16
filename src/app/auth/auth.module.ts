@@ -24,10 +24,11 @@ import { MatTableModule } from "@angular/material/table";
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from "@angular/material/dialog";
 import { MatButtonModule } from "@angular/material/button";
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { ZinbucksComponent } from './components/zinbucks/zinbucks.component';
 
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, ResetpasswordComponent, ChangePasswordComponent, VerifyEmailComponent, ProfileComponent, FormComponent],
+  declarations: [LoginComponent, RegisterComponent, ResetpasswordComponent, ChangePasswordComponent, VerifyEmailComponent, ProfileComponent, FormComponent, ZinbucksComponent],
   providers: [{ provide: MatDialogRef, useValue: {} },
   { provide: MAT_DIALOG_DATA, useValue: [FormComponent] },
 
