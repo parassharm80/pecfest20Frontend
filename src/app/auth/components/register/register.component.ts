@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RegisterService } from './register.service';
 import { MatSnackBar, MatSnackBarConfig } from "@angular/material/snack-bar";
 import { MatDialogRef } from "@angular/material/dialog";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-register',
@@ -13,7 +14,7 @@ export class RegisterComponent implements OnInit {
   registrationForm: FormGroup;
   submitted: boolean = false;
   errorMessage = null;
-  constructor(private formBuilder: FormBuilder, private regService: RegisterService,
+  constructor(private formBuilder: FormBuilder, private regService: RegisterService,private router: Router,
     private snackBar: MatSnackBar, private dialogRef: MatDialogRef<RegisterComponent>) {
     this.registrationForm = this.formBuilder.group({
       first_name: ['', Validators.required], last_name: ['', Validators.required],
@@ -44,6 +45,7 @@ export class RegisterComponent implements OnInit {
         }
         else {
           this.snackBar.open("Check your Email for verification", '', this.config);
+          this.router.navigate(["../zinbucks"]);
           // redirecting for verification
         }
       },

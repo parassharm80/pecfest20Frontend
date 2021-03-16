@@ -7,6 +7,7 @@ import { ChangePasswordComponent } from "./components/change-password/change-pas
 import { ProfileComponent } from "./components/profile/profile.component";
 import { ValidationGuard } from '../validation/validation.guard';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import {ZinbucksComponent} from "./components/zinbucks/zinbucks.component";
 
 
 const routes: Routes = [
@@ -18,7 +19,8 @@ const routes: Routes = [
       { path: 'register', component: RegisterComponent },
       { path: 'reset-password', component: ResetpasswordComponent, canActivate: [ValidationGuard] },
       { path: 'reset-password/:user_id/:verification_code', component: ChangePasswordComponent },
-      { path: 'verify-email', component: VerifyEmailComponent }
+      { path: 'verify-email', component: VerifyEmailComponent },
+      { path: 'zinbucks', component: ZinbucksComponent }
     ]
   }
 ];
