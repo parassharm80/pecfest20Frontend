@@ -10,9 +10,9 @@ import { ProdEnvService } from '../prod-env.service';
   providedIn: 'root'
 })
 export class ValidationService {
-  public isLoggedIn = true;
-  public stateChecked = true;
-  public isAdmin = true;
+  public isLoggedIn = false;
+  public stateChecked = false;
+  public isAdmin = false;
   public routeSet: Set<string> = new Set();
   private url = this.prodEnvService.prodUrl;
   constructor(private http: HttpClient, private cookieService: CookieService, private prodEnvService: ProdEnvService) {
