@@ -1,40 +1,83 @@
-.logo {
+.logoContainer {
   display: flex;
   justify-content: center;
+  flex-flow: column;
+}
+
+.logo,
+.yearNum {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoContainer img {
+  z-index: 10;
+  transform: translateY(-5px);
+  animation: pecfest 1.5s ease-in infinite;
+
 }
 
 .logo img {
-  padding: 0;
-  width: 8%;
-  height: 8%;
-  animation: pecfest 1.5s ease-in infinite;
-  z-index: 10;
+  height: 25vh;
+  margin-bottom: 40px;
 }
+
+.yearNum img {
+  height: 15vh;
+}
+
+.yearNum .dash {
+  height: 4vh;
+}
+
 .logo img:nth-child(1) {
-  animation-delay: 700ms;
-}
-.logo img:nth-child(2) {
   animation-delay: 600ms;
 }
-.logo img:nth-child(3) {
+.logo img:nth-child(2) {
   animation-delay: 500ms;
 }
-.logo img:nth-child(4) {
+.logo img:nth-child(3) {
   animation-delay: 400ms;
 }
-.logo img:nth-child(5) {
+.logo img:nth-child(4) {
   animation-delay: 300ms;
 }
-.logo img:nth-child(6) {
+.logo img:nth-child(5) {
   animation-delay: 200ms;
 }
+.logo img:nth-child(6) {
+  animation-delay: 100ms;
+}
 .logo img:nth-child(7) {
+  animation-delay: 000ms;
+}
+
+.yearNum img:nth-child(1) {
+  animation-delay: 500ms;
+}
+.yearNum img:nth-child(2) {
+  animation-delay: 433ms;
+}
+.yearNum img:nth-child(3) {
+  animation-delay: 366ms;
+}
+.yearNum img:nth-child(4) {
+  animation-delay: 300ms;
+}
+.yearNum img:nth-child(5) {
+  animation-delay: 233ms;
+}
+.yearNum img:nth-child(6) {
+  animation-delay: 165ms;
+}
+.yearNum img:nth-child(7) {
   animation-delay: 100ms;
 }
 
 .surface {
   animation: motion 5s linear infinite;
-  background: url("../../assets/scenery.png");
+  background: url('../../assets/scenery.png');
   background-size: contain;
   background-repeat: repeat-x;
   background-position: bottom;
@@ -72,13 +115,13 @@
 
 @keyframes pecfest {
   0% {
-    transform: translateY(0%);
+    transform: translateY(-7%);
   }
   50% {
-    transform: translateY(20%);
+    transform: translateY(7%);
   }
   100% {
-    transform: translateY(0%);
+    transform: translateY(-7%);
   }
 }
 
@@ -111,10 +154,18 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .logo img {
-    width: 12%;
-    height: 12%;
+    margin-top: 40px;
+    height: 25vw;
+  }
+
+  .yearNum img {
+    height: 15vw;
+  }
+
+  .yearNum .dash {
+    height: 4vw;
   }
 
   .bedrock {
@@ -131,63 +182,10 @@
   }
   .car img {
     position: fixed;
+    width: 60vh;
+    left: calc(50vw - 16vh);
   }
   .social-menu {
     position: fixed;
   }
-}
-
-.forMobile {
-  display: none;
-}
-
-@media (max-width: 450px) {
-  .forDesktop {
-    display: none;
-  }
-  .forMobile {
-    display: flex;
-  }
-}
-.cent{
-  text-align: center;
-  margin-top: 7px;
-}
-.btn{
-  border: 1px solid #c2fffa;
-  /*background: none;*/
-  font-weight: bold;
-  /*background-color: white;*/
-  padding: 10px 20px;
-  font-size: 20px;
-  font-family: "montserrat";
-  cursor: pointer;
-  margin: 10px;
-  transition: 0.8s;
-  position: relative;
-  overflow: hidden;
-}
-.btn1{
-  color: #c2fffa;
-}
-.btn1:hover{
-  /*color: white;*/
-  background-color: #3498db;
-}
-.btn::before{
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 0%;
-  background: #c2fffa;
-  z-index: -1;
-  transition: 0.8s;
-}
-.btn1::before{
-  top: 0;
-  border-radius: 0 0 50% 50%;
-}
-.btn1:hover::before{
-  height: 180%;
 }
