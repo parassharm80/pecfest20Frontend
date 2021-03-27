@@ -10,7 +10,7 @@ import { ValidationService } from './validation/validation.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'PECFEST\'20';
+  title = 'PECFEST\'2020-21';
   showLoading = true;
   imageLoading = false;
   constructor(private router: Router, public eventService: EventService, public validationGuard: ValidationService, private imageLoader: SharedService<boolean>) {
