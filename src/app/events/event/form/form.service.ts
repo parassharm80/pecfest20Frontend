@@ -15,7 +15,6 @@ export class formService {
     this.form = new FormGroup({
       $key: new FormControl(null),
       teamname: new FormControl('', Validators.required),
-      check: new FormControl('',Validators.required),
       team_members: this.getFormArray(eventDetails),
     });
   }

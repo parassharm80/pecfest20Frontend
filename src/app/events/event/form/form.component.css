@@ -29,8 +29,3 @@ mat-radio-group mat-radio-button {
 mat-form-field {
   font-size: 14px;
 }
-@media screen and (max-width: 767px) {
-  mat-checkbox {
-    font-size: 9px;
-  }
-}
