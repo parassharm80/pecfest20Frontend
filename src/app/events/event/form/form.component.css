@@ -3,6 +3,9 @@ form.normal-form {
   margin: 2%;
   overflow: auto;
 }
+mat-grid-tile{
+  overflow-y: scroll;
+}
 .controls-container {
   width: 100%;
   padding: 5%;
