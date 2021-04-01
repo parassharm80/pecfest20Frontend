@@ -1,11 +1,11 @@
 <html>
-  <div class = "scr">
+<div class = "scr">
   <mat-toolbar>
     <span>{{
       formService.form.controls["$key"].value
-        ? "Register Team"
-        : "Register Team"
-    }}</span>
+        ? "Register"
+        : "Register"
+      }}</span>
     <span class="fill-remaining-space"></span>
     <button
       class="btn-dialog-close"
@@ -17,18 +17,10 @@
     </button>
   </mat-toolbar>
   <form [formGroup]="formService.form" class="normal-form">
-    <mat-grid-list cols="1" rowHeight="500px">
+    <mat-grid-list cols="1" rowHeight="300px">
       <mat-grid-tile>
         <div class="controls-container">
           <input type="hidden" formControlName="$key" />
-          <mat-form-field>
-            <input
-              formControlName="teamname"
-              matInput
-              placeholder="TeamName*"
-            />
-            <mat-error>This field is mandatory</mat-error>
-          </mat-form-field>
           <div
             *ngFor="
               let usernameControl of formService.form.controls['team_members'][
@@ -37,41 +29,27 @@
               index as i
             "
           >
-            <mat-form-field *ngIf="i > 0">
-              <input
-                [formControl]="usernameControl"
-                matInput
-                placeholder="Member{{ i + 1 }} PECFEST Username"
-              />
-              <mat-error>This field is mandatory</mat-error>
-            </mat-form-field>
             <mat-form-field *ngIf="i == 0">
               <input
                 [formControl]="usernameControl"
                 matInput
-                placeholder="Leader PECFEST Username"
+                placeholder="Your PECFEST Username"
               />
               <mat-error>This field is mandatory</mat-error>
             </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input
+                  [formControl]="formService.form.controls['link']"
+                matInput
+                placeholder="Google Drive Link"
+                >
+              <mat-hint><strong>Write NA if not applicable</strong></mat-hint>
+              <mat-error>This field is mandatory</mat-error>
+            </mat-form-field>
           </div>
-          <mat-form-field>
-            <input
-              [formControl]="formService.form.controls['link']"
-              matInput
-              placeholder="Google Drive Link"
-            >
-            <mat-hint><strong>Write NA if not applicable</strong></mat-hint>
-            <mat-error>This field is mandatory</mat-error>
-          </mat-form-field>
           <br>
           <mat-checkbox required formControlName="check">I accept the <a href="https://drive.google.com/file/d/1SqhJrT97FwEhXdIO2EOHM1af9fOAwm77/view?usp=sharing">Terms and Conditions</a></mat-checkbox>
-          <button
-            style="margin-top: 10px; width: 120px"
-            class="event-reg btn btn-primary mx-auto d-block my3"
-            (click)="addTeamMember()"
-          >
-            Add Member
-          </button>
           <div class="button-row">
             <button
               mat-raised-button
@@ -112,5 +90,5 @@
       </mat-grid-tile>
     </mat-grid-list>
   </form>
-  </div>
+</div>
 </html>
