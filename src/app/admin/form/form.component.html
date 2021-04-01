@@ -26,7 +26,7 @@
         </mat-form-field>
 
         <mat-form-field>
-          <mat-label>Event Type</mat-label>
+          <mat-label>Event Count</mat-label>
           <mat-select formControlName="event_count" required>
           <mat-option value="INDIVIDUAL">INDIVIDUAL</mat-option>
             <mat-option value="TEAM">TEAM</mat-option>
@@ -34,7 +34,7 @@
         </mat-form-field>
 
         <mat-form-field>
-          <mat-label>Organizing Club*</mat-label>
+          <mat-label>Event Type*</mat-label>
           <mat-select formControlName="organizing_club" required >
             <mat-option *ngFor="let club of prodEnvService.clubNames" [value]="club">
               {{club}}
@@ -97,6 +97,7 @@
         <mat-form-field>
           <mat-label>Event Banner Link*</mat-label>
           <input formControlName="event_banner_image_url" matInput placeholder="Event Banner Link*">
+          <mat-hint>Size should be 1000X200 pixel</mat-hint>
           <mat-error>This field is mandatory</mat-error>
         </mat-form-field>
         <div class = "button-row">
