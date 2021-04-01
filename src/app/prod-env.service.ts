@@ -7,8 +7,8 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class ProdEnvService {
 
-  // prodUrl="http://localhost:8080";
-  prodUrl = "https://pecfest.in/backend"
+  prodUrl="http://localhost:8080";
+  // prodUrl = "https://pecfest.in/backend"
   clubNames = [
     "RHYTHM_AND_SHOES",
     "GAMEOTHONS",
