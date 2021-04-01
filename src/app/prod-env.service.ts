@@ -8,9 +8,25 @@ import { CookieService } from 'ngx-cookie-service';
 export class ProdEnvService {
 
   // prodUrl="http://localhost:8080";
-  prodUrl = "http://ec2-13-232-246-179.ap-south-1.compute.amazonaws.com"
-  clubNames = ["SCC", "EIC", "CIM", "EEB", "HEB", "PEB", "Rotaract_Club", "PDC", "APC", "Music_Club", "SAASC", "Dramatics", "NSS", "NCC",
-    "WEC", "IIM", "IGS", "SESI", "ROBOTICS", "SAE", "IEEE", "SME", "ASPS", "ASCE", "ASME", "ATS", "ACM_CSS", "IETE", "SPORTS"];
+  prodUrl = "https://pecfest.in/backend"
+  clubNames = [
+    "RHYTHM_AND_SHOES",
+    "GAMEOTHONS",
+    "BRAIN_BOOSTERS",
+    "VERBAL_WARS",
+    "ALL_THE_WORLD_S_A_STAGE",
+    "ARTIST_S_PARADISE",
+    "Treasure_Hunt",
+    "CAD_Competitions",
+    "Gaming",
+    "Electronics_and_Circuits",
+    "Webinars",
+    "Miscellaneous",
+    "Coding",
+    "Quiz",
+    "Case_Study_Competition",
+    "ROBOTICS"
+  ];
   constructor(private cookieService: CookieService) { }
   public getHttpHeaders() {
     let headers: HttpHeaders = new HttpHeaders();
