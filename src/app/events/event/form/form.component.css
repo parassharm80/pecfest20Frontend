@@ -4,7 +4,7 @@ form.normal-form {
   overflow: auto;
 }
 mat-grid-tile{
-  overflow-y: scroll;
+  overflow: auto;
 }
 .controls-container {
   width: 100%;
@@ -36,4 +36,7 @@ mat-form-field {
   mat-checkbox {
     font-size: 9px;
   }
+}
+mat-checkbox{
+  margin-top: 2%;
 }

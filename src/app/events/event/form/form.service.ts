@@ -3,6 +3,7 @@ import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { ProdEnvService } from '../../../prod-env.service';
+import {EventRegData} from "../form2/form2.service";
 
 @Injectable({ providedIn: 'root' })
 export class formService {
@@ -17,6 +18,7 @@ export class formService {
       teamname: new FormControl('', Validators.required),
       check: new FormControl('',Validators.required),
       team_members: this.getFormArray(eventDetails),
+      link: new FormControl('',Validators.required)
     });
   }
   private getFormArray(eventDetails: any) {
@@ -37,7 +39,8 @@ export class formService {
   }
 
   registerTeam(pecfestIdList, team_name) {
-    return this.http.post(this.url + `/pecfest-registration/${this.localEventDetails.event_id}/${team_name}`, pecfestIdList, { headers: this.getHttpHeaders() });
+    let obj:EventRegData={"pecfestIdList":pecfestIdList,"contentLink": this.form.controls["link"].value}
+    return this.http.post(this.url + `/pecfest-registration/${this.localEventDetails.event_id}/${team_name}`, obj, { headers: this.getHttpHeaders() });
   }
 
   private getHttpHeaders() {

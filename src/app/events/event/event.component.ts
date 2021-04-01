@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { EventService } from '../event.service';
 import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
 import { FormComponent } from "./form/form.component";
+import {Form2Component} from "./form2/form2.component";
 
 @Component({
   selector: 'app-event',
@@ -16,7 +17,7 @@ export class EventComponent implements OnInit {
   eventDetails = null;
   errorMessage = null;
   successMessage = null;
-  constructor(private formComponent: FormComponent, public dialog: MatDialog, private route: ActivatedRoute, private eventService: EventService) {
+  constructor(private formComponent: FormComponent,private form2Component: Form2Component, public dialog: MatDialog, private route: ActivatedRoute, private eventService: EventService) {
     this.eventService.isFetchingEvents = true;
 
     this.route.params.subscribe(params => {
@@ -52,14 +53,12 @@ export class EventComponent implements OnInit {
   }
 
   registerForIndividual() {
-    this.errorMessage = null;
-    this.successMessage = null
-    this.eventService.registerIndividual(this.eventDetails.event_id).subscribe(response => {
-      if (response["http_status"] != "OK")
-        this.errorMessage = response["status_message"];
-      else
-        this.successMessage = "Registration for " + `${this.eventDetails.event_name}` + " is successful."
-    });
+    this.form2Component.populateForm(this.eventDetails);
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "70%";
+    this.dialog.open(Form2Component, dialogConfig);
   }
 
   manipulateLink() {
