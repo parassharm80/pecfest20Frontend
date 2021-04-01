@@ -23,6 +23,8 @@ import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from "@angular/materia
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { WorkshopComponent } from './types/workshop/workshop.component';
+import { Form2Component } from './event/form2/form2.component';
+import {MatCheckboxModule} from "@angular/material/checkbox";
 @NgModule({
   declarations: [
     EventsComponent,
@@ -31,36 +33,38 @@ import { WorkshopComponent } from './types/workshop/workshop.component';
     CulturalComponent,
     EventComponent,
     FormComponent,
-    WorkshopComponent
+    WorkshopComponent,
+    Form2Component
   ],
   providers: [{ provide: MatDialogRef, useValue: {} },
   { provide: MAT_DIALOG_DATA, useValue: [FormComponent] },
 
   ],
 
-  imports: [
-    CommonModule,
-    EventsRoutingModule,
-    MatCardModule,
-    MatGridListModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatTableModule,
-    MatIconModule,
-    MatButtonModule,
-    MatSortModule,
-    MatPaginatorModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatGridListModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatRadioModule,
-    MatSnackBarModule,
-    MatDialogModule,
-    MatToolbarModule,
-  ],
+    imports: [
+        CommonModule,
+        EventsRoutingModule,
+        MatCardModule,
+        MatGridListModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatTableModule,
+        MatIconModule,
+        MatButtonModule,
+        MatSortModule,
+        MatPaginatorModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatGridListModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        MatRadioModule,
+        MatSnackBarModule,
+        MatDialogModule,
+        MatToolbarModule,
+        MatCheckboxModule,
+    ],
   exports: [EventsRoutingModule]
 })
 export class EventsModule {
