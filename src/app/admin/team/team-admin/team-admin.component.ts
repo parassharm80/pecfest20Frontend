@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, OnInit, ViewChild} from '@angular/core';
+import {ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {MatSort} from '@angular/material/sort';
 import {MatPaginator} from '@angular/material/paginator';
 import {animate, state, style, transition, trigger} from '@angular/animations';
@@ -9,6 +9,8 @@ import {TeamFormComponent} from '../team-form/team-form.component';
 import {TeamAdminService} from './team-admin.service';
 import {MatTableDataSource} from '@angular/material/table';
 import {FormControl, Validators} from '@angular/forms';
+import * as XLSX from 'xlsx';
+
 
 
 @Component({
@@ -26,9 +28,10 @@ import {FormControl, Validators} from '@angular/forms';
 export class TeamAdminComponent implements OnInit {
   searchKey;
   listData=null;
-  displayedColumns=["event_id","event_name","organizing_club","team_id","team_name","leader_pec_fest_id",'Edit','Delete'];
+  displayedColumns=["event_id","event_name","leader_contact","leader_email","team_id","team_name","leader_pec_fest_id",'Edit','Delete'];
   expandedElement;
   message=null;
+  @ViewChild('TABLE') table: ElementRef;
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator
   config: MatSnackBarConfig = {
@@ -114,4 +117,15 @@ export class TeamAdminComponent implements OnInit {
   onForceRefresh() {
     this.refresh(this.eventName.value);
   }
+  ExportTOExcel()
+  {
+    const ws: XLSX.WorkSheet=XLSX.utils.table_to_sheet(this.table.nativeElement);
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+
+    /* save to file */
+    XLSX.writeFile(wb, 'Event.xlsx');
+
+  }
+
 }
