@@ -32,7 +32,7 @@
   z-index: 50;
 }
 
-.toVR > div {
+.vrText {
   font-size: 16px;
   font-family: titlium;
 }
@@ -47,6 +47,10 @@
 
 @media screen and (max-width: 900px) {
   .toVR {
+  width: 50px;
+}
+
+  .vrText {
     display: none;
     visibility: hidden;
     opacity: 0;
