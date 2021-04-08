@@ -19,7 +19,7 @@
 }
 
 .logo img {
-  height: 25vh;
+  height: 20vh;
   margin-bottom: 40px;
 }
 
@@ -92,9 +92,9 @@
 .car img {
   animation: suspension 1s linear infinite;
   position: absolute;
-  width: 75vh;
+  width: 53vh;
   bottom: 8%;
-  left: calc(50vw - 19.9vh);
+  left: calc(50vw - 14.9vh);
 }
 
 .social-menu {
@@ -188,4 +188,53 @@
   .social-menu {
     position: fixed;
   }
+}
+.cent{
+  text-align: center;
+  /*margin-top: 0.1%;*/
+}
+.btn{
+  border: 1px solid #c2fffa;
+  /*background: none;*/
+  font-weight: bold;
+  /*background-color: white;*/
+  padding: 10px 20px;
+  font-size: 20px;
+  font-family: 'Courier Prime', monospace;
+  cursor: pointer;
+  margin: 10px;
+  transition: 0.8s;
+  position: relative;
+  overflow: hidden;
+}
+.btn1{
+  color: #c2fffa;
+}
+.btn1:hover{
+  /*color: white;*/
+  background-color: #3498db;
+}
+.btn::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: #c2fffa;
+  z-index: -1;
+  transition: 0.8s;
+}
+.btn1::before{
+  top: 0;
+  border-radius: 0 0 50% 50%;
+}
+.btn1:hover::before{
+  height: 180%;
+}
+@media (max-width: 900px) {
+  .cent{
+    text-align: center;
+    margin-top: 15%;
+  }
+
 }

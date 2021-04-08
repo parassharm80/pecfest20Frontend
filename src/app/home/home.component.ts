@@ -8,6 +8,7 @@ import { EventService } from '../events/event.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  // public mobile=false;
 
   constructor(private eventService: EventService) {
     this.eventService.fetchEvents().subscribe(response =>

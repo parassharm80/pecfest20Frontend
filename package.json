@@ -26,6 +26,7 @@
     "bootstrap": "^4.6.0",
     "jquery": "^3.6.0",
     "js-sha512": "^0.8.0",
+    "ng-recaptcha": "^7.0.1",
     "ngx-bootstrap": "^6.2.0",
     "ngx-cookie-service": "^10.1.1",
     "popper.js": "^1.16.1",

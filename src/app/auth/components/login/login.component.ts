@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from './login.service';
 import { Router } from '@angular/router';
 import { ValidationService } from '../../../validation/validation.service';
+import {RecaptchaErrorParameters} from "ng-recaptcha";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,7 +15,8 @@ export class LoginComponent implements OnInit {
   errorMessage = null;
   successMessage = null;
   constructor(private formBuilder: FormBuilder, private logInService: LoginService, private router: Router, private validationService: ValidationService) {
-    this.logInForm = this.formBuilder.group({ email: ['', Validators.email], password: ['', Validators.required] });
+    this.logInForm = this.formBuilder.group({ email: ['', Validators.email], password: ['', Validators.required],      captcha: ['', Validators.required]
+    });
   }
 
   ngOnInit(): void {
@@ -50,4 +52,12 @@ export class LoginComponent implements OnInit {
     this.errorMessage = null;
     this.successMessage = null;
   }
+  public resolved(captchaResponse: string): void {
+    console.log(`Resolved captcha with response: ${captchaResponse}`);
+  }
+
+  public onError(errorDetails: RecaptchaErrorParameters): void {
+    console.log(`reCAPTCHA error encountered; details:`, errorDetails);
+  }
+
 }

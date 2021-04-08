@@ -4,6 +4,7 @@ import { RegisterService } from './register.service';
 import { MatSnackBar, MatSnackBarConfig } from "@angular/material/snack-bar";
 import { MatDialogRef } from "@angular/material/dialog";
 import {Router} from "@angular/router";
+import {RecaptchaErrorParameters} from "ng-recaptcha";
 
 @Component({
   selector: 'app-register',
@@ -21,7 +22,8 @@ export class RegisterComponent implements OnInit {
       contact_no: ['', Validators.minLength(10)],
       email: ['', Validators.email], password: ['', Validators.required], college_name: ['', Validators.required],
       year_of_education: ['', Validators.required],
-      gender: ['', Validators.required]
+      gender: ['', Validators.required],
+      captcha: ['', Validators.required]
     });
   }
   config: MatSnackBarConfig = {
@@ -53,5 +55,12 @@ export class RegisterComponent implements OnInit {
           this.errorMessage = error.toString();
         });
     }
+  }
+  public resolved(captchaResponse: string): void {
+    console.log(`Resolved captcha with response: ${captchaResponse}`);
+  }
+
+  public onError(errorDetails: RecaptchaErrorParameters): void {
+    console.log(`reCAPTCHA error encountered; details:`, errorDetails);
   }
 }

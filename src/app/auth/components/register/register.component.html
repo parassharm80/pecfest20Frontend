@@ -100,6 +100,12 @@
           <option value="Other">Other</option>
         </select>
       </div>
+      <re-captcha formControlName="captcha"
+        (resolved)="resolved($event)"
+        (error)="onError($event)"
+        errorMode="handled"
+        siteKey="6LfT2tEZAAAAAKURM86lCsRhVkbHVWFCvEsJ_D5Q"
+      ></re-captcha>
       <button
         type="submit"
         (click)="onSubmit()"

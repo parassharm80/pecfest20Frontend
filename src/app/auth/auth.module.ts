@@ -25,6 +25,7 @@ import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from "@angular/materia
 import { MatButtonModule } from "@angular/material/button";
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { ZinbucksComponent } from './components/zinbucks/zinbucks.component';
+import {RecaptchaFormsModule, RecaptchaModule} from "ng-recaptcha";
 
 
 @NgModule({
@@ -58,6 +59,8 @@ import { ZinbucksComponent } from './components/zinbucks/zinbucks.component';
     MatSnackBarModule,
     MatDialogModule,
     MatToolbarModule,
+    RecaptchaModule,
+    RecaptchaFormsModule
   ],
   exports: [
     LoginComponent,
