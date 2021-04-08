@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   title = 'PECFEST\'2020-21';
   showLoading = true;
   imageLoading = false;
+  notHome = false
   constructor(private router: Router, public eventService: EventService, public validationGuard: ValidationService, private imageLoader: SharedService<boolean>) {
     this.router.events.subscribe((routerEvent: Event) => {
 
@@ -22,6 +23,7 @@ export class AppComponent implements OnInit {
 
       if (routerEvent instanceof NavigationEnd) {
         this.showLoading = false;
+        this.notHome = this.router.url !== '/'
       }
     });
 
